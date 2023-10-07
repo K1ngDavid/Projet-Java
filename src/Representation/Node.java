@@ -20,4 +20,8 @@ public abstract class Node {
 		public Node chooseNext(){
 			return this;
 		}
+
+		public static int getNbNodes(){
+			return nbNodes;
+		}
 }
