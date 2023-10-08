@@ -6,5 +6,13 @@ public class DecisionNode extends Node {
         super(description);
         //TODO Auto-generated constructor stub
     }
-    
+
+    /**
+     * @return
+     */
+    @Override
+    public Node chooseNext() {
+        return null;
+    }
+
 }

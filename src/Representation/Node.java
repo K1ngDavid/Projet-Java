@@ -17,9 +17,7 @@ public abstract class Node {
 			System.out.println(this.description);
 		}
 
-		public Node chooseNext(){
-			return this;
-		}
+		public abstract Node chooseNext();
 
 		public static int getNbNodes(){
 			return nbNodes;

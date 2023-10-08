@@ -4,5 +4,5 @@ public interface Event {
 
     public void display();
 
-    public Node ChooseNext();
+    public Node chooseNext();
 }
