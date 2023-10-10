@@ -7,8 +7,5 @@ public class InnerNode extends Node implements Event{
         //TODO Auto-generated constructor stub
     }
 
-    @Override
-    public Node chooseNext() {
-        return null;
-    }
+
 }

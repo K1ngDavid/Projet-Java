@@ -7,12 +7,4 @@ public class DecisionNode extends Node {
         //TODO Auto-generated constructor stub
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public Node chooseNext() {
-        return null;
-    }
-
 }

@@ -6,13 +6,4 @@ public class ChanceNode extends Node implements Event {
         super(description);
         //TODO Auto-generated constructor stub
     }
-
-    /**
-     * @return
-     */
-    @Override
-    public Node chooseNext() {
-        return null;
-    }
-
 }
