@@ -2,7 +2,7 @@ package Representation;
 
 //TODO: #3 Création de la classe mère 'Node.java'
 
-public abstract class Node {
+public abstract class Node implements Event{
 		private int id;
 		private String description;
 		private static int  nbNodes = 0;

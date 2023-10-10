@@ -1,6 +1,6 @@
 package Representation;
 
-public class InnerNode extends Node implements Event{
+public class InnerNode extends Node{
 
     public InnerNode(String description) {
         super(description);

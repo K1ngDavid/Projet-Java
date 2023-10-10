@@ -1,6 +1,6 @@
 package Representation;
 
-public class ChanceNode extends Node implements Event {
+public class ChanceNode extends Node {
 
     public ChanceNode(String description) {
         super(description);
