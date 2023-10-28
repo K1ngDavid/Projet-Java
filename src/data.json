@@ -1,0 +1,38 @@
+{
+  "type": "DecisionNode",
+  "description": "Vous êtes à un croisement. Choisissez une direction.",
+  "choices": [
+    {
+      "type": "TerminalNode",
+      "description": "Vous avez atteint la fin du chemin 1."
+    },
+    {
+      "type": "DecisionNode",
+      "description": "Vous arrivez à un autre croisement. Choisissez une direction.",
+      "choices": [
+        {
+          "type": "TerminalNode",
+          "description": "Vous avez atteint la fin du chemin 2."
+        },
+        {
+          "type": "TerminalNode",
+          "description": "Vous avez atteint la fin du chemin 3."
+        },
+        {
+          "type": "ChanceNode",
+          "description": "Vous arrivez à un autre autre croisement. Choisissez une direction.",
+          "choices": [
+            {
+              "type": "TerminalNode",
+              "description": "Vous avez atteint la fin du chemin 4."
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Vous avez atteint la fin du chemin 5."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
