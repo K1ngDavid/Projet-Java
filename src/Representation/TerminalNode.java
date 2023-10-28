@@ -8,4 +8,11 @@ public class TerminalNode extends Node implements Event {
         super(description);
         //TODO Auto-generated constructor stub
     }
+
+
+
+    @Override
+    public Node chooseNext() {
+        return this;
+    }
 }

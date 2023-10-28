@@ -3,6 +3,9 @@ package Representation;
 //TODO: #3 Création de la classe mère 'Node.java'
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Node implements Event {
     private int id;
     private String description;
@@ -47,6 +50,10 @@ public abstract class Node implements Event {
 
     @Override
     public Node chooseNext() {
+        return null;
+    }
+
+    public List<Node> getNextNodes(){
         return null;
     }
 
