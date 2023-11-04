@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+public class ChanceNode extends Node {
+
 public class ChanceNode extends InnerNode implements Event {
     private List<Node> nextNodes;
     public ChanceNode(String description, List<Node> nextNodes) {

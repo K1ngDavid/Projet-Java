@@ -2,7 +2,6 @@ package Representation;
 
 //TODO: #3 Création de la classe mère 'Node.java'
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,4 +68,3 @@ public abstract class Node implements Event {
         }
         return false;
 	}
-}

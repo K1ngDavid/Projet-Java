@@ -5,6 +5,8 @@ import java.util.List;
 
 public class InnerNode extends Node implements Event{
 
+public class InnerNode extends Node{
+
     List<Node> nextNodes;
     public InnerNode(String description) {
         super(description);
