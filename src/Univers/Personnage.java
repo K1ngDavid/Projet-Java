@@ -3,7 +3,7 @@ package Univers;
 //TODO: #1 Créer la classe 'Personnage'
 
 public class Personnage {
-    private String pseudo;
+    private final String pseudo;
     private String image;
 
     public Personnage(String pseudo){

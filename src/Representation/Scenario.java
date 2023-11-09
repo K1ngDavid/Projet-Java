@@ -10,19 +10,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Scenario {
-    private String description;
-    public List<Node> nodes;
     public Node initialNode;
-
-    public List<Node> scenarioNodes;
 
 
     public Scenario() throws IOException, ParseException {
-        this.description = "";
-        this.nodes = new ArrayList<>();
         this.initialNode = null;
         this.loadScenarioFromJson("src/data.json");
-        this.scenarioNodes = new ArrayList<>();
     }
 
     public void loadScenarioFromJson(String jsonFilePath) {

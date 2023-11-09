@@ -3,15 +3,14 @@ package Representation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InnerNode extends Node implements Event{
+public abstract class InnerNode extends Node implements Event{
 
-    List<Node> nextNodes;
+    protected List<Node> nextNodes;
     public InnerNode(String description) {
         super(description);
-        this.nextNodes = new ArrayList<>();
+        this.nextNodes = new ArrayList<>(4);
         //TODO Auto-generated constructor stub
     }
-
 
     public InnerNode(String description, List<Node> nexNodes){
         super(description);
