@@ -2,7 +2,6 @@ package Representation;
 
 //TODO: #3 Création de la classe mère 'Node.java'
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +35,8 @@ public abstract class Node implements Event {
     }
 
     /**
-     * @deprecated
      * @return total number of nodes.
+     * @deprecated
      */
     public static int getNbNodes() {
         return nbNodes;
@@ -45,7 +44,6 @@ public abstract class Node implements Event {
 
 
     /**
-     *
      * @return id of the node
      */
     @Override
@@ -69,14 +67,12 @@ public abstract class Node implements Event {
         return null;
     }
 
-    public List<Node> getNextNodes(){
+    public List<Node> getNextNodes() {
         return null;
     }
 
     /**
-     *
      * @return all the information about the node by overriding the toString() method of the Object class
-     *
      */
     @Override
     public String toString() {
@@ -87,11 +83,11 @@ public abstract class Node implements Event {
      * @param obj object that we want to compare
      * @return true if the class of the object passed in params is equal to the class of the current node
      */
-	@Override
-	public boolean equals(Object obj) {
-		if(obj instanceof Node){
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Node) {
             return obj.getClass() == this.getClass();
         }
         return false;
-	}
+    }
 }
