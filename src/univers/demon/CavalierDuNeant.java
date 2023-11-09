@@ -1,6 +1,8 @@
 package univers.demon;
 
+import univers.ActionsPersonnage;
 import univers.General;
+import univers.Personnage;
 
 public class CavalierDuNeant extends General {
     private GestionnaireArmeeDemons gestionnaireArmeeDemon;
@@ -15,5 +17,29 @@ public class CavalierDuNeant extends General {
         this.gestionnaireArmeeDemon.updateNombreAntechrist(20);
 
         this.setStatistiques(450, 1350, 500);
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void attaquer(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void perdrePV(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
     }
 }

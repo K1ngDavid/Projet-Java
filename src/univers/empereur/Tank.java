@@ -1,6 +1,8 @@
 package univers.empereur;
 
+import univers.ActionsPersonnage;
 import univers.Capitaine;
+import univers.Personnage;
 
 public class Tank extends Capitaine {
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
@@ -10,5 +12,29 @@ public class Tank extends Capitaine {
         this.gestionnaireArmeeEmpereur.updateNombreCavaliers(10);
         this.gestionnaireArmeeEmpereur.updateNombreFantassins(10);
         this.setStatistiques(80, 160, 50);
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void attaquer(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void perdrePV(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
     }
 }

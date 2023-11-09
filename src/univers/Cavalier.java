@@ -14,4 +14,28 @@ public class Cavalier extends Soldat{
         }
         return (Cavalier) personnage;
     }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void attaquer(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void perdrePV(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
+    }
 }

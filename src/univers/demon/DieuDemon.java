@@ -1,6 +1,8 @@
 package univers.demon;
 
+import univers.ActionsPersonnage;
 import univers.Capitaine;
+import univers.Personnage;
 
 public class DieuDemon extends Capitaine {
     private GestionnaireArmeeDemons gestionnaireArmeeDemon;
@@ -10,5 +12,29 @@ public class DieuDemon extends Capitaine {
         this.gestionnaireArmeeDemon.updateNombreCavaliers(10);
         this.gestionnaireArmeeDemon.updateNombreFantassins(10);
         this.setStatistiques(70, 140, 100);
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void attaquer(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void perdrePV(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
     }
 }

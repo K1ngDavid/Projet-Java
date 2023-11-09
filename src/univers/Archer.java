@@ -14,4 +14,28 @@ public class Archer extends Soldat{
         }
         return (Archer) personnage;
     }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void attaquer(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @param personnage
+     */
+    @Override
+    public void perdrePV(ActionsPersonnage personnage) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
+    }
 }

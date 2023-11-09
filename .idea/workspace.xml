@@ -4,38 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/univers/ActionsPersonnage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Capitaine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Cavalier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Fantassin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/General.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/GestionnaireArmee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Personnage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/Soldat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/Antechrist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/CavalierDuNeant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/Demon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/DieuDemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/GestionnaireArmeeDemons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/Necromancien.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/NemesisDuChaos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/demon/SilloneurDesTrefonds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/BerserkerDeLApocalyspse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/Empereur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/Epeiste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/GestionnaireArmeeEmpereur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/MageSaint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/SaintPaladin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/Silvios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/univers/empereur/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/TerminalNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/TerminalNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Soldat.java" beforeDir="false" />
+    <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Cavalier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/Fantassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Fantassin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/Antechrist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/Antechrist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/CavalierDuNeant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/CavalierDuNeant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/DieuDemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/DieuDemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/Necromancien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/Necromancien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/NemesisDuChaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/NemesisDuChaos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/demon/SilloneurDesTrefonds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/SilloneurDesTrefonds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/BerserkerDeLApocalyspse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/BerserkerDeLApocalyspse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Epeiste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Epeiste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/MageSaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/MageSaint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/SaintPaladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/SaintPaladin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Silvios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Silvios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Tank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,26 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "copyright"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -116,8 +105,16 @@
       <workItem from="1699364030263" duration="1743000" />
       <workItem from="1699449015602" duration="922000" />
       <workItem from="1699456072211" duration="2336000" />
-      <workItem from="1699534929738" duration="1591000" />
+      <workItem from="1699534929738" duration="1895000" />
     </task>
+    <task id="LOCAL-00001" summary="Résolution de conflits">
+      <created>1699536589175</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699536589175</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +130,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Résolution de conflits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Résolution de conflits" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
