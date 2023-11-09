@@ -1,7 +1,7 @@
-package univers;
+package Univers;
 
-import univers.demon.*;
-import univers.empereur.*;
+import Univers.demon.*;
+import Univers.empereur.*;
 
 public abstract class Capitaine extends Personnage{
 

@@ -1,17 +1,17 @@
-package univers.demon;
+package Univers.demon;
 
-import univers.ActionsPersonnage;
-import univers.Capitaine;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.Capitaine;
+import Univers.Personnage;
 
-public class Antechrist extends Capitaine {
+public class DieuDemon extends Capitaine {
     private GestionnaireArmeeDemons gestionnaireArmeeDemon;
-    public Antechrist(){
+    public DieuDemon(){
         this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         this.gestionnaireArmeeDemon.updateNombreArchers(10);
         this.gestionnaireArmeeDemon.updateNombreCavaliers(10);
         this.gestionnaireArmeeDemon.updateNombreFantassins(10);
-        this.setStatistiques(85, 170, 70);
+        this.setStatistiques(70, 140, 100);
     }
 
     /**

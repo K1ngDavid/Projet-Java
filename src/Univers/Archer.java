@@ -1,18 +1,18 @@
-package univers;
+package Univers;
 
-import univers.demon.Demon;
-import univers.empereur.Empereur;
+import Univers.demon.Demon;
+import Univers.empereur.Empereur;
 
-public class Cavalier extends Soldat{
-    public static Cavalier setCavalier(Personnage personnage){
-        personnage = new Cavalier();
+public class Archer extends Soldat{
+    public static Archer setArcher(Personnage personnage){
+        personnage = new Archer();
         if(personnage instanceof Empereur){
-            personnage.setStatistiques(10, 10, 5);
+            personnage.setStatistiques(5, 5, 10);
         }
         else if(personnage instanceof Demon){
-            personnage.setStatistiques(10, 15, 5);
+            personnage.setStatistiques(10, 15, 10);
         }
-        return (Cavalier) personnage;
+        return (Archer) personnage;
     }
 
     /**

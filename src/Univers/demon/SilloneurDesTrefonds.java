@@ -1,17 +1,17 @@
-package univers.demon;
+package Univers.demon;
 
-import univers.ActionsPersonnage;
-import univers.Capitaine;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.Capitaine;
+import Univers.Personnage;
 
-public class DieuDemon extends Capitaine {
+public class SilloneurDesTrefonds extends Capitaine {
     private GestionnaireArmeeDemons gestionnaireArmeeDemon;
-    public DieuDemon(){
+    public SilloneurDesTrefonds(){
         this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         this.gestionnaireArmeeDemon.updateNombreArchers(10);
         this.gestionnaireArmeeDemon.updateNombreCavaliers(10);
         this.gestionnaireArmeeDemon.updateNombreFantassins(10);
-        this.setStatistiques(70, 140, 100);
+        this.setStatistiques(90, 180, 60);
     }
 
     /**

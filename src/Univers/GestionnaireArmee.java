@@ -1,6 +1,4 @@
-package univers;
-
-import univers.empereur.GestionnaireArmeeEmpereur;
+package Univers;
 
 public abstract class GestionnaireArmee {
 

@@ -1,17 +1,19 @@
-package univers.empereur;
+package Univers.empereur;
 
-import univers.ActionsPersonnage;
-import univers.Capitaine;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.Capitaine;
+import Univers.Personnage;
 
-public class Tank extends Capitaine {
+public class Epeiste extends Capitaine {
+
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
-    public Tank(){
+
+    public Epeiste(){
         this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         this.gestionnaireArmeeEmpereur.updateNombreArchers(10);
         this.gestionnaireArmeeEmpereur.updateNombreCavaliers(10);
         this.gestionnaireArmeeEmpereur.updateNombreFantassins(10);
-        this.setStatistiques(80, 160, 50);
+        this.setStatistiques(90, 120, 70);
     }
 
     /**

@@ -1,8 +1,8 @@
-package univers.empereur;
+package Univers.empereur;
 
-import univers.ActionsPersonnage;
-import univers.General;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.General;
+import Univers.Personnage;
 
 public class MageSaint extends General {
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;

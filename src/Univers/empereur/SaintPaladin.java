@@ -1,12 +1,12 @@
-package univers.empereur;
+package Univers.empereur;
 
-import univers.ActionsPersonnage;
-import univers.General;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.General;
+import Univers.Personnage;
 
-public class BerserkerDeLApocalyspse extends General {
+public class SaintPaladin extends General {
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
-    public BerserkerDeLApocalyspse(){
+    public SaintPaladin(){
         this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         this.gestionnaireArmeeEmpereur.updateNombreArchers(1000);
         this.gestionnaireArmeeEmpereur.updateNombreCavaliers(1000);
@@ -16,7 +16,7 @@ public class BerserkerDeLApocalyspse extends General {
         this.gestionnaireArmeeEmpereur.updateNomrbreTank(20);
         this.gestionnaireArmeeEmpereur.updateNombreEpeiste(20);
 
-        this.setStatistiques(350, 1300, 300);
+        this.setStatistiques(80, 320, 0);
     }
 
     /**

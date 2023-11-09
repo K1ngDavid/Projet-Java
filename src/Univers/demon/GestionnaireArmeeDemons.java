@@ -1,9 +1,6 @@
-package univers.demon;
+package Univers.demon;
 
-import univers.GestionnaireArmee;
-import univers.empereur.Epeiste;
-import univers.empereur.Silvios;
-import univers.empereur.Tank;
+import Univers.GestionnaireArmee;
 
 public class GestionnaireArmeeDemons extends GestionnaireArmee {
     private int nombreDieuDemon;

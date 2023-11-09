@@ -1,12 +1,12 @@
-package univers.demon;
+package Univers.demon;
 
-import univers.ActionsPersonnage;
-import univers.General;
-import univers.Personnage;
+import Univers.ActionsPersonnage;
+import Univers.General;
+import Univers.Personnage;
 
-public class Necromancien extends General {
+public class NemesisDuChaos extends General {
     private GestionnaireArmeeDemons gestionnaireArmeeDemon;
-    public Necromancien(){
+    public NemesisDuChaos(){
         this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         this.gestionnaireArmeeDemon.updateNombreArchers(1000);
         this.gestionnaireArmeeDemon.updateNombreCavaliers(1000);
@@ -16,7 +16,7 @@ public class Necromancien extends General {
         this.gestionnaireArmeeDemon.updateNombreSilloneurDesTrefonds(20);
         this.gestionnaireArmeeDemon.updateNombreAntechrist(20);
 
-        this.setStatistiques(30, 500, 700);
+        this.setStatistiques(500, 1500, 100);
     }
 
     /**

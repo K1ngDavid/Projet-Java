@@ -1,6 +1,6 @@
-package univers.empereur;
+package Univers.empereur;
 
-import univers.GestionnaireArmee;
+import Univers.GestionnaireArmee;
 
 public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     private int nombreSilvios;

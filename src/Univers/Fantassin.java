@@ -1,7 +1,7 @@
-package univers;
+package Univers;
 
-import univers.demon.Demon;
-import univers.empereur.Empereur;
+import Univers.demon.Demon;
+import Univers.empereur.Empereur;
 
 public class Fantassin extends Soldat{
 

@@ -1,4 +1,4 @@
-package univers;
+package Univers;
 
 public interface ActionsPersonnage {
 

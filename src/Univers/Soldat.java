@@ -1,7 +1,7 @@
-package univers;
+package Univers;
 
-import univers.empereur.*;
-import univers.demon.*;
+import Univers.empereur.*;
+import Univers.demon.*;
 
 public abstract class Soldat extends Personnage {
 
