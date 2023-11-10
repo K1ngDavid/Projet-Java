@@ -5,30 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Cavalier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/Fantassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/Fantassin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/Antechrist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/Antechrist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/CavalierDuNeant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/CavalierDuNeant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/DieuDemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/DieuDemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/Necromancien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/Necromancien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/NemesisDuChaos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/NemesisDuChaos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/demon/SilloneurDesTrefonds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/demon/SilloneurDesTrefonds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/BerserkerDeLApocalyspse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/BerserkerDeLApocalyspse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Epeiste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Epeiste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/MageSaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/MageSaint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/SaintPaladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/SaintPaladin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Silvios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Silvios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/univers/empereur/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/univers/empereur/Tank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/googlecode_json_simple.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJava.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/ActionsPersonnage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Archer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Capitaine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Cavalier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Fantassin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/General.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/GestionnaireArmee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Personnage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Soldat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Antechrist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/CavalierDuNeant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Demon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/DieuDemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/GestionnaireArmeeDemons.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Necromancien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/NemesisDuChaos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/SilloneurDesTrefonds.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/BerserkerDeLApocalyspse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Empereur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Epeiste.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/GestionnaireArmeeEmpereur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/MageSaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/SaintPaladin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Silvios.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Tank.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,8 +57,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2WCW14LZs4JyheSeJS9idsqfB1N" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -50,27 +80,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "copyright"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+  </component>
   <component name="RunManager">
     <configuration name="RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
