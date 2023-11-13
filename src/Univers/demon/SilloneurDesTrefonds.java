@@ -23,10 +23,10 @@ public class SilloneurDesTrefonds extends Capitaine {
     }
 
     /**
-     * @param personnage
+     * @param perte
      */
     @Override
-    public void perdrePV(ActionsPersonnage personnage) {
+    public void perdrePV(int perte) {
 
     }
 

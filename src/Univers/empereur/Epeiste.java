@@ -9,10 +9,7 @@ public class Epeiste extends Capitaine {
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
 
     public Epeiste(){
-        this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
-        this.gestionnaireArmeeEmpereur.updateNombreArchers(10);
-        this.gestionnaireArmeeEmpereur.updateNombreCavaliers(10);
-        this.gestionnaireArmeeEmpereur.updateNombreFantassins(10);
+        this.gestionnaireArmeeEmpereur= this.gestionnaireArmeeEmpereur.setArmee(this);
         this.setStatistiques(90, 120, 70);
     }
 
@@ -25,10 +22,10 @@ public class Epeiste extends Capitaine {
     }
 
     /**
-     * @param personnage
+     * @param perte
      */
     @Override
-    public void perdrePV(ActionsPersonnage personnage) {
+    public void perdrePV(int perte) {
 
     }
 

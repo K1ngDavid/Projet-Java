@@ -7,10 +7,7 @@ import Univers.Personnage;
 public class Tank extends Capitaine {
     private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public Tank(){
-        this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
-        this.gestionnaireArmeeEmpereur.updateNombreArchers(10);
-        this.gestionnaireArmeeEmpereur.updateNombreCavaliers(10);
-        this.gestionnaireArmeeEmpereur.updateNombreFantassins(10);
+        this.gestionnaireArmeeEmpereur= this.gestionnaireArmeeEmpereur.setArmee(this);
         this.setStatistiques(80, 160, 50);
     }
 
@@ -23,10 +20,10 @@ public class Tank extends Capitaine {
     }
 
     /**
-     * @param personnage
+     * @param perte
      */
     @Override
-    public void perdrePV(ActionsPersonnage personnage) {
+    public void perdrePV(int perte) {
 
     }
 

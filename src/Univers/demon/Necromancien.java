@@ -28,10 +28,10 @@ public class Necromancien extends General {
     }
 
     /**
-     * @param personnage
+     * @param perte
      */
     @Override
-    public void perdrePV(ActionsPersonnage personnage) {
+    public void perdrePV(int perte) {
 
     }
 

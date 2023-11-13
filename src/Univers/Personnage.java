@@ -24,7 +24,15 @@ public abstract class Personnage implements ActionsPersonnage{
         personnage.perdrePV(this.force);
     }
 
-    private void perdrePV(int pertePV){
+    public void attaquerMana(Personnage personnage){
+        if(this.mana > 10){
+            personnage.perdrePV(this.force+(this.force/2));
+            this.mana-=10;
+        }
+        else
+            this.attaquer(personnage);
+    }
+    public void perdrePV(int pertePV){
         this.pointDeVie-=pertePV;
         if(this.pointDeVie <= 0)
             this.mourir();
@@ -40,11 +48,20 @@ public abstract class Personnage implements ActionsPersonnage{
         this.mana = mana;
     }
 
+    public int getPointDeVie(){
+        return this.pointDeVie;
+    }
+    public int getForce(){
+        return this.force;
+    }
+    public int getMana(){
+        return this.mana;
+    }
     public GestionnaireArmee getGestionnaireArmee(){
         return this.gestionnaireArmee;
     }
 
     public String toString(){
-        return pseudo + "PV : " + this.pointDeVie;
+        return pseudo + "PV : " + this.pointDeVie + "Mana : " + this.mana + this.gestionnaireArmee;
     }
 }

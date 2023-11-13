@@ -24,10 +24,10 @@ public class Archer extends Soldat{
     }
 
     /**
-     * @param personnage
+     * @param perte
      */
     @Override
-    public void perdrePV(ActionsPersonnage personnage) {
+    public void perdrePV(int perte) {
 
     }
 

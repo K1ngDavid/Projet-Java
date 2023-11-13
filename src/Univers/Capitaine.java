@@ -28,6 +28,7 @@ public abstract class Capitaine extends Personnage{
                 personnage = new CavalierDuNeant();
             }
         }
+        personnage = General.faculteSpeciale(personnage);
         return (General) personnage;
     }
 }
