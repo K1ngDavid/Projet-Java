@@ -8,4 +8,9 @@ public abstract class DecoratorNode implements Event{
         this.node = node;
         this.filePath = filePath;
     }
+
+    @Override
+    public String toString() {
+        return node.toString();
+    }
 }

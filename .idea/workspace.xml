@@ -5,68 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/googlecode_json_simple.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/BugReport$PRIORITE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/BugReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Images/__Run.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/Run.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ChanceNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/DecisionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/DecisionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Displayable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Displayable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ImageNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/ImageNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/InnerNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/InnerNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Scenario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/Scenario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Representation/TerminalNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/ActionsPersonnage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Archer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Capitaine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Cavalier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Fantassin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/General.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/GestionnaireArmee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Personnage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Soldat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Antechrist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/CavalierDuNeant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Demon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/DieuDemon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/GestionnaireArmeeDemons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Necromancien.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/NemesisDuChaos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/SilloneurDesTrefonds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/BerserkerDeLApocalyspse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Empereur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Epeiste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/GestionnaireArmeeEmpereur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/MageSaint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/SaintPaladin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Silvios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Tank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/__Run.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Displayable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Displayable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/InnerNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/InnerNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/TerminalNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/TerminalNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,9 +128,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="Résolution de conflits" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Representation/Scenario.java</url>
+          <line>99</line>
+          <properties class="Representation.Scenario" method="playScenario">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Representation.ChanceNode" memberName="nextNodes" />
+        <PinnedItemInfo parentTag="Representation.DecisionNode" memberName="nextNodes" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

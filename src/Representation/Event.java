@@ -11,4 +11,6 @@ public interface Event {
     void addNode(Event nodeFromJson);
 
     List<Event> getNextNodes();
+
+    String toString();
 }

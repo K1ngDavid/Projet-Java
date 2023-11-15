@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileReader;
+
+import kotlin.coroutines.jvm.internal.SuspendFunction;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -43,7 +45,6 @@ public class Scenario {
                 innerNode = new ChanceNode(description);
             }
             if(pathFile != null && ImageNode.isImageFile(pathFile)){
-
                 innerNode = new ImageNode((Node) innerNode,pathFile);
             }
             try{

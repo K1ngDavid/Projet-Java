@@ -15,6 +15,7 @@ public class ImageNode extends DecoratorNode{
 
     public ImageNode(Node node, String filePath) {
         super(node,filePath);
+        System.out.println("+++++" + node.getDescription());
         try{
             if(isImageFile(filePath)){
                 this.image = new ImageIcon(new ImageIcon(filePath).getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
@@ -63,7 +64,7 @@ public class ImageNode extends DecoratorNode{
      */
     @Override
     public void addNode(Event nodeFromJson) {
-
+        node.addNode(nodeFromJson);
     }
 
     /**
@@ -71,7 +72,7 @@ public class ImageNode extends DecoratorNode{
      */
     @Override
     public Node chooseNext() {
-        return null;
+        return (Node) node.chooseNext();
     }
 
     /*Ajout Victorien*/
