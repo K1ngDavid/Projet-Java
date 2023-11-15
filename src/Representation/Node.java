@@ -46,15 +46,13 @@ public abstract class Node implements Event {
     /**
      * @return id of the node
      */
-    @Override
-    public int getId() {
+    public int getId(){
         return this.id;
     }
 
     /**
-     * @return description of the node
+     * @return description of node
      */
-    @Override
     public String getDescription() {
         return this.description;
     }
@@ -63,11 +61,11 @@ public abstract class Node implements Event {
      * @return the next node of the current node
      */
     @Override
-    public Node chooseNext() {
+    public Event chooseNext() {
         return null;
     }
 
-    public List<Node> getNextNodes() {
+    public List<Event> getNextNodes() {
         return null;
     }
 

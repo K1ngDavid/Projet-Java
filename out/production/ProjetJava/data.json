@@ -3,34 +3,26 @@
   "description": "Choisissez votre faction !",
   "choices": [
     {
-      "type": "TerminalNode",
-      "description": "Vous avez atteint la fin du chemin 1."
+      "type": "DecisionNode",
+      "description": "Démon",
+      "choices" : []
     },
     {
       "type": "DecisionNode",
       "description": "Empereur",
+      "pathfile" : "src/Run.gif",
       "choices": [
         {
           "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 2."
+          "description": "Fantassin"
         },
         {
           "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 3."
+          "description": "Archer"
         },
         {
-          "type": "ChanceNode",
-          "description": "Vous arrivez à un autre autre croisement. Choisissez une direction.",
-          "choices": [
-            {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 4."
-            },
-            {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 5."
-            }
-          ]
+          "type": "TerminalNode",
+          "description": "Cavalier"
         }
       ]
     }

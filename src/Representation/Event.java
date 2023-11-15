@@ -2,9 +2,9 @@ package Representation;
 
 public interface Event {
 
-    void display();
-    int getId();
-    String getDescription();
-    Node chooseNext();
+    Event chooseNext();
 
+    void display();
+
+    void addNode(Event nodeFromJson);
 }

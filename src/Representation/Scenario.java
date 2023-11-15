@@ -1,5 +1,6 @@
 package Representation;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,34 +24,42 @@ public class Scenario {
 
         try {
             JSONObject root = (JSONObject) parser.parse(new FileReader(jsonFilePath));
-            this.initialNode = createNodeFromJson(root);
+            this.initialNode = (Node) createNodeFromJson(root);
         } catch (IOException | ParseException e) {
             System.out.println("--ERREUR--");
             e.printStackTrace();
         }
     }
-    private Node createNodeFromJson(JSONObject jsonData) {
+    private Event createNodeFromJson(JSONObject jsonData) {
         String nodeType = (String) jsonData.get("type");
         String description = (String) jsonData.get("description");
-        InnerNode innerNode;
+        String pathFile = (String) jsonData.get("pathfile");
 
+        Event innerNode;
         if (nodeType.equals("DecisionNode") || nodeType.equals("ChanceNode")) {
             if (nodeType.equals("DecisionNode")) {
                 innerNode = new DecisionNode(description);
             } else {
                 innerNode = new ChanceNode(description);
             }
-            JSONArray choicesData = (JSONArray) jsonData.get("choices");
+            if(pathFile != null && ImageNode.isImageFile(pathFile)){
 
-            for (Object choiceObject : choicesData) {
-                JSONObject choiceData = (JSONObject) choiceObject;
-                innerNode.addNode(createNodeFromJson(choiceData));
+                innerNode = new ImageNode((Node) innerNode,pathFile);
+            }
+            try{
+                JSONArray choicesData = (JSONArray) jsonData.get("choices");
+                if(choicesData == null) throw new Exception("Vous n'avez pas de nodes successeurs pour ce node");
+                for (Object choiceObject : choicesData) {
+                    JSONObject choiceData = (JSONObject) choiceObject;
+                    innerNode.addNode(createNodeFromJson(choiceData));
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
             return innerNode;
         } else if (nodeType.equals("TerminalNode")) {
             return new TerminalNode(description);
         }
-
         return null;
     }
 
@@ -62,8 +71,8 @@ public class Scenario {
     private String toString(Node currentNode) {
         StringBuilder result = new StringBuilder(currentNode.toString());
         if (currentNode instanceof InnerNode) {
-            for (Node node : currentNode.getNextNodes()) {
-                result.append(this.toString(node));
+            for (Event node : currentNode.getNextNodes()) {
+                result.append(this.toString((Node) node));
             }
         }
         return result.toString();
@@ -75,7 +84,9 @@ public class Scenario {
 
         while (!(currentNode instanceof TerminalNode)) {
             // Laisser le joueur choisir le prochain nœud
-            currentNode = currentNode.chooseNext();
+            currentNode.display();
+            System.out.println(currentNode.getNextNodes());
+            currentNode = (Node) currentNode.chooseNext();
         }
 
         // Le jeu est terminé

@@ -1,26 +1,75 @@
 package Representation;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
 
-public class ImageNode extends Displayable{
+public class ImageNode extends DecoratorNode implements Event  {
     /**
      * @param description the description of the node
      */
-    private final String imagePath;
-    private Image image;
+    private ImageIcon image;
 
-    public ImageNode(String description,String imagePath) {
-        super(description);
-        this.imagePath = imagePath;
+    public ImageNode(Node node, String filePath) {
+        super(node,filePath);
+        try{
+            if(isImageFile(filePath)){
+                this.image = new ImageIcon(new ImageIcon(filePath).getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
+            }else throw new Exception("Le document n'est pas une image :/");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void loadImage() throws IOException {
-        image = ImageIO.read(new File("/Images/__Run.gif"));
+    /**
+     * @external_sources CHATGPT
+     * @param filePath
+     * @return
+     */
+    public static boolean isImageFile(String filePath) {
+        try {
+            ImageIO.read(new File(filePath));
+            return true; // The file is a valid image
+        } catch (IOException e) {
+            return false; // The file is not a valid image
+        }
+    }
+    @Override
+    public void display() {
+        image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));;
+
+        // Utilisation de l'Event Dispatch Thread (EDT)
+        SwingUtilities.invokeLater(() -> {
+            JFrame jFrame = new JFrame();
+            jFrame.setLayout(new FlowLayout());
+            jFrame.setSize(200, 300);
+
+            JLabel lbl = new JLabel("",image,JLabel.CENTER);
+            lbl.setVerticalAlignment(1/2);
+            JLabel lblText= new JLabel("Vous êtes un chevalier !!");
+            jFrame.add(lblText);
+            jFrame.add(lbl); // Ajoutez le JLabel au JFrame
+
+            jFrame.setVisible(true);
+            jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        });
     }
 
+    /**
+     * @param nodeFromJson
+     */
+    @Override
+    public void addNode(Event nodeFromJson) {
+
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public Node chooseNext() {
+        return null;
+    }
 }

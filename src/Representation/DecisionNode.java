@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DecisionNode extends InnerNode {
-    List<Node> nextNodes;
+public class DecisionNode extends InnerNode implements Event{
+    List<Event> nextNodes;
     private static final Scanner myScanner = new Scanner(System.in);
-    public DecisionNode(String description,List<Node> nextNodes) {
+    public DecisionNode(String description,List<Event> nextNodes) {
         super(description);
         this.nextNodes = nextNodes;
     }
@@ -16,17 +16,17 @@ public class DecisionNode extends InnerNode {
         super(description);
         this.nextNodes = new ArrayList<>();
     }
-
-    public void addNode(Node node){
+    @Override
+    public void addNode(Event node){
         nextNodes.add(node);
     }
 
     @Override
-    public Node chooseNext() {
+    public Event chooseNext() {
         int index = 0;
-        for (Node node : this.nextNodes){
+        for (Event node : this.nextNodes){
             index++;
-            System.out.println(index + " : " + node.getDescription());
+            System.out.println(index + " : " + ((Node) node).getDescription());
         }
         int choice = -1; // Initialisation à une valeur invalide pour entrer dans la boucle
 
@@ -47,8 +47,11 @@ public class DecisionNode extends InnerNode {
         return nextNodes.get(choice -1);
     }
 
+
+
+
     @Override
-    public List<Node> getNextNodes() {
+    public List<Event> getNextNodes() {
         return nextNodes;
     }
 }

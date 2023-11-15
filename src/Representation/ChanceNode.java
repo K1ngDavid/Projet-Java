@@ -6,8 +6,8 @@ import java.util.Random;
 
 
 public class ChanceNode extends InnerNode implements Event {
-    private final List<Node> nextNodes;
-    public ChanceNode(String description, List<Node> nextNodes) {
+    private final List<Event> nextNodes;
+    public ChanceNode(String description, List<Event> nextNodes) {
         super(description);
         //TODO Auto-generated constructor stub
         this.nextNodes = nextNodes;
@@ -23,16 +23,24 @@ public class ChanceNode extends InnerNode implements Event {
     }
 
     @Override
-    public Node chooseNext() {
+    public Event chooseNext() {
         Random random = new Random();
         System.out.println(nextNodes.size());
         int randomChoice = random.nextInt(nextNodes.size());
 
         System.out.println("Un événement aléatoire se produit...");
 
-        Node selectedNode = nextNodes.get(randomChoice);
-        System.out.println("Vous êtes dirigé vers : " + selectedNode.getDescription());
+        Event selectedNode = nextNodes.get(randomChoice);
+        System.out.println("Vous êtes dirigé vers : " + ((Node) selectedNode).getDescription() );
 
-        return selectedNode;
+        return  selectedNode;
+    }
+
+    /**
+     * @param nodeFromJson
+     */
+    @Override
+    public void addNode(Event nodeFromJson) {
+
     }
 }

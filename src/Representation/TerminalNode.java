@@ -12,7 +12,16 @@ public class TerminalNode extends Node {
 
 
     @Override
-    public Node chooseNext() {
+    public Event chooseNext() {
         return this;
     }
+
+    /**
+     * @param nodeFromJson
+     */
+    @Override
+    public void addNode(Event nodeFromJson) {
+
+    }
+
 }
