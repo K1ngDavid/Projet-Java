@@ -50,7 +50,7 @@ public class ImageNode extends DecoratorNode{
 
             JLabel lbl = new JLabel("",image,JLabel.CENTER);
             lbl.setVerticalAlignment(1/2);
-            JLabel lblText= new JLabel("Vous êtes un chevalier !!");
+            JLabel lblText= new JLabel("Vous êtes un " + node.toString() + " !!!");
             jFrame.add(lblText);
             jFrame.add(lbl); // Ajoutez le JLabel au JFrame
 
