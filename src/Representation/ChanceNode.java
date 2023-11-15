@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class ChanceNode extends InnerNode implements Event {
+public class ChanceNode extends InnerNode{
     private final List<Event> nextNodes;
     public ChanceNode(String description, List<Event> nextNodes) {
         super(description);

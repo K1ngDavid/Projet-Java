@@ -72,9 +72,15 @@ public abstract class Node implements Event {
     /**
      * @return all the information about the node by overriding the toString() method of the Object class
      */
+    /*ANCIENNE VERSION
     @Override
     public String toString() {
         return "Node de type : " + this.getClass() + "\nId : " + this.getId() + "\nDescription : " + this.getDescription();
+    }
+    */
+    @Override
+    public String toString() {
+        return this.getDescription();
     }
 
     /**

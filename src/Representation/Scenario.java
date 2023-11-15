@@ -79,6 +79,7 @@ public class Scenario {
     }
 
 
+    /*ANCIENNE VERSION
     public void playScenario(Node initialNode) {
         Node currentNode = initialNode;
 
@@ -87,6 +88,22 @@ public class Scenario {
             currentNode.display();
             System.out.println(currentNode.getNextNodes());
             currentNode = (Node) currentNode.chooseNext();
+        }
+
+        // Le jeu est terminé
+        System.out.println("Fin du jeu");
+    }
+     */
+
+    /*Nouvelle version*/
+    public void playScenario(Event initialNode) {
+        Event currentNode = initialNode;
+
+        while (!(currentNode instanceof TerminalNode)) {
+            // Laisser le joueur choisir le prochain nœud
+            currentNode.display();
+            System.out.println(currentNode.getNextNodes());
+            currentNode = currentNode.chooseNext();
         }
 
         // Le jeu est terminé

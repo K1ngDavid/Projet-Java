@@ -1,5 +1,7 @@
 package Representation;
 
+import java.util.List;
+
 public class SoundNode extends DecoratorNode{
 
 
@@ -29,5 +31,10 @@ public class SoundNode extends DecoratorNode{
     @Override
     public void addNode(Event nodeFromJson) {
 
+    }
+
+    /*Ajout Victorien*/
+    public List<Event> getNextNodes() {
+        return null;
     }
 }

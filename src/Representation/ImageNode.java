@@ -4,9 +4,10 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 
-public class ImageNode extends DecoratorNode implements Event  {
+public class ImageNode extends DecoratorNode{
     /**
      * @param description the description of the node
      */
@@ -70,6 +71,11 @@ public class ImageNode extends DecoratorNode implements Event  {
      */
     @Override
     public Node chooseNext() {
+        return null;
+    }
+
+    /*Ajout Victorien*/
+    public List<Event> getNextNodes() {
         return null;
     }
 }
