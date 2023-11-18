@@ -32,16 +32,14 @@ public class Scenario {
         } catch (IOException | ParseException e) {
             System.out.println("--ERREUR--");
             e.printStackTrace();
-        } catch (UnsupportedAudioFileException e) {
-            throw new RuntimeException(e);
-        } catch (LineUnavailableException e) {
+        } catch (UnsupportedAudioFileException | LineUnavailableException e) {
             throw new RuntimeException(e);
         }
     }
     private Event createNodeFromJson(JSONObject jsonData) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         String nodeType = (String) jsonData.get("type");
         String description = (String) jsonData.get("description");
-        String pathFile = (String) jsonData.get("pathfile");
+        JSONObject pathFile = (JSONObject) jsonData.get("pathfile");
 
         Event innerNode;
         if (nodeType.equals("DecisionNode") || nodeType.equals("ChanceNode")) {
@@ -50,12 +48,7 @@ public class Scenario {
             } else {
                 innerNode = new ChanceNode(description);
             }
-            if(pathFile != null && ImageNode.isImageFile(pathFile)){
-                innerNode = new ImageNode((Node) innerNode,pathFile);
-            }
-            else if(pathFile != null){
-                innerNode = new SoundNode((Node) innerNode,pathFile);
-            }
+            innerNode = getEvent(pathFile, innerNode);
             try{
                 JSONArray choicesData = (JSONArray) jsonData.get("choices");
                 if(choicesData == null) throw new Exception("Vous n'avez pas de nodes successeurs pour ce node");
@@ -68,9 +61,23 @@ public class Scenario {
             }
             return innerNode;
         } else if (nodeType.equals("TerminalNode")) {
-            return new TerminalNode(description);
+            Event terminalNode = new TerminalNode(description);
+            terminalNode = getEvent(pathFile, terminalNode);
+            return terminalNode;
         }
         return null;
+    }
+
+    private Event getEvent(JSONObject pathFile, Event node) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+        if(pathFile != null){
+            if(pathFile.containsKey("Image")){
+                node = new ImageNode((Node) node, (String) pathFile.get("Image"));
+            }
+            else if (pathFile.containsKey("Sound")){
+                node = new SoundNode((Node) node,(String) pathFile.get("Sound"));
+            }
+        }
+        return node;
     }
 
     @Override
@@ -112,7 +119,6 @@ public class Scenario {
         while (!(currentNode instanceof TerminalNode)) {
             // Laisser le joueur choisir le prochain nœud
             currentNode.display();
-            System.out.println(currentNode.getNextNodes());
             currentNode = currentNode.chooseNext();
         }
 

@@ -10,11 +10,16 @@
     {
       "type": "DecisionNode",
       "description": "Empereur",
-      "pathfile" : "src/Images/Run.gif",
+      "pathfile" : {
+        "Image" : "src/Images/Run.gif"
+      },
       "choices": [
         {
           "type": "TerminalNode",
-          "description": "Fantassin"
+          "description": "Fantassin",
+          "pathfile" : {
+            "Sound" : "src/Sounds/gameOver.wav"
+          }
         },
         {
           "type": "TerminalNode",

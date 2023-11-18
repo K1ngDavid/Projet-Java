@@ -8,6 +8,10 @@ public class TerminalNode extends Node {
         super(description);
         //TODO Auto-generated constructor stub
     }
+    public TerminalNode() {
+        super();
+        //TODO Auto-generated constructor stub
+    }
 
 
 

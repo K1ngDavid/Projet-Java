@@ -14,7 +14,7 @@ import java.util.List;
 
 public abstract class Node implements Event {
     private final int id;
-    private final String description;
+    private String description;
     private static int nbNodes = 0;
 
 
@@ -24,6 +24,10 @@ public abstract class Node implements Event {
     public Node(String description) {
         this.id = nbNodes;
         this.description = description;
+        nbNodes++;
+    }
+    public Node() {
+        this.id = nbNodes;
         nbNodes++;
     }
 

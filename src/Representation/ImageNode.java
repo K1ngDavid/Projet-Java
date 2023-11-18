@@ -72,8 +72,8 @@ public class ImageNode extends DecoratorNode{
      * @return
      */
     @Override
-    public Node chooseNext() {
-        return (Node) node.chooseNext();
+    public Event chooseNext() {
+        return node.chooseNext();
     }
 
     /*Ajout Victorien*/

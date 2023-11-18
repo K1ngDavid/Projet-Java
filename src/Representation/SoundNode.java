@@ -19,7 +19,7 @@ public class SoundNode extends DecoratorNode{
     }
     @Override
     public Event chooseNext() {
-        return (Node) node.chooseNext();
+        return  node.chooseNext();
     }
 
     /**
