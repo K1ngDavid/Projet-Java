@@ -10,7 +10,7 @@
     {
       "type": "DecisionNode",
       "description": "Empereur",
-      "pathfile" : "src/Run.gif",
+      "pathfile" : "src/Images/Run.gif",
       "choices": [
         {
           "type": "TerminalNode",

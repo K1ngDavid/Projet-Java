@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.FileReader;
 
-import kotlin.coroutines.jvm.internal.SuspendFunction;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Scenario {
     public Node initialNode;
@@ -30,9 +32,13 @@ public class Scenario {
         } catch (IOException | ParseException e) {
             System.out.println("--ERREUR--");
             e.printStackTrace();
+        } catch (UnsupportedAudioFileException e) {
+            throw new RuntimeException(e);
+        } catch (LineUnavailableException e) {
+            throw new RuntimeException(e);
         }
     }
-    private Event createNodeFromJson(JSONObject jsonData) {
+    private Event createNodeFromJson(JSONObject jsonData) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         String nodeType = (String) jsonData.get("type");
         String description = (String) jsonData.get("description");
         String pathFile = (String) jsonData.get("pathfile");
@@ -46,6 +52,9 @@ public class Scenario {
             }
             if(pathFile != null && ImageNode.isImageFile(pathFile)){
                 innerNode = new ImageNode((Node) innerNode,pathFile);
+            }
+            else if(pathFile != null){
+                innerNode = new SoundNode((Node) innerNode,pathFile);
             }
             try{
                 JSONArray choicesData = (JSONArray) jsonData.get("choices");

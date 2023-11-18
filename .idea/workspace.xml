@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Sounds/gameOver.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Run.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/Images/Run.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +55,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava/src/Sounds&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Sounds" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -94,6 +109,8 @@
       <workItem from="1699872704367" duration="1312000" />
       <workItem from="1699970303071" duration="11644000" />
       <workItem from="1699995682645" duration="2228000" />
+      <workItem from="1700306653410" duration="3012000" />
+      <workItem from="1700319076027" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>

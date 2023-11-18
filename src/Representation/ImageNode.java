@@ -8,11 +8,14 @@ import java.util.List;
 
 
 public class ImageNode extends DecoratorNode{
-    /**
-     * @param description the description of the node
-     */
+
     private ImageIcon image;
 
+    /**
+     *
+     * @param node ImageNode reçoit en paramètre un Node pour le décorer et lui ajouter des fonctionnalités
+     * @param filePath On reçoit en paramètre le chemin du fichier pour ouvrir l'image
+     */
     public ImageNode(Node node, String filePath) {
         super(node,filePath);
         System.out.println("+++++" + node.getDescription());
@@ -30,13 +33,11 @@ public class ImageNode extends DecoratorNode{
      * @param filePath
      * @return
      */
-    public static boolean isImageFile(String filePath) {
-        try {
-            ImageIO.read(new File(filePath));
-            return true; // The file is a valid image
-        } catch (IOException e) {
-            return false; // The file is not a valid image
+    public static boolean isImageFile(String filePath) throws IOException {
+        if(ImageIO.read(new File(filePath)) == null){
+            return false;
         }
+        else return true;
     }
     @Override
     public void display() {

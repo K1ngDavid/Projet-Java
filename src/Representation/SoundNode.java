@@ -1,20 +1,25 @@
 package Representation;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class SoundNode extends DecoratorNode{
 
+    private Clip clip;
 
-    public SoundNode(Node node, String filePath) {
+    public SoundNode(Node node, String filePath) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
         super(node, filePath);
+        this.clip = AudioSystem.getClip();
+        this.clip.open(AudioSystem.getAudioInputStream(new File(this.filePath)));
     }
-
-    /**
-     * @return
-     */
     @Override
     public Event chooseNext() {
-        return null;
+        return (Node) node.chooseNext();
     }
 
     /**
@@ -22,7 +27,7 @@ public class SoundNode extends DecoratorNode{
      */
     @Override
     public void display() {
-
+        this.clip.start();
     }
 
     /**
@@ -30,7 +35,7 @@ public class SoundNode extends DecoratorNode{
      */
     @Override
     public void addNode(Event nodeFromJson) {
-
+        node.addNode(nodeFromJson);
     }
 
     /*Ajout Victorien*/
