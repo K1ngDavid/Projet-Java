@@ -17,9 +17,7 @@
         {
           "type": "TerminalNode",
           "description": "Fantassin",
-          "pathfile" : {
             "Sound" : "src/Sounds/gameOver.wav"
-          }
         },
         {
           "type": "TerminalNode",

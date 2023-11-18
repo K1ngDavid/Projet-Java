@@ -1,5 +1,6 @@
 package Representation;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -48,6 +49,11 @@ public class DecisionNode extends InnerNode{
         return nextNodes.get(choice -1);
     }
     */
+
+    @Override
+    public void display(JPanel pnlRoot) {
+        super.display(pnlRoot);
+    }
 
     @Override
     public Event chooseNext() {

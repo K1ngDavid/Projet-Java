@@ -1,9 +1,9 @@
 package Representation;
 
+import Tools.BackgroundPanel;
+
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.io.FileReader;
 
 import org.json.simple.JSONArray;
@@ -13,10 +13,11 @@ import org.json.simple.parser.ParseException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.*;
 
-public class Scenario {
+public class Scenario extends JFrame{
     public Node initialNode;
-
+    private JPanel pnlRoot;
 
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
@@ -95,34 +96,37 @@ public class Scenario {
         return result.toString();
     }
 
-
-    /*ANCIENNE VERSION
-    public void playScenario(Node initialNode) {
-        Node currentNode = initialNode;
-
-        while (!(currentNode instanceof TerminalNode)) {
-            // Laisser le joueur choisir le prochain nœud
-            currentNode.display();
-            System.out.println(currentNode.getNextNodes());
-            currentNode = (Node) currentNode.chooseNext();
-        }
-
-        // Le jeu est terminé
-        System.out.println("Fin du jeu");
-    }
-     */
-
     /*Nouvelle version*/
+
+    /**
+     * @param initialNode
+     */
     public void playScenario(Event initialNode) {
         Event currentNode = initialNode;
 
         while (!(currentNode instanceof TerminalNode)) {
             // Laisser le joueur choisir le prochain nœud
-            currentNode.display();
+            currentNode.display(this.pnlRoot);
             currentNode = currentNode.chooseNext();
         }
 
         // Le jeu est terminé
         System.out.println("Fin du jeu");
     }
+
+    private void createUIComponents() {
+        this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
+        this.setContentPane(pnlRoot);
+        this.pnlRoot.setLayout(new FlowLayout()); // Use FlowLayout for simplicity
+
+        JLabel lbl = new JLabel("Kingdom War");
+        lbl.setFont(new Font("Arial",Font.PLAIN,30));
+
+        this.setTitle("Kingdom War");
+        this.setSize(800, 600);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
+    }
+
 }

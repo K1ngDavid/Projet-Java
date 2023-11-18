@@ -2,7 +2,8 @@ package Representation;
 
 //TODO: #3 Création de la classe mère 'Node.java'
 
-import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 /** Abstract class Node
@@ -16,6 +17,7 @@ public abstract class Node implements Event {
     private final int id;
     private String description;
     private static int nbNodes = 0;
+    protected JLabel jLabel;
 
 
     /**
@@ -24,6 +26,7 @@ public abstract class Node implements Event {
     public Node(String description) {
         this.id = nbNodes;
         this.description = description;
+        jLabel = new JLabel(this.description);
         nbNodes++;
     }
     public Node() {
@@ -34,8 +37,15 @@ public abstract class Node implements Event {
     /**
      * displays the description of the node
      */
-    public void display() {
-        System.out.println(this.description);
+    public void display(JPanel pnlRoot) {
+        System.out.println("Jlabel ----> " + this.jLabel.getText());
+        pnlRoot.removeAll();
+        jLabel = new JLabel(this.description);
+        jLabel.setFont(new Font("Arial",Font.PLAIN,30));
+        pnlRoot.add(jLabel); // Add the label to the panel
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+        System.out.println("++++" + this.description);
     }
 
     /**

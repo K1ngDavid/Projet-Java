@@ -2,6 +2,8 @@ package Representation;
 
 //TODO : Création de 'TerminalNode.java'
 
+import javax.swing.*;
+
 public class TerminalNode extends Node {
 
     public TerminalNode(String description) {
@@ -18,6 +20,11 @@ public class TerminalNode extends Node {
     @Override
     public Event chooseNext() {
         return this;
+    }
+
+    @Override
+    public void display(JPanel pnlRoot) {
+
     }
 
     /**

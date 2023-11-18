@@ -40,24 +40,17 @@ public class ImageNode extends DecoratorNode{
         else return true;
     }
     @Override
-    public void display() {
+    public void display(JPanel pnlRoot) {
+        pnlRoot.removeAll();
         image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));;
+        JLabel lbl = new JLabel("",image,JLabel.CENTER);
+        lbl.setVerticalAlignment(1/2);
+        JLabel lblText= new JLabel("Vous êtes un " + node.toString() + " !!!");
+        lblText.setFont(new Font("Arial",Font.PLAIN,30));
+        pnlRoot.add(lblText);
+        pnlRoot.add(lbl); // Ajoutez le JLabel au JFrame
 
-        // Utilisation de l'Event Dispatch Thread (EDT)
-        SwingUtilities.invokeLater(() -> {
-            JFrame jFrame = new JFrame();
-            jFrame.setLayout(new FlowLayout());
-            jFrame.setSize(200, 300);
-
-            JLabel lbl = new JLabel("",image,JLabel.CENTER);
-            lbl.setVerticalAlignment(1/2);
-            JLabel lblText= new JLabel("Vous êtes un " + node.toString() + " !!!");
-            jFrame.add(lblText);
-            jFrame.add(lbl); // Ajoutez le JLabel au JFrame
-
-            jFrame.setVisible(true);
-            jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        });
+        pnlRoot.revalidate();
     }
 
     /**

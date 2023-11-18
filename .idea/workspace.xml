@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="">
+    <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
+      <change afterPath="$PROJECT_DIR$/src/Tools/BackgroundPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
@@ -58,7 +63,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava/src/Sounds",
+    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -68,6 +73,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Sounds" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -111,7 +119,8 @@
       <workItem from="1699970303071" duration="11644000" />
       <workItem from="1699995682645" duration="2228000" />
       <workItem from="1700306653410" duration="3012000" />
-      <workItem from="1700319076027" duration="3849000" />
+      <workItem from="1700319076027" duration="7340000" />
+      <workItem from="1700327462262" duration="5479000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>

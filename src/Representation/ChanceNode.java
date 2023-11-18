@@ -1,5 +1,6 @@
 package Representation;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -34,6 +35,11 @@ public class ChanceNode extends InnerNode{
         System.out.println("Vous êtes dirigé vers : " + ((Node) selectedNode).getDescription() );
 
         return  selectedNode;
+    }
+
+    @Override
+    public void display(JPanel pnlRoot) {
+
     }
 
     /**
