@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ParseException {
         Scenario scenario = new Scenario();
-        scenario.playScenario((Node) scenario.initialNode);
+        scenario.playScenario(scenario.initialNode);
 //        ImageNode imageNode = new ImageNode("OK","pl");
 //        imageNode.loadImage();
 //        ImageNode imageNode = new ImageNode("src/Run.gif");

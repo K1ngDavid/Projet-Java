@@ -3,6 +3,7 @@ package Representation;
 import Tools.BugReport;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -28,33 +29,6 @@ public class DecisionNode extends InnerNode{
         nextNodes.add(node);
     }
 
-    /*ANCIENNE VERSION
-    @Override
-    public Event chooseNext() {
-        int index = 0;
-        for (Event node : this.nextNodes){
-            index++;
-            System.out.println(index + " : " + ((Node) node).getDescription());
-        }
-        int choice = -1; // Initialisation à une valeur invalide pour entrer dans la boucle
-
-        while (choice < 1 || choice >= nextNodes.size() + 1) {
-            System.out.println("Quel est votre choix ?");
-            try {
-                choice = Integer.parseInt(myScanner.nextLine());
-
-                if (choice < 1 || choice >= nextNodes.size() + 1) {
-                    System.out.println("Choix invalide. Veuillez sélectionner un choix valide.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Veuillez entrer un numéro de choix valide.");
-            }
-        }
-
-        System.out.println("Vous avez choisi le choix numéro " + choice);
-        return nextNodes.get(choice -1);
-    }
-    */
 
     @Override
     public void display(JPanel pnlRoot) {
@@ -62,6 +36,11 @@ public class DecisionNode extends InnerNode{
     }
 
 
+    /**
+     *
+     * @param pnlRoot which is the Jpanel of the window
+     * @return a node which is an Event type
+     */
     @BugReport(
             reportedBy = {"David"},
             description = "Bug sur la méthode chooseNext qui renvoie un node Null",
@@ -71,25 +50,31 @@ public class DecisionNode extends InnerNode{
     @Override
     public Event chooseNext(JPanel pnlRoot) {
         pnlRoot.removeAll();
+        pnlRoot.setLayout(new GridBagLayout());
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(0, 5, 0, 5); // Adjust the insets according to your preference
 
         for (int i = 0; i < nextNodes.size(); i++) {
             Event node = nextNodes.get(i);
 
             JButton choiceButton = new JButton((i + 1) + ": " + node);
-            choiceButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    pnlRoot.removeAll(); // Supprimer tous les composants précédents
-                    pnlRoot.revalidate();
-                    pnlRoot.repaint();
-                    // il fallait supprimer la méthode display() que j'avais mis içi
-                    // Appeler setSelectedNode pour définir le nœud sélectionné
-                    setSelectedNode(node);
-                }
+            choiceButton.addActionListener(e -> {
+                pnlRoot.removeAll(); // Remove all previous components
+                pnlRoot.revalidate();
+                pnlRoot.repaint();
+
+                // Call setSelectedNode to set the selected node
+                setSelectedNode(node);
             });
 
-            pnlRoot.add(choiceButton);
+            // Set GridBagConstraints for spacing
+            gbc.gridx = i * 2; // Multiply by 2 to create a gap
+            gbc.gridy = 0;
+            gbc.gridwidth = 1; // Each button occupies 1 column
+            pnlRoot.add(choiceButton, gbc);
         }
+
 
         pnlRoot.revalidate();
         pnlRoot.repaint();
@@ -116,34 +101,6 @@ public class DecisionNode extends InnerNode{
             lock.notify();
         }
     }
-
-
-//    @Override
-//    public Event chooseNext() {
-//        int index = 0;
-//        for (Event node : this.nextNodes){
-//            index++;
-//            System.out.println(index + " : " + node);
-//        }
-//        int choice = -1; // Initialisation à une valeur invalide pour entrer dans la boucle
-//
-//        while (choice < 1 || choice >= nextNodes.size() + 1) {
-//            System.out.println("Quel est votre choix ?");
-//            try {
-//                choice = Integer.parseInt(myScanner.nextLine());
-//
-//                if (choice < 1 || choice >= nextNodes.size() + 1) {
-//                    System.out.println("Choix invalide. Veuillez sélectionner un choix valide.");
-//                }
-//            } catch (NumberFormatException e) {
-//                System.out.println("Veuillez entrer un numéro de choix valide.");
-//            }
-//        }
-//        System.out.println("Vous avez choisi le choix numéro " + choice);
-//        return nextNodes.get(choice -1);
-//    }
-
-
 
     @Override
     public List<Event> getNextNodes() {

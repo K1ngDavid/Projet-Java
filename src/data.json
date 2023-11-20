@@ -8,7 +8,7 @@
     },
     {
       "type": "DecisionNode",
-      "description": "Empereur",
+      "description": "Vous êtes un Empereur !",
       "pathfile" : {
         "Image" : "src/Images/Run.gif"
       },

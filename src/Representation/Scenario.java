@@ -14,9 +14,10 @@ import org.json.simple.parser.ParseException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 public class Scenario extends JFrame{
-    public Node initialNode;
+    public Event initialNode;
     private JPanel pnlRoot;
 
     public Scenario() throws IOException, ParseException {
@@ -29,7 +30,7 @@ public class Scenario extends JFrame{
 
         try {
             JSONObject root = (JSONObject) parser.parse(new FileReader(jsonFilePath));
-            this.initialNode = (Node) createNodeFromJson(root);
+            this.initialNode = (Event) createNodeFromJson(root);
         } catch (IOException | ParseException e) {
             System.out.println("--ERREUR--");
             e.printStackTrace();
@@ -83,7 +84,7 @@ public class Scenario extends JFrame{
 
     @Override
     public String toString() {
-        return this.toString(initialNode);
+        return this.toString((Node) initialNode);
     }
 
     private String toString(Node currentNode) {
@@ -104,7 +105,7 @@ public class Scenario extends JFrame{
     public void playScenario(Event initialNode) {
         Event currentNode = initialNode;
         boolean iterate = true;
-        while (iterate) {
+        while (iterate && currentNode!=null) {
             // Laisser le joueur choisir le prochain nœud
             currentNode.display(this.pnlRoot);
             if(currentNode instanceof TerminalNode){
@@ -120,16 +121,51 @@ public class Scenario extends JFrame{
     private void createUIComponents() {
         this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
         this.setContentPane(pnlRoot);
-        this.pnlRoot.setLayout(new FlowLayout()); // Use FlowLayout for simplicity
+        this.pnlRoot.setLayout(new BorderLayout()); // Use FlowLayout for simplicity
 
         JLabel lbl = new JLabel("Kingdom War");
         lbl.setFont(new Font("Arial",Font.PLAIN,30));
+        lbl.setHorizontalAlignment(0);
+        lbl.setVerticalAlignment(SwingConstants.TOP);
+        pnlRoot.add(lbl);
+
+        JPanel jpanelMenu = new JPanel(new GridBagLayout());
+        jpanelMenu.setPreferredSize(new Dimension(200, 100));
+        JButton btnStart = new JButton("Commencer la partie");
+        JButton btnSave = new JButton("Reprendre depuis une sauvegarde");
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        jpanelMenu.add(lbl,gbc);
+        gbc.gridy = 2;
+
+        jpanelMenu.add(btnStart, gbc);
+
+        gbc.gridy = 3;
+        jpanelMenu.add(Box.createRigidArea(new Dimension(0, 10)), gbc); // Add vertical gap
+
+        gbc.gridy = 5;
+        jpanelMenu.add(btnSave, gbc);
+
+        // Center the panel
+        jpanelMenu.setAlignmentX(Component.CENTER_ALIGNMENT);
+        jpanelMenu.setAlignmentY(Component.CENTER_ALIGNMENT);
+
+        // Make the panel transparent
+        jpanelMenu.setOpaque(false);
+
+        // Set a colored border with a specific color
+//        jpanelMenu.setBorder(new LineBorder(Color.RED, 2));
+        pnlRoot.add(jpanelMenu);
 
         this.setTitle("Kingdom War");
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
-    }
+        Node.nextButton(pnlRoot);
 
+
+    }
 }

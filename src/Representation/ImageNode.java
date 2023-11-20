@@ -46,56 +46,43 @@ public class ImageNode extends DecoratorNode{
     @Override
     public void display(JPanel pnlRoot) {
         pnlRoot.removeAll();
-        image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));;
-        JLabel lbl = new JLabel("",image,JLabel.CENTER);
-        lbl.setVerticalAlignment(1/2);
-        JLabel lblText= new JLabel("Vous êtes un " + node.toString() + " !!!");
-        lblText.setFont(new Font("Arial",Font.PLAIN,30));
-        pnlRoot.add(lblText);
-        pnlRoot.add(lbl); // Ajoutez le JLabel au JFrame
-        nextButton(pnlRoot);
 
-//        JButton nextButton = new JButton("Suivant");
-//        pnlRoot.add(nextButton);
-//
-//        nextButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                synchronized (lock) {
-//                    lock.notify(); // Notifie le thread principal pour continuer
-//                }
-//            }
-//        });
-//
-//        pnlRoot.revalidate();
-//        pnlRoot.repaint();
-//
-//        synchronized (lock) {
-//            try {
-//                lock.wait();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
+        JLabel lbl = new JLabel("", image, JLabel.CENTER);
+        lbl.setVerticalAlignment(JLabel.CENTER);  // Ajustez la position verticale
+
+        JLabel lblText = new JLabel(node.toString());
+        lblText.setFont(new Font("Arial", Font.PLAIN, 30));
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        pnlRoot.add(lblText, gbc);  // Ajoutez lblText à la position (0, 0)
+
+        gbc.gridy = 1;
+        pnlRoot.add(lbl, gbc);  // Ajoutez lbl à la position (0, 1)
+
+        nextButton(pnlRoot, gbc);  // Passez le GridBagConstraints pour le positionnement du bouton Suivant
     }
 
-    private void nextButton(JPanel pnlRoot) {
+    private void nextButton(JPanel pnlRoot, GridBagConstraints gbc) {
         JButton nextButton = new JButton("Suivant");
-        pnlRoot.add(nextButton);
+
+        gbc.gridy = 2;
+        pnlRoot.add(nextButton, gbc);  // Ajoutez le bouton Suivant à la position (0, 2)
+
         pnlRoot.revalidate();
         pnlRoot.repaint();
+
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 synchronized (lock) {
                     lock.notify(); // Notifie le thread principal pour continuer
-                    System.out.println("Hello WOrld");
+                    System.out.println("Hello World");
                 }
             }
         });
-
-        pnlRoot.revalidate();
-        pnlRoot.repaint();
 
         synchronized (lock) {
             try {

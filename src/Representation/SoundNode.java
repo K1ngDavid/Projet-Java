@@ -41,6 +41,7 @@ public class SoundNode extends DecoratorNode{
     @Override
     public void display(JPanel pnlRoot) {
         this.clip.start();
+        if(node instanceof TerminalNode) node.display(pnlRoot);
     }
 
     /**

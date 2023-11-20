@@ -5,6 +5,9 @@ package Representation;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class TerminalNode extends Node {
 
@@ -33,6 +36,14 @@ public class TerminalNode extends Node {
         pnlRoot.add(new JLabel(""),BorderLayout.PAGE_START);
         lblGameOver.setFont(new Font("Arial",Font.PLAIN,50));
         pnlRoot.add(lblGameOver, BorderLayout.CENTER);
+        System.out.println(" -------> " + (pnlRoot.getComponent(1)));
+        nextButton.setText("Fermer");
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         pnlRoot.validate();
         pnlRoot.repaint();
     }
