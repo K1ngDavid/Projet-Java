@@ -3,9 +3,8 @@
   "description": "Choisissez votre faction !",
   "choices": [
     {
-      "type": "DecisionNode",
-      "description": "Démon",
-      "choices" : []
+      "type": "TerminalNode",
+      "description": "Démon"
     },
     {
       "type": "DecisionNode",
@@ -17,7 +16,9 @@
         {
           "type": "TerminalNode",
           "description": "Fantassin",
+          "pathfile" : {
             "Sound" : "src/Sounds/gameOver.wav"
+          }
         },
         {
           "type": "TerminalNode",

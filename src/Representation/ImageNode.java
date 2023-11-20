@@ -2,6 +2,8 @@ package Representation;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.List;
 public class ImageNode extends DecoratorNode{
 
     private ImageIcon image;
+
+    private static final Object lock = new Object();
 
     /**
      *
@@ -49,8 +53,57 @@ public class ImageNode extends DecoratorNode{
         lblText.setFont(new Font("Arial",Font.PLAIN,30));
         pnlRoot.add(lblText);
         pnlRoot.add(lbl); // Ajoutez le JLabel au JFrame
+        nextButton(pnlRoot);
+
+//        JButton nextButton = new JButton("Suivant");
+//        pnlRoot.add(nextButton);
+//
+//        nextButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                synchronized (lock) {
+//                    lock.notify(); // Notifie le thread principal pour continuer
+//                }
+//            }
+//        });
+//
+//        pnlRoot.revalidate();
+//        pnlRoot.repaint();
+//
+//        synchronized (lock) {
+//            try {
+//                lock.wait();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+    }
+
+    private void nextButton(JPanel pnlRoot) {
+        JButton nextButton = new JButton("Suivant");
+        pnlRoot.add(nextButton);
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                synchronized (lock) {
+                    lock.notify(); // Notifie le thread principal pour continuer
+                    System.out.println("Hello WOrld");
+                }
+            }
+        });
 
         pnlRoot.revalidate();
+        pnlRoot.repaint();
+
+        synchronized (lock) {
+            try {
+                lock.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -65,8 +118,8 @@ public class ImageNode extends DecoratorNode{
      * @return
      */
     @Override
-    public Event chooseNext() {
-        return node.chooseNext();
+    public Event chooseNext(JPanel pnlRoot) {
+        return node.chooseNext(pnlRoot);
     }
 
     /*Ajout Victorien*/

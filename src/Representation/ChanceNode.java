@@ -23,8 +23,9 @@ public class ChanceNode extends InnerNode{
         this.nextNodes.add(node);
     }
 
+
     @Override
-    public Event chooseNext() {
+    public Event chooseNext(JPanel pnlRoot) {
         Random random = new Random();
         System.out.println(nextNodes.size());
         int randomChoice = random.nextInt(nextNodes.size());

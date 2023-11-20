@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change afterPath="$PROJECT_DIR$/src/Tools/BackgroundPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Images/GAME_OVER.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BugReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tools/BugReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/InnerNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/InnerNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
@@ -60,18 +62,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava/src/Images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Images" />
       <recent name="$PROJECT_DIR$/src/Sounds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -120,7 +123,13 @@
       <workItem from="1699995682645" duration="2228000" />
       <workItem from="1700306653410" duration="3012000" />
       <workItem from="1700319076027" duration="7340000" />
-      <workItem from="1700327462262" duration="5479000" />
+      <workItem from="1700327462262" duration="11715000" />
+      <workItem from="1700387627443" duration="2290000" />
+      <workItem from="1700418486013" duration="5998000" />
+      <workItem from="1700472655632" duration="689000" />
+      <workItem from="1700478803782" duration="1144000" />
+      <workItem from="1700482919782" duration="1328000" />
+      <workItem from="1700485345862" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
@@ -151,6 +160,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Résolution de conflits" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Representation/Scenario.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Representation.ChanceNode" memberName="nextNodes" />

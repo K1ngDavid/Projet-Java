@@ -103,13 +103,16 @@ public class Scenario extends JFrame{
      */
     public void playScenario(Event initialNode) {
         Event currentNode = initialNode;
-
-        while (!(currentNode instanceof TerminalNode)) {
+        boolean iterate = true;
+        while (iterate) {
             // Laisser le joueur choisir le prochain nœud
             currentNode.display(this.pnlRoot);
-            currentNode = currentNode.chooseNext();
-        }
+            if(currentNode instanceof TerminalNode){
+                iterate = false;
+            }
+            currentNode = currentNode.chooseNext(pnlRoot);
 
+        }
         // Le jeu est terminé
         System.out.println("Fin du jeu");
     }

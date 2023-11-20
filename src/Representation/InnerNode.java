@@ -1,5 +1,6 @@
 package Representation;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,8 @@ public abstract class InnerNode extends Node {
     public void addNode(Node node){
         this.nextNodes.add(node);
     }
+
+    public abstract Event chooseNext(JPanel pnlRoot);
 
     @Override
     public List<Event> getNextNodes() {

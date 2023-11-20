@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface Event {
 
-    Event chooseNext();
+    Event chooseNext(JPanel pnlRoot);
 
     void display(JPanel pnlRoot);
 

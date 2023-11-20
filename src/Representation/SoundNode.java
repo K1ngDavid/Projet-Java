@@ -13,18 +13,30 @@ public class SoundNode extends DecoratorNode{
 
     private Clip clip;
 
-    public SoundNode(Node node, String filePath) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+    public SoundNode(Node node, String filePath) throws LineUnavailableException, IOException {
         super(node, filePath);
-        this.clip = AudioSystem.getClip();
-        this.clip.open(AudioSystem.getAudioInputStream(new File(this.filePath)));
-    }
-    @Override
-    public Event chooseNext() {
-        return  node.chooseNext();
+        try {
+            this.clip = AudioSystem.getClip();
+            this.clip.open(AudioSystem.getAudioInputStream(new File(this.filePath)));
+        }
+        catch (UnsupportedAudioFileException e){
+            throw new RuntimeException("Le fichier n'est pas un fichier audio");
+        }
     }
 
     /**
      *
+     * @param pnlRoot
+     * @return
+     */
+    @Override
+    public Event chooseNext(JPanel pnlRoot) {
+        return null;
+    }
+
+    /**
+     *
+     * @param pnlRoot
      */
     @Override
     public void display(JPanel pnlRoot) {

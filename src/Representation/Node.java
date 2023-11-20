@@ -1,106 +1,83 @@
+// Node.java
 package Representation;
-
-//TODO: #3 Création de la classe mère 'Node.java'
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
-
-/** Abstract class Node
- * @author k1ngdavid
- * @version 1.0.0
- * @since October 2023
- * */
-
 
 public abstract class Node implements Event {
     private final int id;
     private String description;
     private static int nbNodes = 0;
     protected JLabel jLabel;
+    protected final Object lock = new Object();
 
-
-    /**
-     * @param description the description of the node
-     */
     public Node(String description) {
         this.id = nbNodes;
         this.description = description;
-        jLabel = new JLabel(this.description);
         nbNodes++;
     }
+
     public Node() {
         this.id = nbNodes;
         nbNodes++;
     }
 
-    /**
-     * displays the description of the node
-     */
     public void display(JPanel pnlRoot) {
-        System.out.println("Jlabel ----> " + this.jLabel.getText());
         pnlRoot.removeAll();
+        pnlRoot.setLayout(new FlowLayout());
         jLabel = new JLabel(this.description);
-        jLabel.setFont(new Font("Arial",Font.PLAIN,30));
-        pnlRoot.add(jLabel); // Add the label to the panel
+        jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
+        pnlRoot.add(jLabel);
+        System.out.println("++++" + this.description);
+        this.nextButton(pnlRoot);
+    }
+
+    public void nextButton(JPanel pnlRoot) {
+        JButton nextButton = new JButton("Suivant");
+        pnlRoot.add(nextButton);
         pnlRoot.revalidate();
         pnlRoot.repaint();
-        System.out.println("++++" + this.description);
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                synchronized (lock) {
+                    lock.notify(); // Notify the main thread to continue
+                    System.out.println("Hello World");
+                }
+            }
+        });
+
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+
+        synchronized (lock) {
+            try {
+                System.out.println("JE SUIS LA");
+                lock.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    /**
-     * @return total number of nodes.
-     * @deprecated
-     */
-    public static int getNbNodes() {
-        return nbNodes;
-    }
+    public abstract Event chooseNext(JPanel pnlRoot);
 
-
-    /**
-     * @return id of the node
-     */
-    public int getId(){
-        return this.id;
-    }
-
-    /**
-     * @return description of node
-     */
     public String getDescription() {
         return this.description;
-    }
-
-    /**
-     * @return the next node of the current node
-     */
-    @Override
-    public Event chooseNext() {
-        return null;
     }
 
     public List<Event> getNextNodes() {
         return null;
     }
 
-    /**
-     * @return all the information about the node by overriding the toString() method of the Object class
-     */
-    /*ANCIENNE VERSION
-    @Override
-    public String toString() {
-        return "Node de type : " + this.getClass() + "\nId : " + this.getId() + "\nDescription : " + this.getDescription();
-    }
-    */
     @Override
     public String toString() {
         return this.getDescription();
     }
 
-    /**
-     * @param obj object that we want to compare
-     * @return true if the class of the object passed in params is equal to the class of the current node
-     */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Node) {
