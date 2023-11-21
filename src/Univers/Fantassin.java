@@ -1,42 +1,22 @@
 package Univers;
 
-import Univers.demon.Demon;
-import Univers.empereur.Empereur;
-
 public class Fantassin extends Soldat{
 
+    public Fantassin(Espece espece){
+        super(espece);
+    }
+
     public static Fantassin setFantassin(Personnage personnage){
-        personnage = new Fantassin();
-        if(personnage instanceof Empereur){
+        personnage = (Fantassin) new Fantassin(personnage.getEspece());
+        //personnage = new Fantassin();
+
+        if(personnage.isEmpereur()){
             personnage.setStatistiques(5, 10, 5);
+            //return personnage;
         }
-        else if(personnage instanceof Demon){
+        else if(personnage.isDemon()){
             personnage.setStatistiques(7, 15, 5);
         }
         return (Fantassin) personnage;
-    }
-
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
-    }
-
-    /**
-     * @param perte
-     */
-    @Override
-    public void perdrePV(int perte) {
-
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public Personnage evoluerGrade() {
-        return null;
     }
 }

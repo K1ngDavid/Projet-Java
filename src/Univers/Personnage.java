@@ -1,6 +1,7 @@
 package Univers;
 
-public abstract class Personnage implements ActionsPersonnage{
+//abstract ?
+public class Personnage implements ActionsPersonnage {
     private String pseudo;
     private String image;
     private int force;
@@ -8,16 +9,27 @@ public abstract class Personnage implements ActionsPersonnage{
     private int mana;
     private boolean statutVivant = true;
     private GestionnaireArmee gestionnaireArmee;
+    private Espece espece;
 
     public Personnage(){
         this.pseudo="Perso generique";
         this.image="";
+        this.espece = Espece.EMPEREUR;
+        //this.gestionnaireArmee = new GestionnaireArmee();
     }
 
-    public Personnage(String pseudo, String image, GestionnaireArmee gestionnaireArmee){
+    public Personnage(Espece espece){
+        this.pseudo="Perso generique";
+        this.image="";
+        this.espece = espece;
+        //this.gestionnaireArmee = new GestionnaireArmee();
+    }
+
+    public Personnage(String pseudo, String image, GestionnaireArmee gestionnaireArmee, Espece espece){
         this.pseudo=pseudo;
         this.image=image;
-        this.gestionnaireArmee = gestionnaireArmee;
+        this.espece= espece;
+        //this.gestionnaireArmee = gestionnaireArmee;
     }
 
     public void attaquer(Personnage personnage) {
@@ -38,6 +50,11 @@ public abstract class Personnage implements ActionsPersonnage{
             this.mourir();
     }
 
+    @Override
+    public Personnage evoluerGrade() {
+        return null;
+    }
+
     private void mourir() {
         this.statutVivant= false;
     }
@@ -46,6 +63,10 @@ public abstract class Personnage implements ActionsPersonnage{
         this.force = force;
         this.pointDeVie = pointDeVie;
         this.mana = mana;
+    }
+
+    public void setGestionnaireArmee(GestionnaireArmee gestionnaireArmee){
+        this.gestionnaireArmee = gestionnaireArmee;
     }
 
     public int getPointDeVie(){
@@ -57,11 +78,26 @@ public abstract class Personnage implements ActionsPersonnage{
     public int getMana(){
         return this.mana;
     }
+
     public GestionnaireArmee getGestionnaireArmee(){
         return this.gestionnaireArmee;
     }
 
+    public boolean isEmpereur(){
+        return this.espece == Espece.EMPEREUR;
+    }
+
+    public boolean isDemon(){
+        return this.espece == Espece.DEMON;
+    }
+
+    public Espece getEspece(){
+        return this.espece;
+    }
+
     public String toString(){
-        return pseudo + "PV : " + this.pointDeVie + "Mana : " + this.mana + this.gestionnaireArmee;
+        String classe = this.getClass().getName();
+        classe = classe.substring(classe.lastIndexOf('.')+1);
+        return classe + " : " + " Force " + this.force + " PV : " + this.pointDeVie + " Mana : " + this.mana;
     }
 }

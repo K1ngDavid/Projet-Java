@@ -5,35 +5,39 @@ import Univers.demon.*;
 
 public abstract class Soldat extends Personnage {
 
+    public Soldat(Espece espece){
+        super(espece);
+    }
+
     public static Capitaine evoluerGrade(Personnage personnage){
-        if(personnage instanceof Empereur){
+        if(personnage.isEmpereur()){
             if(personnage instanceof Fantassin){
                 personnage =  new Epeiste();
+                return (Epeiste) personnage;
             }
             else if(personnage instanceof Archer){
                 personnage = new Silvios();
-
+                return (Silvios) personnage;
             }
             else if(personnage instanceof Cavalier){
                 personnage = new Tank();
-
-
+                return (Tank) personnage;
             }
         }
-        else if(personnage instanceof Demon){
+        else if(personnage.isDemon()){
             if(personnage instanceof Fantassin){
                 personnage =  new SilloneurDesTrefonds();
-                personnage.setStatistiques(90, 180, 60);
+                return (SilloneurDesTrefonds) personnage;
 
             }
             else if(personnage instanceof Archer){
                 personnage = new Antechrist();
-                personnage.setStatistiques(85, 170, 70);
+                return (Antechrist) personnage;
 
             }
             else if(personnage instanceof Cavalier){
                 personnage = new DieuDemon();
-                personnage.setStatistiques(70, 140, 100);
+                return (DieuDemon) personnage;
 
             }
         }

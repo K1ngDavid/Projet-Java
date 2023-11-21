@@ -1,37 +1,30 @@
 package Univers.empereur;
 
 import Univers.ActionsPersonnage;
+import Univers.Espece;
 import Univers.General;
 import Univers.Personnage;
 
 public class BerserkerDeLApocalyspse extends General {
-    private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
+    //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public BerserkerDeLApocalyspse(){
-        this.gestionnaireArmeeEmpereur= this.gestionnaireArmeeEmpereur.setArmee(this);
+        super(Espece.EMPEREUR);
+        //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
+        //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
+
+        this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));
         this.setStatistiques(350, 1300, 300);
     }
 
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
+    /*
+    public GestionnaireArmeeEmpereur getGestionnaireArmeeEmpereur(){
+        return this.gestionnaireArmeeEmpereur;
     }
 
-    /**
-     * @param perte
      */
-    @Override
-    public void perdrePV(int perte) {
 
-    }
-
-    /**
-     * @return
-     */
     @Override
-    public Personnage evoluerGrade() {
-        return null;
+    public String toString(){
+        return super.toString() + "\n" + this.getGestionnaireArmee();
     }
 }

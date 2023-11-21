@@ -1,41 +1,21 @@
 package Univers;
 
-import Univers.demon.Demon;
-import Univers.empereur.Empereur;
-
 public class Archer extends Soldat{
+
+
+    public Archer(Espece espece){
+        super(espece);
+    }
+
     public static Archer setArcher(Personnage personnage){
-        personnage = new Archer();
-        if(personnage instanceof Empereur){
+        personnage = new Archer(personnage.getEspece());
+        //personnage = new Archer();
+        if(personnage.isEmpereur()){
             personnage.setStatistiques(5, 5, 10);
         }
-        else if(personnage instanceof Demon){
+        else if(personnage.isDemon()){
             personnage.setStatistiques(10, 15, 10);
         }
         return (Archer) personnage;
-    }
-
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
-    }
-
-    /**
-     * @param perte
-     */
-    @Override
-    public void perdrePV(int perte) {
-
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public Personnage evoluerGrade() {
-        return null;
     }
 }

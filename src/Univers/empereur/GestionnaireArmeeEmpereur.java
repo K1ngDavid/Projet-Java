@@ -1,7 +1,6 @@
 package Univers.empereur;
 
-import Univers.GestionnaireArmee;
-import Univers.Personnage;
+import Univers.*;
 
 public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     private int nombreSilvios;
@@ -11,92 +10,111 @@ public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     private Silvios troupeSilvios;
     private Tank troupeTanks;
     private Epeiste troupeEpeistes;
+
     public GestionnaireArmeeEmpereur(){
         super();
 
         this.nombreSilvios = 0;
         this.nomrbreTank = 0;
         this.nombreEpeiste = 0;
-
-        this.troupeSilvios = new Silvios();
-        this.troupeTanks = new Tank();
-        this.troupeEpeistes = new Epeiste();
     }
 
-    public GestionnaireArmeeEmpereur setArmee(Personnage personnage){
-        if(personnage instanceof Silvios){
-            super.updateNombreArchers(15);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(5);
+    public void initTroupes(){
+        super.initTroupes(Espece.EMPEREUR);
+        //this.troupeSilvios= new Silvios();
+        //this.troupeTanks = new Tank();
+        //this.troupeEpeistes= new Epeiste();
+    }
+    public static GestionnaireArmeeEmpereur setArmee(Personnage personnage){
+        GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
+        gestionnaireArmeeEmpereur.initTroupes();
 
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
-        }
-        else if(personnage instanceof Tank){
-            super.updateNombreArchers(15);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(5);
+        if(personnage.isEmpereur()){
+            //gestionnaireArmeeEmpereur.troupeSilvios = new Silvios();
+            //gestionnaireArmeeEmpereur.troupeTanks = new Tank();
+            //gestionnaireArmeeEmpereur.troupeEpeistes = new Epeiste();
 
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
-        }
-        else if(personnage instanceof Epeiste){
-            super.updateNombreArchers(5);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(15);
+            if(personnage instanceof Silvios){
+                gestionnaireArmeeEmpereur.updateNombreArchers(15);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(5);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(5);
 
-            super.setCaractéristiquesArchers(5, 5, 5);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(10, 10, 10);
-        }
-        else if(personnage instanceof BerserkerDeLApocalyspse){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(5, 5, 5);
+            }
+            else if(personnage instanceof Tank){
+                gestionnaireArmeeEmpereur.updateNombreArchers(5);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(15);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(5);
 
-            this.updateNombreSilvios(20);
-            this.updateNomrbreTank(20);
-            this.updateNombreEpeiste(20);
-            this.setCaractéristiquesSilvios(80, 160, 80);
-            this.setCaractéristiquesTank(80, 160, 50);
-            this.setCaractéristiquesEpeiste(90, 120, 70);
-        }
-        else if(personnage instanceof MageSaint){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(5, 5, 5);
+            }
+            else if(personnage instanceof Epeiste){
+                gestionnaireArmeeEmpereur.updateNombreArchers(5);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(5);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(15);
 
-            this.updateNombreSilvios(20);
-            this.updateNomrbreTank(20);
-            this.updateNombreEpeiste(20);
-            this.setCaractéristiquesSilvios(80, 160, 80);
-            this.setCaractéristiquesTank(80, 160, 50);
-            this.setCaractéristiquesEpeiste(90, 120, 70);
-        }
-        else if (personnage instanceof SaintPaladin){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(10, 10, 10);
+            }
+            else if(personnage instanceof BerserkerDeLApocalyspse){
+                gestionnaireArmeeEmpereur.updateNombreArchers(1000);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(1000);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(1000);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(5, 5, 5);
+                /*
+                gestionnaireArmeeEmpereur.updateNombreSilvios(20);
+                gestionnaireArmeeEmpereur.updateNomrbreTank(20);
+                gestionnaireArmeeEmpereur.updateNombreEpeiste(20);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesSilvios(80, 160, 80);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesTank(80, 160, 50);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesEpeiste(90, 120, 70);
 
-            this.updateNombreSilvios(20);
-            this.updateNomrbreTank(20);
-            this.updateNombreEpeiste(20);
-            this.setCaractéristiquesSilvios(80, 160, 80);
-            this.setCaractéristiquesTank(80, 160, 50);
-            this.setCaractéristiquesEpeiste(90, 120, 70);
+                 */
+            }
+            else if(personnage instanceof MageSaint){
+                gestionnaireArmeeEmpereur.updateNombreArchers(1000);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(1000);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(1000);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(5, 5, 5);
+
+                /*
+                gestionnaireArmeeEmpereur.updateNombreSilvios(20);
+                gestionnaireArmeeEmpereur.updateNomrbreTank(20);
+                gestionnaireArmeeEmpereur.updateNombreEpeiste(20);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesSilvios(80, 160, 80);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesTank(80, 160, 50);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesEpeiste(90, 120, 70);
+
+                 */
+            }
+            else if (personnage instanceof SaintPaladin){
+                gestionnaireArmeeEmpereur.updateNombreArchers(1000);
+                gestionnaireArmeeEmpereur.updateNombreCavaliers(1000);
+                gestionnaireArmeeEmpereur.updateNombreFantassins(1000);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesFantassins(5, 5, 5);
+                /*
+                gestionnaireArmeeEmpereur.updateNombreSilvios(20);
+                gestionnaireArmeeEmpereur.updateNomrbreTank(20);
+                gestionnaireArmeeEmpereur.updateNombreEpeiste(20);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesSilvios(80, 160, 80);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesTank(80, 160, 50);
+                gestionnaireArmeeEmpereur.setCaractéristiquesTroupesEpeiste(90, 120, 70);
+
+                 */
+            }
         }
-        return this;
+        return gestionnaireArmeeEmpereur;
     }
 
     public void updateNombreSilvios(int nombreSilvios){
@@ -124,13 +142,13 @@ public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     }
 
 
-    public void setCaractéristiquesSilvios(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesSilvios(int force, int pointDeVie, int mana){
         this.troupeSilvios.setStatistiques(force*this.nombreSilvios, pointDeVie*this.nombreSilvios, mana*this.nombreSilvios);
     }
-    public void setCaractéristiquesTank(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesTank(int force, int pointDeVie, int mana){
         this.troupeTanks.setStatistiques(force*this.nomrbreTank, pointDeVie*this.nomrbreTank, mana*this.nomrbreTank);
     }
-    public void setCaractéristiquesEpeiste(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesEpeiste(int force, int pointDeVie, int mana){
         this.troupeEpeistes.setStatistiques(force*this.nombreEpeiste, pointDeVie*this.nombreEpeiste, mana*this.nombreEpeiste);
     }
 
@@ -145,4 +163,12 @@ public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     public Tank getTroupeTanks(){
         return this.troupeTanks;
     }
+
+    /*
+    @Override
+    public String toString(){
+        return super.toString() + "\n[Silvios] : " + this.nombreSilvios + " [Epeistes] : " + this.nombreEpeiste +
+                " [Tanks] : " + this.nomrbreTank;
+    }
+     */
 }

@@ -1,17 +1,17 @@
 package Univers.demon;
 
+import Univers.Espece;
 import Univers.GestionnaireArmee;
 import Univers.Personnage;
-import Univers.empereur.*;
 
 public class GestionnaireArmeeDemons extends GestionnaireArmee {
     private int nombreDieuDemon;
     private int nombreSilloneurDesTrefonds;
     private int nombreAntechrist;
 
-    private DieuDemon dieuDemonType;
-    private SilloneurDesTrefonds silloneurDesTrefondsType;
-    private Antechrist antechristType;
+    private DieuDemon troupeDieuDemon;
+    private SilloneurDesTrefonds troupeSilloneurDesTrefonds;
+    private Antechrist troupeAntechrist;
 
     public GestionnaireArmeeDemons(){
         super();
@@ -19,86 +19,102 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
         this.nombreDieuDemon = 0;
         this.nombreSilloneurDesTrefonds = 0;
         this.nombreAntechrist = 0;
-
-        this.dieuDemonType = new DieuDemon();
-        this.silloneurDesTrefondsType = new SilloneurDesTrefonds();
-        this.antechristType = new Antechrist();
     }
 
-    public GestionnaireArmeeDemons setArmee(Personnage personnage){
-        if(personnage instanceof SilloneurDesTrefonds){
-            super.updateNombreArchers(15);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(5);
+    public void initTroupes(){
+        super.initTroupes(Espece.DEMON);
+        //this.troupeDieuDemon = new DieuDemon();
+        //this.troupeSilloneurDesTrefonds = new SilloneurDesTrefonds();
+        //this.troupeAntechrist = new Antechrist();
+    }
 
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
-        }
-        else if(personnage instanceof Antechrist){
-            super.updateNombreArchers(15);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(5);
+    public static GestionnaireArmeeDemons setArmee(Personnage personnage){
+        GestionnaireArmeeDemons gestionnaireArmeeDemons = new GestionnaireArmeeDemons();
+        gestionnaireArmeeDemons.initTroupes();
+        if(personnage.isDemon()){
+            if(personnage instanceof SilloneurDesTrefonds){
+                gestionnaireArmeeDemons.updateNombreArchers(5);
+                gestionnaireArmeeDemons.updateNombreCavaliers(15);
+                gestionnaireArmeeDemons.updateNombreFantassins(5);
 
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
-        }
-        else if(personnage instanceof DieuDemon){
-            super.updateNombreArchers(5);
-            super.updateNombreCavaliers(5);
-            super.updateNombreFantassins(15);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(5, 5, 5);
+            }
+            else if(personnage instanceof Antechrist){
+                gestionnaireArmeeDemons.updateNombreArchers(15);
+                gestionnaireArmeeDemons.updateNombreCavaliers(5);
+                gestionnaireArmeeDemons.updateNombreFantassins(5);
 
-            super.setCaractéristiquesArchers(5, 5, 5);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(10, 10, 10);
-        }
-        else if(personnage instanceof NemesisDuChaos){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(5, 5, 5);
+            }
+            else if(personnage instanceof DieuDemon){
+                gestionnaireArmeeDemons.updateNombreArchers(5);
+                gestionnaireArmeeDemons.updateNombreCavaliers(5);
+                gestionnaireArmeeDemons.updateNombreFantassins(15);
 
-            this.updateNombreDieuDemon(20);
-            this.updateNombreSilloneurDesTrefonds(20);
-            this.updateNombreAntechrist(20);
-            this.setCaractéristiquesDieuDemon(80, 160, 80);
-            this.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
-            this.setCaractéristiquesAntechrist(90, 120, 70);
-        }
-        else if(personnage instanceof Necromancien){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(10, 10, 10);
+            }
+            else if(personnage instanceof NemesisDuChaos){
+                gestionnaireArmeeDemons.updateNombreArchers(1000);
+                gestionnaireArmeeDemons.updateNombreCavaliers(1000);
+                gestionnaireArmeeDemons.updateNombreFantassins(1000);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(5, 5, 5);
 
-            this.updateNombreDieuDemon(20);
-            this.updateNombreSilloneurDesTrefonds(20);
-            this.updateNombreAntechrist(20);
-            this.setCaractéristiquesDieuDemon(80, 160, 80);
-            this.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
-            this.setCaractéristiquesAntechrist(90, 120, 70);
-        }
-        else if (personnage instanceof CavalierDuNeant){
-            super.updateNombreArchers(1000);
-            super.updateNombreCavaliers(1000);
-            super.updateNombreFantassins(1000);
-            super.setCaractéristiquesArchers(10, 10, 10);
-            super.setCaractéristiquesCavaliers(5, 5, 5);
-            super.setCaractéristiquesFantassins(5, 5, 5);
+                /*
+                gestionnaireArmeeDemons.updateNombreDieuDemon(20);
+                gestionnaireArmeeDemons.updateNombreSilloneurDesTrefonds(20);
+                gestionnaireArmeeDemons.updateNombreAntechrist(20);
+                gestionnaireArmeeDemons.setCaractéristiquesDieuDemon(80, 160, 80);
+                gestionnaireArmeeDemons.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
+                gestionnaireArmeeDemons.setCaractéristiquesAntechrist(90, 120, 70);
 
-            this.updateNombreDieuDemon(20);
-            this.updateNombreSilloneurDesTrefonds(20);
-            this.updateNombreAntechrist(20);
-            this.setCaractéristiquesDieuDemon(80, 160, 80);
-            this.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
-            this.setCaractéristiquesAntechrist(90, 120, 70);
+                 */
+            }
+            else if(personnage instanceof Necromancien){
+                gestionnaireArmeeDemons.updateNombreArchers(1000);
+                gestionnaireArmeeDemons.updateNombreCavaliers(1000);
+                gestionnaireArmeeDemons.updateNombreFantassins(1000);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(5, 5, 5);
+
+                /*
+                gestionnaireArmeeDemons.updateNombreDieuDemon(20);
+                gestionnaireArmeeDemons.updateNombreSilloneurDesTrefonds(20);
+                gestionnaireArmeeDemons.updateNombreAntechrist(20);
+                gestionnaireArmeeDemons.setCaractéristiquesDieuDemon(80, 160, 80);
+                gestionnaireArmeeDemons.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
+                gestionnaireArmeeDemons.setCaractéristiquesAntechrist(90, 120, 70);
+
+                 */
+            }
+            else if (personnage instanceof CavalierDuNeant){
+                gestionnaireArmeeDemons.updateNombreArchers(1000);
+                gestionnaireArmeeDemons.updateNombreCavaliers(1000);
+                gestionnaireArmeeDemons.updateNombreFantassins(1000);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesArchers(10, 10, 10);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesCavaliers(5, 5, 5);
+                gestionnaireArmeeDemons.setCaractéristiquesTroupesFantassins(5, 5, 5);
+
+                /*
+                gestionnaireArmeeDemons.updateNombreDieuDemon(20);
+                gestionnaireArmeeDemons.updateNombreSilloneurDesTrefonds(20);
+                gestionnaireArmeeDemons.updateNombreAntechrist(20);
+                gestionnaireArmeeDemons.setCaractéristiquesDieuDemon(80, 160, 80);
+                gestionnaireArmeeDemons.setCaractéristiquesSilloneurDesTrefonds(80, 160, 50);
+                gestionnaireArmeeDemons.setCaractéristiquesAntechrist(90, 120, 70);
+
+                 */
+            }
         }
-        return this;
+        return gestionnaireArmeeDemons;
     }
 
     public void updateNombreDieuDemon(int nombreDieuDemon){
@@ -127,12 +143,12 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
 
 
     public void setCaractéristiquesDieuDemon(int force, int pointDeVie, int mana){
-        this.dieuDemonType.setStatistiques(force, pointDeVie, mana);
+        this.troupeDieuDemon.setStatistiques(force, pointDeVie, mana);
     }
     public void setCaractéristiquesSilloneurDesTrefonds(int force, int pointDeVie, int mana){
-        this.silloneurDesTrefondsType.setStatistiques(force, pointDeVie, mana);
+        this.troupeSilloneurDesTrefonds.setStatistiques(force, pointDeVie, mana);
     }
     public void setCaractéristiquesAntechrist(int force, int pointDeVie, int mana){
-        this.antechristType.setStatistiques(force, pointDeVie, mana);
+        this.troupeAntechrist.setStatistiques(force, pointDeVie, mana);
     }
 }

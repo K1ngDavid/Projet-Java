@@ -1,45 +1,30 @@
 package Univers.demon;
 
 import Univers.ActionsPersonnage;
+import Univers.Espece;
 import Univers.General;
 import Univers.Personnage;
 
 public class CavalierDuNeant extends General {
-    private GestionnaireArmeeDemons gestionnaireArmeeDemon;
+    //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public CavalierDuNeant(){
-        this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
-        this.gestionnaireArmeeDemon.updateNombreArchers(1000);
-        this.gestionnaireArmeeDemon.updateNombreCavaliers(1000);
-        this.gestionnaireArmeeDemon.updateNombreFantassins(1000);
+        super(Espece.DEMON);
+        //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
+        //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
 
-        this.gestionnaireArmeeDemon.updateNombreDieuDemon(20);
-        this.gestionnaireArmeeDemon.updateNombreSilloneurDesTrefonds(20);
-        this.gestionnaireArmeeDemon.updateNombreAntechrist(20);
-
+        this.setGestionnaireArmee(GestionnaireArmeeDemons.setArmee(this));
         this.setStatistiques(450, 1350, 500);
     }
 
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
+    /*
+    public GestionnaireArmeeDemons getGestionnaireArmeeDemon(){
+        return this.gestionnaireArmeeDemon;
     }
 
-    /**
-     * @param perte
      */
-    @Override
-    public void perdrePV(int perte) {
 
-    }
-
-    /**
-     * @return
-     */
     @Override
-    public Personnage evoluerGrade() {
-        return null;
+    public String toString(){
+        return super.toString() + "\n" + this.getGestionnaireArmee();
     }
 }
