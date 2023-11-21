@@ -5,38 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/googlecode_json_simple.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetJava/Univers/Personnage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/ActionsPersonnage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Archer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Capitaine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Cavalier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Fantassin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/General.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/GestionnaireArmee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Personnage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/Soldat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Antechrist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/CavalierDuNeant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Demon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/DieuDemon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/GestionnaireArmeeDemons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/Necromancien.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/NemesisDuChaos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/demon/SilloneurDesTrefonds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/BerserkerDeLApocalyspse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Empereur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Epeiste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/GestionnaireArmeeEmpereur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/MageSaint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/SaintPaladin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Silvios.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjetJava/univers/empereur/Tank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/TerminalNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/TerminalNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,18 +58,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava/src/Images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Images" />
+      <recent name="$PROJECT_DIR$/src/Sounds" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="RUN" type="Application" factoryName="Application">
@@ -127,7 +111,21 @@
       <workItem from="1699364030263" duration="1743000" />
       <workItem from="1699449015602" duration="922000" />
       <workItem from="1699456072211" duration="2336000" />
-      <workItem from="1699534929738" duration="1895000" />
+      <workItem from="1699534929738" duration="3497000" />
+      <workItem from="1699808921716" duration="5314000" />
+      <workItem from="1699862788164" duration="5863000" />
+      <workItem from="1699872704367" duration="1312000" />
+      <workItem from="1699970303071" duration="11644000" />
+      <workItem from="1699995682645" duration="2228000" />
+      <workItem from="1700306653410" duration="3012000" />
+      <workItem from="1700319076027" duration="7340000" />
+      <workItem from="1700327462262" duration="11715000" />
+      <workItem from="1700387627443" duration="2290000" />
+      <workItem from="1700418486013" duration="5998000" />
+      <workItem from="1700472655632" duration="689000" />
+      <workItem from="1700478803782" duration="1144000" />
+      <workItem from="1700482919782" duration="1328000" />
+      <workItem from="1700485345862" duration="12651000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
@@ -161,6 +159,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Representation.ChanceNode" memberName="nextNodes" />
+        <PinnedItemInfo parentTag="Representation.DecisionNode" memberName="nextNodes" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

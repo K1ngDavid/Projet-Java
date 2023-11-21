@@ -4,33 +4,29 @@
   "choices": [
     {
       "type": "TerminalNode",
-      "description": "Vous avez atteint la fin du chemin 1."
+      "description": "Démon"
     },
     {
       "type": "DecisionNode",
-      "description": "Empereur",
+      "description": "Vous êtes un Empereur !",
+      "pathfile" : {
+        "Image" : "src/Images/Run.gif"
+      },
       "choices": [
         {
           "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 2."
+          "description": "Fantassin",
+          "pathfile" : {
+            "Sound" : "src/Sounds/gameOver.wav"
+          }
         },
         {
           "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 3."
+          "description": "Archer"
         },
         {
-          "type": "ChanceNode",
-          "description": "Vous arrivez à un autre autre croisement. Choisissez une direction.",
-          "choices": [
-            {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 4."
-            },
-            {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 5."
-            }
-          ]
+          "type": "TerminalNode",
+          "description": "Cavalier"
         }
       ]
     }

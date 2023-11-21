@@ -1,18 +1,19 @@
 package Representation;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class InnerNode extends Node implements Event{
+public abstract class InnerNode extends Node {
 
-    protected List<Node> nextNodes;
+    protected List<Event> nextNodes;
     public InnerNode(String description) {
         super(description);
         this.nextNodes = new ArrayList<>(4);
         //TODO Auto-generated constructor stub
     }
 
-    public InnerNode(String description, List<Node> nexNodes){
+    public InnerNode(String description, List<Event> nexNodes){
         super(description);
         this.nextNodes = nexNodes;
     }
@@ -21,8 +22,10 @@ public abstract class InnerNode extends Node implements Event{
         this.nextNodes.add(node);
     }
 
+    public abstract Event chooseNext(JPanel pnlRoot);
+
     @Override
-    public List<Node> getNextNodes() {
+    public List<Event> getNextNodes() {
         return nextNodes;
     }
 }

@@ -1,88 +1,91 @@
+// Node.java
 package Representation;
 
-//TODO: #3 Création de la classe mère 'Node.java'
-
-import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
-
-/** Abstract class Node
- * @author k1ngdavid
- * @version 1.0.0
- * @since October 2023
- * */
-
 
 public abstract class Node implements Event {
     private final int id;
-    private final String description;
+    private String description;
     private static int nbNodes = 0;
+    protected JLabel jLabel;
+    protected static final Object lock = new Object();
+    static JButton nextButton = new JButton("Suivant");
 
 
-    /**
-     * @param description the description of the node
-     */
+
     public Node(String description) {
         this.id = nbNodes;
         this.description = description;
         nbNodes++;
     }
 
-    /**
-     * displays the description of the node
-     */
-    public void display() {
-        System.out.println(this.description);
+    public Node() {
+        this.id = nbNodes;
+        nbNodes++;
     }
 
-    /**
-     * @return total number of nodes.
-     * @deprecated
-     */
-    public static int getNbNodes() {
-        return nbNodes;
+    public void display(JPanel pnlRoot) {
+        pnlRoot.removeAll();
+        pnlRoot.setLayout(new BorderLayout());
+
+        JLabel jLabel = new JLabel(this.description);
+        jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
+        jLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        pnlRoot.add(jLabel, BorderLayout.NORTH); // Ajouter le JLabel en haut du BorderLayout
+
+        nextButton(pnlRoot);
     }
 
+    public static void  nextButton(JPanel pnlRoot) {
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.setOpaque(false);
+        nextButton.setVerticalAlignment(JButton.CENTER);
+        buttonPanel.setPreferredSize(new Dimension(100, 50)); // Remplacez 100 et 50 par la taille souhaitée
+        buttonPanel.add(nextButton); // Ajouter le bouton au JPanel
+        pnlRoot.add(buttonPanel, BorderLayout.SOUTH); // Ajouter le JPanel en bas du BorderLayout
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                synchronized (lock) {
+                    lock.notify(); // Notify the main thread to continue
+                    System.out.println("Hello World");
+                }
+            }
+        });
 
-    /**
-     * @return id of the node
-     */
-    @Override
-    public int getId() {
-        return this.id;
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+
+        synchronized (lock) {
+            try {
+                lock.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    /**
-     * @return description of the node
-     */
-    @Override
+    public abstract Event chooseNext(JPanel pnlRoot);
+
     public String getDescription() {
         return this.description;
     }
 
-    /**
-     * @return the next node of the current node
-     */
-    @Override
-    public Node chooseNext() {
+    public List<Event> getNextNodes() {
         return null;
     }
 
-    public List<Node> getNextNodes() {
-        return null;
-    }
-
-    /**
-     * @return all the information about the node by overriding the toString() method of the Object class
-     */
     @Override
     public String toString() {
-        return "Node de type : " + this.getClass() + "\nId : " + this.getId() + "\nDescription : " + this.getDescription();
+        return this.getDescription();
     }
 
-    /**
-     * @param obj object that we want to compare
-     * @return true if the class of the object passed in params is equal to the class of the current node
-     */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Node) {
