@@ -9,6 +9,10 @@ import Univers.empereur.SaintPaladin;
 
 public abstract class General extends Personnage{
 
+    public General(Espece espece){
+        super(espece);
+    }
+
     public static General faculteSpeciale(Personnage personnage){
         if(personnage instanceof BerserkerDeLApocalyspse){
             personnage.getGestionnaireArmee().getTroupeFantassins().setStatistiques(
@@ -23,6 +27,7 @@ public abstract class General extends Personnage{
                     personnage.getGestionnaireArmee().getTroupeArchers().getPointDeVie(),
                     personnage.getGestionnaireArmee().getTroupeArchers().getMana()+200
             );
+
         }
         else if(personnage instanceof SaintPaladin){
             personnage.getGestionnaireArmee().getTroupeCavaliers().setStatistiques(

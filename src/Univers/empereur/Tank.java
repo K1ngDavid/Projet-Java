@@ -2,36 +2,27 @@ package Univers.empereur;
 
 import Univers.ActionsPersonnage;
 import Univers.Capitaine;
+import Univers.Espece;
 import Univers.Personnage;
 
 public class Tank extends Capitaine {
-    private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
+    //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public Tank(){
-        this.gestionnaireArmeeEmpereur= this.gestionnaireArmeeEmpereur.setArmee(this);
+        super(Espece.EMPEREUR);
+        //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
+        //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
+        this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));
         this.setStatistiques(80, 160, 50);
     }
 
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
+    /*
+    public GestionnaireArmeeEmpereur getGestionnaireArmeeEmpereur(){
+        return this.gestionnaireArmeeEmpereur;
     }
-
-    /**
-     * @param perte
      */
-    @Override
-    public void perdrePV(int perte) {
 
-    }
-
-    /**
-     * @return
-     */
     @Override
-    public Personnage evoluerGrade() {
-        return null;
+    public String toString(){
+        return super.toString() + "\n" + this.getGestionnaireArmee();
     }
 }

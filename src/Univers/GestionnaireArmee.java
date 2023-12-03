@@ -1,10 +1,7 @@
 package Univers;
 
-import Univers.empereur.Epeiste;
-import Univers.empereur.Silvios;
-import Univers.empereur.Tank;
-
-public abstract class GestionnaireArmee {
+//abstract ?
+public class GestionnaireArmee {
 
     private int nombreFantassins;
     private int nombreArchers;
@@ -18,10 +15,20 @@ public abstract class GestionnaireArmee {
         this.nombreFantassins = 0;
         this.nombreArchers = 0;
         this.nombreCavaliers = 0;
+    }
 
+    public void initTroupes(Espece espece){
+
+        this.trouoeFantassins = new Fantassin(espece);
+        this.troupeArchers = new Archer(espece);
+        this.troupeCavaliers = new Cavalier(espece);
+
+        /*
         this.trouoeFantassins = new Fantassin();
         this.troupeArchers = new Archer();
         this.troupeCavaliers = new Cavalier();
+
+         */
     }
 
     public void updateNombreFantassins(int nombreFantassins){
@@ -48,13 +55,13 @@ public abstract class GestionnaireArmee {
         this.troupeCavaliers.perdrePV(perte);
     }
 
-    public void setCaractéristiquesFantassins(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesFantassins(int force, int pointDeVie, int mana){
         this.trouoeFantassins.setStatistiques(force*this.nombreFantassins, pointDeVie*this.nombreFantassins, mana*this.nombreFantassins);
     }
-    public void setCaractéristiquesArchers(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesArchers(int force, int pointDeVie, int mana){
         this.troupeArchers.setStatistiques(force*this.nombreArchers, pointDeVie*this.nombreArchers, mana*this.nombreArchers);
     }
-    public void setCaractéristiquesCavaliers(int force, int pointDeVie, int mana){
+    public void setCaractéristiquesTroupesCavaliers(int force, int pointDeVie, int mana){
         this.troupeCavaliers.setStatistiques(force*this.nombreCavaliers, pointDeVie*this.nombreCavaliers, mana*this.nombreCavaliers);
     }
 
@@ -71,7 +78,7 @@ public abstract class GestionnaireArmee {
     }
 
     public String toString(){
-        return "[Fantassins]" + this.trouoeFantassins + "\n" + "[Cavaliers]" + this.troupeCavaliers + "\n" +
-                "[Archers]" + this.troupeArchers;
+        return "[Fantassins]\n" + "Nombre : " + this.nombreFantassins + "\t" + this.trouoeFantassins + "\n" + "[Cavaliers]\n" + "Nombre : " + "\t" +this.nombreCavaliers + "\t" +
+                this.troupeCavaliers +"\n" + "[Archers]\n" + "Nombre : " + this.nombreArchers + "\t" + this.troupeArchers;
     }
 }

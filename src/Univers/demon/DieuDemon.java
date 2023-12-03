@@ -2,39 +2,28 @@ package Univers.demon;
 
 import Univers.ActionsPersonnage;
 import Univers.Capitaine;
+import Univers.Espece;
 import Univers.Personnage;
 
 public class DieuDemon extends Capitaine {
-    private GestionnaireArmeeDemons gestionnaireArmeeDemon;
+    //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public DieuDemon(){
-        this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
-        this.gestionnaireArmeeDemon.updateNombreArchers(10);
-        this.gestionnaireArmeeDemon.updateNombreCavaliers(10);
-        this.gestionnaireArmeeDemon.updateNombreFantassins(10);
+        super(Espece.DEMON);
+        //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
+        //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
+        this.setGestionnaireArmee(GestionnaireArmeeDemons.setArmee(this));
         this.setStatistiques(70, 140, 100);
     }
 
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
+    /*
+    public GestionnaireArmeeDemons getGestionnaireArmeeDemon(){
+        return this.gestionnaireArmeeDemon;
     }
 
-    /**
-     * @param perte
      */
-    @Override
-    public void perdrePV(int perte) {
 
-    }
-
-    /**
-     * @return
-     */
     @Override
-    public Personnage evoluerGrade() {
-        return null;
+    public String toString(){
+        return super.toString() + "\n" + this.getGestionnaireArmee();
     }
 }

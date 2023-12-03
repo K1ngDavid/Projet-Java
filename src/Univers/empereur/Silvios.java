@@ -2,38 +2,31 @@ package Univers.empereur;
 
 import Univers.ActionsPersonnage;
 import Univers.Capitaine;
+import Univers.Espece;
 import Univers.Personnage;
 
 public class Silvios extends Capitaine {
 
-    private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
+    //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
 
     public Silvios(){
-        this.gestionnaireArmeeEmpereur= this.gestionnaireArmeeEmpereur.setArmee(this);
+        super(Espece.EMPEREUR);
+        //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
+        //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
+        this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));
         this.setStatistiques(80, 160, 80);
     }
 
-    /**
-     * @param personnage
-     */
-    @Override
-    public void attaquer(ActionsPersonnage personnage) {
-
+    /*
+    public GestionnaireArmeeEmpereur getGestionnaireArmeeEmpereur(){
+        return this.gestionnaireArmeeEmpereur;
     }
 
-    /**
-     * @param perte
      */
-    @Override
-    public void perdrePV(int perte) {
 
+    @Override
+    public String toString(){
+        return super.toString() + "\n" + this.getGestionnaireArmee();
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public Personnage evoluerGrade() {
-        return null;
-    }
 }
