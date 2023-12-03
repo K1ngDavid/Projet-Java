@@ -1,10 +1,12 @@
 package Representation;
+import javax.imageio.IIOException;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,13 +24,8 @@ public class ImageNode extends DecoratorNode{
      */
     public ImageNode(Node node, String filePath) {
         super(node,filePath);
-        System.out.println("+++++" + node.getDescription());
-        try{
-            if(isImageFile(filePath)){
-                this.image = new ImageIcon(new ImageIcon(filePath).getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
-            }else throw new Exception("Le document n'est pas une image :/");
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        if(isImageFile(filePath)){
+            this.image = new ImageIcon(new ImageIcon(filePath).getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
         }
     }
 
@@ -37,73 +34,43 @@ public class ImageNode extends DecoratorNode{
      * @param filePath
      * @return
      */
-    public static boolean isImageFile(String filePath) throws IOException {
-        if(ImageIO.read(new File(filePath)) == null){
+    public static boolean isImageFile(String filePath){
+        try {
+            File file = new File(filePath);
+            if(!file.exists()){
+                throw new FileNotFoundException("Le document n'existe pas");
+            }
+            if(ImageIO.read(new File(filePath)) == null){
+                throw new IOException("Le document existe mais est vide");
+            }
+            return true;
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
             return false;
         }
-        else return true;
     }
     @Override
     public void display(JPanel pnlRoot) {
         pnlRoot.removeAll();
-
+        pnlRoot.setLayout(new BorderLayout());
         image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
         JLabel lbl = new JLabel("", image, JLabel.CENTER);
-        lbl.setVerticalAlignment(JLabel.CENTER);  // Ajustez la position verticale
-
+        lbl.setVerticalAlignment(SwingConstants.CENTER);  // Ajustez la position verticale
+        lbl.setHorizontalAlignment(SwingConstants.CENTER);
         JLabel lblText = new JLabel(node.toString());
         lblText.setFont(new Font("Arial", Font.PLAIN, 30));
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        pnlRoot.add(lblText, gbc);  // Ajoutez lblText à la position (0, 0)
-
-        gbc.gridy = 1;
-        pnlRoot.add(lbl, gbc);  // Ajoutez lbl à la position (0, 1)
-
-        nextButton(pnlRoot, gbc);  // Passez le GridBagConstraints pour le positionnement du bouton Suivant
+        lblText.setHorizontalAlignment(SwingConstants.CENTER);
+        pnlRoot.add(lblText,BorderLayout.NORTH);  // Ajoutez lblText à la position (0, 0)
+        pnlRoot.add(lbl);  // Ajoutez lbl à la position (0, 1);
+        nextButton(pnlRoot);
     }
 
-    private void nextButton(JPanel pnlRoot, GridBagConstraints gbc) {
+    private void nextButton(JPanel pnlRoot) {
         JButton nextButton = new JButton("Suivant");
-
-        gbc.gridy = 2;
-        pnlRoot.add(nextButton, gbc);  // Ajoutez le bouton Suivant à la position (0, 2)
-
-        pnlRoot.revalidate();
-        pnlRoot.repaint();
-
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                synchronized (lock) {
-                    lock.notify(); // Notifie le thread principal pour continuer
-                    System.out.println("Hello World");
-                }
-            }
-        });
-
-        synchronized (lock) {
-            try {
-                lock.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        pnlRoot.add(nextButton,BorderLayout.SOUTH);
+        JFrameFunctionnalities.waitForSelection(nextButton,pnlRoot);
     }
 
-    /**
-     * @param nodeFromJson
-     */
-    @Override
-    public void addNode(Event nodeFromJson) {
-        node.addNode(nodeFromJson);
-    }
-
-    /**
-     * @return
-     */
     @Override
     public Event chooseNext(JPanel pnlRoot) {
         return node.chooseNext(pnlRoot);
@@ -112,5 +79,9 @@ public class ImageNode extends DecoratorNode{
     /*Ajout Victorien*/
     public List<Event> getNextNodes() {
         return null;
+    }
+
+    public Image getImage(){
+        return image.getImage();
     }
 }

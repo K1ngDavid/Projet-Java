@@ -31,7 +31,7 @@ public class SoundNode extends DecoratorNode{
      */
     @Override
     public Event chooseNext(JPanel pnlRoot) {
-        return null;
+        return node.chooseNext(pnlRoot);
     }
 
     /**

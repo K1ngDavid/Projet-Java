@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.FileReader;
 
+import Univers.Personnage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,11 +15,14 @@ import org.json.simple.parser.ParseException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 public class Scenario extends JFrame{
     public Event initialNode;
     private JPanel pnlRoot;
+    public static Image imagePlayer;
+    JFrame jFrame = this;
 
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
@@ -53,7 +57,7 @@ public class Scenario extends JFrame{
             innerNode = getEvent(pathFile, innerNode);
             try{
                 JSONArray choicesData = (JSONArray) jsonData.get("choices");
-                if(choicesData == null) throw new Exception("Vous n'avez pas de nodes successeurs pour ce node");
+                if(choicesData == null) throw new Exception("Vous n'avez pas de nodes successeurs pour ce node : " + innerNode);
                 for (Object choiceObject : choicesData) {
                     JSONObject choiceData = (JSONObject) choiceObject;
                     innerNode.addNode(createNodeFromJson(choiceData));
@@ -70,7 +74,7 @@ public class Scenario extends JFrame{
         return null;
     }
 
-    private Event getEvent(JSONObject pathFile, Event node) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+    private Event getEvent(JSONObject pathFile, Event node) throws LineUnavailableException, IOException {
         if(pathFile != null){
             if(pathFile.containsKey("Image")){
                 node = new ImageNode((Node) node, (String) pathFile.get("Image"));
@@ -106,17 +110,18 @@ public class Scenario extends JFrame{
         Event currentNode = initialNode;
         boolean iterate = true;
         while (iterate && currentNode!=null) {
-            // Laisser le joueur choisir le prochain nœud
             currentNode.display(this.pnlRoot);
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
             currentNode = currentNode.chooseNext(pnlRoot);
 
+
         }
         // Le jeu est terminé
         System.out.println("Fin du jeu");
     }
+
 
     private void createUIComponents() {
         this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
@@ -126,8 +131,7 @@ public class Scenario extends JFrame{
         JLabel lbl = new JLabel("Kingdom War");
         lbl.setFont(new Font("Arial",Font.PLAIN,30));
         lbl.setHorizontalAlignment(0);
-        lbl.setVerticalAlignment(SwingConstants.TOP);
-        pnlRoot.add(lbl);
+        pnlRoot.add(lbl,BorderLayout.NORTH);
 
         JPanel jpanelMenu = new JPanel(new GridBagLayout());
         jpanelMenu.setPreferredSize(new Dimension(200, 100));
@@ -137,7 +141,6 @@ public class Scenario extends JFrame{
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        jpanelMenu.add(lbl,gbc);
         gbc.gridy = 2;
 
         jpanelMenu.add(btnStart, gbc);
@@ -154,18 +157,16 @@ public class Scenario extends JFrame{
 
         // Make the panel transparent
         jpanelMenu.setOpaque(false);
+        jpanelMenu.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         // Set a colored border with a specific color
 //        jpanelMenu.setBorder(new LineBorder(Color.RED, 2));
         pnlRoot.add(jpanelMenu);
 
         this.setTitle("Kingdom War");
-        this.setSize(800, 600);
+        this.setSize(1000, 800);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
-        Node.nextButton(pnlRoot);
-
-
     }
 }

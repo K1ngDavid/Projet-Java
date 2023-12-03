@@ -36,7 +36,6 @@ public class TerminalNode extends Node {
         pnlRoot.add(new JLabel(""),BorderLayout.PAGE_START);
         lblGameOver.setFont(new Font("Arial",Font.PLAIN,50));
         pnlRoot.add(lblGameOver, BorderLayout.CENTER);
-        System.out.println(" -------> " + (pnlRoot.getComponent(1)));
         nextButton.setText("Fermer");
         nextButton.addActionListener(new ActionListener() {
             @Override

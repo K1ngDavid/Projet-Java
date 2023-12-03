@@ -53,28 +53,24 @@ public class DecisionNode extends InnerNode{
         pnlRoot.setLayout(new GridBagLayout());
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(0, 5, 0, 5); // Adjust the insets according to your preference
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(10, 10, 10, 10); // Marge entre les boutons
 
         for (int i = 0; i < nextNodes.size(); i++) {
             Event node = nextNodes.get(i);
 
             JButton choiceButton = new JButton((i + 1) + ": " + node);
             choiceButton.addActionListener(e -> {
-                pnlRoot.removeAll(); // Remove all previous components
+                pnlRoot.removeAll();
                 pnlRoot.revalidate();
                 pnlRoot.repaint();
-
-                // Call setSelectedNode to set the selected node
                 setSelectedNode(node);
             });
 
-            // Set GridBagConstraints for spacing
-            gbc.gridx = i * 2; // Multiply by 2 to create a gap
-            gbc.gridy = 0;
-            gbc.gridwidth = 1; // Each button occupies 1 column
+            gbc.gridy = i; // Change the row for each button
             pnlRoot.add(choiceButton, gbc);
         }
-
 
         pnlRoot.revalidate();
         pnlRoot.repaint();

@@ -29,46 +29,34 @@ public abstract class Node implements Event {
     }
 
     public void display(JPanel pnlRoot) {
-        pnlRoot.removeAll();
-        pnlRoot.setLayout(new BorderLayout());
+        if(id == 0){
+            JPanel nestedPanel = (JPanel) pnlRoot.getComponent(1);
+            JButton button = (JButton) nestedPanel.getComponent(0);
+            JFrameFunctionnalities.waitForSelection(button,nestedPanel);
+        }
+        else {
+            pnlRoot.removeAll();
+            pnlRoot.setLayout(new BorderLayout());
 
-        JLabel jLabel = new JLabel(this.description);
-        jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
-        jLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        pnlRoot.add(jLabel, BorderLayout.NORTH); // Ajouter le JLabel en haut du BorderLayout
+            JLabel jLabel = new JLabel(this.description);
+            jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
+            jLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            pnlRoot.add(jLabel, BorderLayout.NORTH); // Ajouter le JLabel en haut du BorderLayout
 
-        nextButton(pnlRoot);
+            nextButton(pnlRoot);
+        }
     }
 
     public static void  nextButton(JPanel pnlRoot) {
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.setOpaque(false);
-        nextButton.setVerticalAlignment(JButton.CENTER);
-        buttonPanel.setPreferredSize(new Dimension(100, 50)); // Remplacez 100 et 50 par la taille souhaitée
-        buttonPanel.add(nextButton); // Ajouter le bouton au JPanel
-        pnlRoot.add(buttonPanel, BorderLayout.SOUTH); // Ajouter le JPanel en bas du BorderLayout
+        buttonPanel.add(nextButton);
+        pnlRoot.add(nextButton,BorderLayout.SOUTH);
         pnlRoot.revalidate();
         pnlRoot.repaint();
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                synchronized (lock) {
-                    lock.notify(); // Notify the main thread to continue
-                    System.out.println("Hello World");
-                }
-            }
-        });
-
-        pnlRoot.revalidate();
-        pnlRoot.repaint();
-
-        synchronized (lock) {
-            try {
-                lock.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        JFrameFunctionnalities.waitForSelection(nextButton,pnlRoot);
     }
 
     public abstract Event chooseNext(JPanel pnlRoot);

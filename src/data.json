@@ -3,32 +3,101 @@
   "description": "Choisissez votre faction !",
   "choices": [
     {
-      "type": "TerminalNode",
-      "description": "Démon"
-    },
-    {
-      "type": "DecisionNode",
-      "description": "Vous êtes un Empereur !",
-      "pathfile" : {
-        "Image" : "src/Images/Run.gif"
+      "type": "ChanceNode",
+      "description": "Démon",
+      "pathfile": {
+        "Image": "src/Images/Skeleton_Walk.gif"
       },
-      "choices": [
+      "choices" : [
         {
           "type": "TerminalNode",
-          "description": "Fantassin",
-          "pathfile" : {
-            "Sound" : "src/Sounds/gameOver.wav"
-          }
-        },
-        {
-          "type": "TerminalNode",
-          "description": "Archer"
+          "description": "Fantassin"
         },
         {
           "type": "TerminalNode",
           "description": "Cavalier"
+        },
+        {
+          "type": "TerminalNode",
+          "description": "Archer"
+        }
+      ]
+    },
+    {
+      "type": "DecisionNode",
+      "description": "Vous êtes un Empereur !",
+      "pathfile": {
+        "Image": "src/Images/Run.gif"
+      },
+      "choices": [
+        {
+          "type": "DecisionNode",
+          "description": "Fantassin",
+          "choices": [
+            {
+              "type": "TerminalNode",
+              "description": "Infiltrer les rangs ennemis"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Empoisonner le général (en cas de succès victoire)"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Rentrer dans la base vivant"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Compléter la formation de capitaine (aléatoire réussite ou mort)"
+            }
+          ]
+        },
+        {
+          "type": "DecisionNode",
+          "description": "Archer",
+          "choices": [
+            {
+              "type": "TerminalNode",
+              "description": "Infiltrer les rangs ennemis"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Empoisonner le général (en cas de succès victoire)"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Rentrer dans la base vivant"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Compléter la formation de capitaine (aléatoire réussite ou mort)"
+            }
+          ]
+        },
+        {
+          "type": "DecisionNode",
+          "description": "Cavalier",
+          "choices": [
+            {
+              "type": "TerminalNode",
+              "description": "Infiltrer les rangs ennemis"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Empoisonner le général (en cas de succès victoire)"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Rentrer dans la base vivant"
+            },
+            {
+              "type": "TerminalNode",
+              "description": "Compléter la formation de capitaine (aléatoire réussite ou mort)"
+            }
+          ]
         }
       ]
     }
   ]
 }
+
