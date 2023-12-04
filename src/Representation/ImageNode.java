@@ -1,4 +1,6 @@
 package Representation;
+import Univers.Personnage;
+
 import javax.imageio.IIOException;
 import javax.swing.*;
 import javax.imageio.ImageIO;
@@ -8,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Period;
 import java.util.List;
 
 
@@ -54,6 +57,7 @@ public class ImageNode extends DecoratorNode{
         pnlRoot.removeAll();
         pnlRoot.setLayout(new BorderLayout());
         image = new ImageIcon(this.image.getImage().getScaledInstance(220, 220, Image.SCALE_DEFAULT));
+        Personnage.setImageFile(filePath);
         JLabel lbl = new JLabel("", image, JLabel.CENTER);
         lbl.setVerticalAlignment(SwingConstants.CENTER);  // Ajustez la position verticale
         lbl.setHorizontalAlignment(SwingConstants.CENTER);

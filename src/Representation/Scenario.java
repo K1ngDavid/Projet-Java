@@ -6,6 +6,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.FileReader;
 
+import Univers.Espece;
+import Univers.EvoluerPersonnage;
 import Univers.Personnage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,6 +19,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+
+import static Univers.EvoluerPersonnage.EvoluerPersonnage;
 
 public class Scenario extends JFrame{
     public Event initialNode;
@@ -48,11 +52,13 @@ public class Scenario extends JFrame{
         JSONObject pathFile = (JSONObject) jsonData.get("pathfile");
 
         Event innerNode;
-        if (nodeType.equals("DecisionNode") || nodeType.equals("ChanceNode")) {
+        if (nodeType.equals("DecisionNode") || nodeType.equals("ChanceNode") || nodeType.equals("CombatNode") ) {
             if (nodeType.equals("DecisionNode")) {
                 innerNode = new DecisionNode(description);
-            } else {
+            } else if (nodeType.equals("ChanceNode")){
                 innerNode = new ChanceNode(description);
+            } else {
+                innerNode = new CombatNode(description);
             }
             innerNode = getEvent(pathFile, innerNode);
             try{
@@ -106,7 +112,9 @@ public class Scenario extends JFrame{
     /**
      * @param initialNode
      */
-    public void playScenario(Event initialNode) {
+    public void playScenario(Event initialNode) throws ClassNotFoundException {
+        Personnage personnage = new Personnage();
+        Class<?> classePersonnage;
         Event currentNode = initialNode;
         boolean iterate = true;
         while (iterate && currentNode!=null) {
@@ -115,7 +123,10 @@ public class Scenario extends JFrame{
                 iterate = false;
             }
             currentNode = currentNode.chooseNext(pnlRoot);
+            if(!(personnage.isDemon() | personnage.isEmpereur()))    personnage.setEspeceFromString(currentNode.toString());
+            if(Node.getNbNodes() % 4 == 0)    personnage.evoluerGrade();
 
+            System.out.println("Evolution " + personnage);
 
         }
         // Le jeu est terminé
@@ -162,7 +173,7 @@ public class Scenario extends JFrame{
         // Set a colored border with a specific color
 //        jpanelMenu.setBorder(new LineBorder(Color.RED, 2));
         pnlRoot.add(jpanelMenu);
-
+        this.pack();
         this.setTitle("Kingdom War");
         this.setSize(1000, 800);
         this.setLocationRelativeTo(null);

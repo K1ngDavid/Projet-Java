@@ -4,3 +4,5 @@ public enum Espece {
     EMPEREUR,
     DEMON
 }
+
+

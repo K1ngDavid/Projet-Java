@@ -11,10 +11,12 @@ public class Personnage implements ActionsPersonnage {
     private GestionnaireArmee gestionnaireArmee;
     private Espece espece;
 
+    private static String imageFile;
+
     public Personnage(){
         this.pseudo="Perso generique";
         this.image="";
-        this.espece = Espece.EMPEREUR;
+        this.espece = null;
         //this.gestionnaireArmee = new GestionnaireArmee();
     }
 
@@ -65,6 +67,10 @@ public class Personnage implements ActionsPersonnage {
         this.mana = mana;
     }
 
+    public Personnage setPersonnage(Personnage p){
+         return null;
+    }
+
     public void setGestionnaireArmee(GestionnaireArmee gestionnaireArmee){
         this.gestionnaireArmee = gestionnaireArmee;
     }
@@ -87,6 +93,10 @@ public class Personnage implements ActionsPersonnage {
         return this.espece == Espece.EMPEREUR;
     }
 
+    public void setEspece(Espece espece){
+        this.espece = espece;
+    }
+
     public boolean isDemon(){
         return this.espece == Espece.DEMON;
     }
@@ -95,9 +105,37 @@ public class Personnage implements ActionsPersonnage {
         return this.espece;
     }
 
+    @Override
     public String toString(){
         String classe = this.getClass().getName();
         classe = classe.substring(classe.lastIndexOf('.')+1);
         return classe + " : " + " Force " + this.force + " PV : " + this.pointDeVie + " Mana : " + this.mana;
+    }
+
+    public static void setImageFile(String image){
+        imageFile = image;
+    }
+    public static String getImage(){
+        return imageFile;
+    }
+
+    public void setEspeceFromString(String especeString) {
+        // Utilisez une méthode ou une logique pour convertir la chaîne en valeur d'Espece
+        Espece espece = convertStringToEspece(especeString);
+
+        // Définissez l'espèce du personnage
+        setEspece(espece);
+    }
+
+    private Espece convertStringToEspece(String especeString) {
+        // Logique pour convertir la chaîne en valeur d'Espece
+        if (especeString.contains("Empereur")) {
+            return Espece.EMPEREUR;
+        } else if (especeString.contains("Démon")) {
+            return Espece.DEMON;
+        } else {
+            // Gérez le cas où la chaîne ne correspond à aucune espèce connue
+            throw new IllegalArgumentException("Espèce inconnue : " + especeString);
+        }
     }
 }

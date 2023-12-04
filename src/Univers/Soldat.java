@@ -43,5 +43,4 @@ public abstract class Soldat extends Personnage {
         }
         return (Capitaine) personnage;
     }
-
 }

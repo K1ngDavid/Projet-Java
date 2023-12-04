@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change afterPath="$PROJECT_DIR$/src/Images/Skeleton_Walk.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Univers/EvoluerPersonnage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/TerminalNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/TerminalNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Cavalier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Espece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Espece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Fantassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Fantassin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Personnage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Univers/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Soldat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,18 +61,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava/src/Images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Game/maps" />
       <recent name="$PROJECT_DIR$/src/Images" />
       <recent name="$PROJECT_DIR$/src/Sounds" />
     </key>
@@ -134,7 +137,10 @@
       <workItem from="1701420881778" duration="1058000" />
       <workItem from="1701425072351" duration="1874000" />
       <workItem from="1701527286060" duration="9344000" />
-      <workItem from="1701598953971" duration="3177000" />
+      <workItem from="1701598953971" duration="30858000" />
+      <workItem from="1701642295767" duration="632000" />
+      <workItem from="1701676980153" duration="11000" />
+      <workItem from="1701691721167" duration="2535000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>

@@ -81,4 +81,8 @@ public abstract class Node implements Event {
         }
         return false;
     }
+
+    public static int getNbNodes() {
+        return nbNodes;
+    }
 }

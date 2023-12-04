@@ -43,8 +43,14 @@
               "description": "Empoisonner le général (en cas de succès victoire)"
             },
             {
-              "type": "TerminalNode",
-              "description": "Rentrer dans la base vivant"
+              "type": "CombatNode",
+              "description": "Rentrer dans la base vivant",
+              "choices": [
+                {
+                  "type": "TerminalNode",
+                  "description": "Rentrer dans la base vivant"
+                }
+              ]
             },
             {
               "type": "TerminalNode",
