@@ -1,5 +1,6 @@
 import Representation.ImageNode;
 import Representation.Node;
+import Representation.Sauvegarde;
 import Representation.Scenario;
 import Univers.Archer;
 import Univers.Espece;
@@ -10,7 +11,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws IOException, ParseException, ClassNotFoundException {
         Scenario scenario = new Scenario();
         try {
             scenario.playScenario(scenario.initialNode);
@@ -18,6 +19,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+//        System.out.println(Sauvegarde.reprendrePartie());
 //        Personnage personnage = new Personnage();
 //        Personnage archerEvolue = EvoluerPersonnage.EvoluerPersonnage(personnage, Archer.class, Espece.EMPEREUR);
 //        System.out.println(archerEvolue);

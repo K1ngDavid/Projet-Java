@@ -2,8 +2,9 @@ package Representation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class DecoratorNode implements Event{
+public abstract class DecoratorNode implements Event, Serializable {
 
     protected String filePath;
     protected Event node;

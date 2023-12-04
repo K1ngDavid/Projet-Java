@@ -3,8 +3,11 @@ package Representation;
 import Tools.BackgroundPanel;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import Univers.Espece;
 import Univers.EvoluerPersonnage;
@@ -26,7 +29,9 @@ public class Scenario extends JFrame{
     public Event initialNode;
     private JPanel pnlRoot;
     public static Image imagePlayer;
+    private Sauvegarde sauvegarde;
     JFrame jFrame = this;
+    JLabel checkpointLabel;
 
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
@@ -112,29 +117,50 @@ public class Scenario extends JFrame{
     /**
      * @param initialNode
      */
-    public void playScenario(Event initialNode) throws ClassNotFoundException {
+    public void playScenario(Event initialNode) throws ClassNotFoundException, IOException {
+        this.sauvegarde = new Sauvegarde();
         Personnage personnage = new Personnage();
         Class<?> classePersonnage;
         Event currentNode = initialNode;
         boolean iterate = true;
+        ArrayList<Event> checkpoints = new ArrayList<>();
+        ArrayList<ArrayList<Event>> partie = new ArrayList<>();
+        checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
+        checkpointLabel.setFont(new Font("Arial",Font.PLAIN,30));
         while (iterate && currentNode!=null) {
+            checkpoints.add(currentNode);
             currentNode.display(this.pnlRoot);
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
             currentNode = currentNode.chooseNext(pnlRoot);
-            if(!(personnage.isDemon() | personnage.isEmpereur()))    personnage.setEspeceFromString(currentNode.toString());
-            if(Node.getNbNodes() % 4 == 0)    personnage.evoluerGrade();
+            if(!(personnage.isDemon() | personnage.isEmpereur())) {
+                personnage.setEspeceFromString(currentNode.toString());
+            }
+            if(checkpoints.size() % 4 == 0) {
+                personnage.evoluerGrade();
+                partie.add(checkpoints);
+                checkpoints = new ArrayList<>();
+                pnlRoot.add(checkpointLabel,BorderLayout.SOUTH);
+                checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
+            }
 
             System.out.println("Evolution " + personnage);
 
         }
+        sauvegarde.setPartie(partie);
+        System.out.println(sauvegarde);
+//        if(!partie.isEmpty()){
+//            JOptionPane.showMessageDialog(pnlRoot,"Voulez vous sauvegardez votre partie ? (checkpoint n°"+ partie.size()  +"/4)","SAUVEGARDE",JOptionPane.INFORMATION_MESSAGE);
+//        }
+        sauvegarde.savePartie();
+        System.out.println(Sauvegarde.reprendrePartie());
         // Le jeu est terminé
         System.out.println("Fin du jeu");
     }
 
 
-    private void createUIComponents() {
+    private void createUIComponents() throws IOException, ClassNotFoundException {
         this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
         this.setContentPane(pnlRoot);
         this.pnlRoot.setLayout(new BorderLayout()); // Use FlowLayout for simplicity
@@ -148,6 +174,19 @@ public class Scenario extends JFrame{
         jpanelMenu.setPreferredSize(new Dimension(200, 100));
         JButton btnStart = new JButton("Commencer la partie");
         JButton btnSave = new JButton("Reprendre depuis une sauvegarde");
+
+//        btnSave.addActionListener(e -> {
+//            try {
+//                System.out.println(sauvegarde.reprendrePartie());
+//            } catch (IOException ex) {
+//                throw new RuntimeException(ex);
+//            } catch (ClassNotFoundException ex) {
+//                throw new RuntimeException(ex);
+//            }
+//        });
+        Sauvegarde sauvegarde1 = new Sauvegarde();
+
+        System.out.println(sauvegarde1);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;

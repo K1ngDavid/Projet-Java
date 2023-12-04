@@ -5,9 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Node implements Event {
+public abstract class Node implements Event, Serializable {
     private final int id;
     private String description;
     private static int nbNodes = 0;

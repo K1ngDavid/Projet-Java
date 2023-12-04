@@ -10,16 +10,34 @@
       },
       "choices" : [
         {
-          "type": "TerminalNode",
-          "description": "Fantassin"
+          "type": "DecisionNode",
+          "description": "Fantassin",
+          "choices" : [
+            {
+                "type": "TerminalNode",
+              "description": "Fantassin"
+            }
+          ]
         },
         {
-          "type": "TerminalNode",
-          "description": "Cavalier"
+          "type": "DecisionNode",
+          "description": "Cavalier",
+          "choices" : [
+            {
+              "type": "TerminalNode",
+              "description": "Fantassin"
+            }
+          ]
         },
         {
-          "type": "TerminalNode",
-          "description": "Archer"
+          "type": "DecisionNode",
+          "description": "Archer",
+          "choices" : [
+            {
+              "type": "TerminalNode",
+              "description": "Fantassin"
+            }
+          ]
         }
       ]
     },

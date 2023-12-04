@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CombatNode extends InnerNode{
-    private GamePanel gamePanel;
+    private transient GamePanel gamePanel;
     public CombatNode(String description) {
         super(description);
         this.gamePanel = new GamePanel();
@@ -30,6 +30,7 @@ public class CombatNode extends InnerNode{
 
         });
         Node.nextButton(pnlRoot);
+        gamePanel.stopGameThread();
         return this.nextNodes.get(0);
     }
 

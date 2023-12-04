@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change afterPath="$PROJECT_DIR$/src/Univers/EvoluerPersonnage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tile/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/CombatNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/CombatNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Cavalier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Espece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Espece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Fantassin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Fantassin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Personnage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Soldat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "88",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
     "node.js.detected.package.eslint": "true",
@@ -140,7 +138,8 @@
       <workItem from="1701598953971" duration="30858000" />
       <workItem from="1701642295767" duration="632000" />
       <workItem from="1701676980153" duration="11000" />
-      <workItem from="1701691721167" duration="2535000" />
+      <workItem from="1701691721167" duration="4896000" />
+      <workItem from="1701710506466" duration="9292000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
