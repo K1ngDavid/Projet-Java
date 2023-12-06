@@ -19,6 +19,10 @@ public abstract class DecoratorNode implements Event, Serializable {
         return node.toString();
     }
 
+    @Override
+    public int getId() {
+        return node.getId();
+    }
 
     @Override
     public Event chooseNext(JPanel jPanel) {

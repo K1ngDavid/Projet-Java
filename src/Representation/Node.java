@@ -30,12 +30,14 @@ public abstract class Node implements Event, Serializable {
     }
 
     public void display(JPanel pnlRoot) {
-        if(id == 0){
-            JPanel nestedPanel = (JPanel) pnlRoot.getComponent(1);
-            JButton button = (JButton) nestedPanel.getComponent(0);
-            JFrameFunctionnalities.waitForSelection(button,nestedPanel);
-        }
-        else {
+//        if(id == 0){
+//            JPanel nestedPanel = (JPanel) pnlRoot.getComponent(1);
+//            JButton button = (JButton) nestedPanel.getComponent(0);
+//            JButton button1 = (JButton) nestedPanel.getComponent(2);
+//            JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
+//
+//        }
+//        else {
             pnlRoot.removeAll();
             pnlRoot.setLayout(new BorderLayout());
 
@@ -45,7 +47,7 @@ public abstract class Node implements Event, Serializable {
             pnlRoot.add(jLabel, BorderLayout.NORTH); // Ajouter le JLabel en haut du BorderLayout
 
             nextButton(pnlRoot);
-        }
+//        }
     }
 
     public static void  nextButton(JPanel pnlRoot) {
@@ -68,6 +70,10 @@ public abstract class Node implements Event, Serializable {
 
     public List<Event> getNextNodes() {
         return null;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

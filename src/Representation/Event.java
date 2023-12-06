@@ -14,4 +14,6 @@ public interface Event {
     List<Event> getNextNodes();
 
     String toString();
+
+    public int getId();
 }

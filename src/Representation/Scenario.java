@@ -32,9 +32,11 @@ public class Scenario extends JFrame{
     private Sauvegarde sauvegarde;
     JFrame jFrame = this;
     JLabel checkpointLabel;
-
+    Personnage personnage;
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
+        personnage = new Personnage();
+        Class<?> classePersonnage;
         this.loadScenarioFromJson("src/data.json");
     }
 
@@ -119,8 +121,7 @@ public class Scenario extends JFrame{
      */
     public void playScenario(Event initialNode) throws ClassNotFoundException, IOException {
         this.sauvegarde = new Sauvegarde();
-        Personnage personnage = new Personnage();
-        Class<?> classePersonnage;
+        personnage = this.sauvegarde.getPersonnage();
         Event currentNode = initialNode;
         boolean iterate = true;
         ArrayList<Event> checkpoints = new ArrayList<>();
@@ -129,7 +130,20 @@ public class Scenario extends JFrame{
         checkpointLabel.setFont(new Font("Arial",Font.PLAIN,30));
         while (iterate && currentNode!=null) {
             checkpoints.add(currentNode);
-            currentNode.display(this.pnlRoot);
+            if(currentNode.getId() == 0){
+                JPanel nestedPanel = (JPanel) pnlRoot.getComponent(1);
+                JButton button = (JButton) nestedPanel.getComponent(0);
+                JButton button1 = (JButton) nestedPanel.getComponent(2);
+                Sauvegarde savedPartie = JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
+                if(savedPartie != null){
+                    currentNode = savedPartie.getPartie().get(0).get(3);
+                    personnage = savedPartie.getPersonnage();
+                    currentNode.display(this.pnlRoot);
+                }
+            }
+            else{
+                currentNode.display(this.pnlRoot);
+            }
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
@@ -143,6 +157,7 @@ public class Scenario extends JFrame{
                 checkpoints = new ArrayList<>();
                 pnlRoot.add(checkpointLabel,BorderLayout.SOUTH);
                 checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
+                sauvegarde.setPersonnage(personnage);
             }
 
             System.out.println("Evolution " + personnage);
@@ -150,17 +165,18 @@ public class Scenario extends JFrame{
         }
         sauvegarde.setPartie(partie);
         System.out.println(sauvegarde);
-//        if(!partie.isEmpty()){
-//            JOptionPane.showMessageDialog(pnlRoot,"Voulez vous sauvegardez votre partie ? (checkpoint n°"+ partie.size()  +"/4)","SAUVEGARDE",JOptionPane.INFORMATION_MESSAGE);
-//        }
-        sauvegarde.savePartie();
-        System.out.println(Sauvegarde.reprendrePartie());
+        if(!partie.isEmpty()){
+            if(JOptionPane.showConfirmDialog(pnlRoot,"Voulez vous sauvegardez votre partie ? (checkpoint n°"+ partie.size()  +"/4)","SAUVEGARDE",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+                sauvegarde.savePartie();
+                System.out.println(Sauvegarde.reprendrePartie());
+            }
+        }
         // Le jeu est terminé
         System.out.println("Fin du jeu");
     }
 
 
-    private void createUIComponents() throws IOException, ClassNotFoundException {
+    private void createUIComponents() throws IOException {
         this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
         this.setContentPane(pnlRoot);
         this.pnlRoot.setLayout(new BorderLayout()); // Use FlowLayout for simplicity
@@ -175,15 +191,7 @@ public class Scenario extends JFrame{
         JButton btnStart = new JButton("Commencer la partie");
         JButton btnSave = new JButton("Reprendre depuis une sauvegarde");
 
-//        btnSave.addActionListener(e -> {
-//            try {
-//                System.out.println(sauvegarde.reprendrePartie());
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            } catch (ClassNotFoundException ex) {
-//                throw new RuntimeException(ex);
-//            }
-//        });
+
         Sauvegarde sauvegarde1 = new Sauvegarde();
 
         System.out.println(sauvegarde1);

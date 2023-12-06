@@ -1,7 +1,9 @@
 package Univers;
 
+import java.io.Serializable;
+
 //abstract ?
-public class Personnage implements ActionsPersonnage {
+public class Personnage implements ActionsPersonnage, Serializable {
     private String pseudo;
     private String image;
     private int force;

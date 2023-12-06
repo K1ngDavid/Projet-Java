@@ -1,5 +1,7 @@
 package Representation;
 
+import Univers.Personnage;
+
 import javax.swing.text.html.StyleSheet;
 import java.io.*;
 import java.util.ArrayList;
@@ -7,11 +9,12 @@ import java.util.ArrayList;
 public class Sauvegarde implements Serializable {
     private ArrayList<Event> checkpoints;
     private ArrayList<ArrayList<Event>> partie;
-
+    private Personnage personnage;
 
     public Sauvegarde() throws IOException {
         checkpoints = new ArrayList<>();
         partie = new ArrayList<>();
+        personnage = new Personnage();
     }
 
 
@@ -43,12 +46,19 @@ public class Sauvegarde implements Serializable {
         }
     }
 
+    public void setPersonnage(Personnage personnage){
+        this.personnage = personnage;
+    }
+
+    public Personnage getPersonnage() {
+        return personnage;
+    }
+
     @Override
     public String toString() {
         StringBuilder description = new StringBuilder(new String());
         for(ArrayList<Event> checkpoint : partie){
             for (Event node : checkpoint){
-                System.out.println(node);
                 description.append(node.toString());
             }
         }
