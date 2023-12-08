@@ -1,34 +1,608 @@
 {
-  "type": "DecisionNode",
-  "description": "Choisissez votre faction !",
-  "choices": [
+  "type" : "DecisionNode",
+  "description" : "Choisissez votre faction ! ",
+  "choices" : [
     {
-      "type": "TerminalNode",
-      "description": "Vous avez atteint la fin du chemin 1."
+      "type" : "DecisionNode",
+      "description" : "Vous êtes un Démon ! ",
+      "pathfile" : {
+        "Image" : "src/Images/Skeleton_Walk.gif"
+      },
+      "choices" : [
+        {
+          "type" : "DecisionNode",
+          "description" : "Fantassin",
+          "choices" : [
+            {
+              "type" : "ChanceNode",
+              "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "choices" : [
+                    {
+                      "type" : "CombatNode",
+                      "description" : "Tuer le Roi des Empereurs",
+                      "choices" : [
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                        },
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez été vaincu"
+                        }
+                      ]
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                      "choices" : [
+                        {
+                          "type" : "ChanceNode",
+                          "description" : "Détruire le catalyseur impérial protégeant la capitale",
+                          "choices" : [
+                            {
+                              "type" : "ChanceNode",
+                              "description" : "Sceller la source de l'Ordre",
+                              "choices" : [
+                                {
+                                  "type" : "TerminalNode",
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                },
+                                {
+                                  "type" : "ChanceNode",
+                                  "description" : "Récupérer la clé vers l'espace chaotique",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Libérer la source du chaos",
+                                      "choices" : [
+                                        {
+                                          "type" : "TerminalNode",
+                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre l'amée impériale et détruire la capitale des Empereurs",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez vaincu l'armée impériale"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez été vaincu"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    }
+                                  ]                              
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : "DecisionNode",
+          "description" : "Cavalier",
+          "choices" : [
+            {
+              "type" : "ChanceNode",
+              "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "choices" : [
+                    {
+                      "type" : "CombatNode",
+                      "description" : "Tuer le Roi des Empereurs",
+                      "choices" : [
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                        },
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez été vaincu"
+                        }
+                      ]
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                      "choices" : [
+                        {
+                          "type" : "ChanceNode",
+                          "description" : "Détruire le catalyseur impérial protégeant la capitale",
+                          "choices" : [
+                            {
+                              "type" : "ChanceNode",
+                              "description" : "Sceller la source de l'Ordre",
+                              "choices" : [
+                                {
+                                  "type" : "TerminalNode",
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                },
+                                {
+                                  "type" : "ChanceNode",
+                                  "description" : "Récupérer la clé vers l'espace chaotique",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Libérer la source du chaos",
+                                      "choices" : [
+                                        {
+                                          "type" : "TerminalNode",
+                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre l'amée impériale et détruire la capitale des Empereurs",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez vaincu l'armée impériale"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez été vaincu"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    }
+                                  ]                              
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type" : "DecisionNode",
+          "description" : "Archer",
+          "choices" : [
+            {
+              "type" : "ChanceNode",
+              "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "choices" : [
+                    {
+                      "type" : "CombatNode",
+                      "description" : "Tuer le Roi des Empereurs",
+                      "choices" : [
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                        },
+                        {
+                          "type" : "TerminalNode",
+                          "description" : "Vous avez été vaincu"
+                        }
+                      ]
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                      "choices" : [
+                        {
+                          "type" : "ChanceNode",
+                          "description" : "Détruire le catalyseur impérial protégeant la capitale",
+                          "choices" : [
+                            {
+                              "type" : "ChanceNode",
+                              "description" : "Sceller la source de l'Ordre",
+                              "choices" : [
+                                {
+                                  "type" : "TerminalNode",
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                },
+                                {
+                                  "type" : "ChanceNode",
+                                  "description" : "Récupérer la clé vers l'espace chaotique",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Libérer la source du chaos",
+                                      "choices" : [
+                                        {
+                                          "type" : "TerminalNode",
+                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre l'amée impériale et détruire la capitale des Empereurs",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez vaincu l'armée impériale"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez été vaincu"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type" :"TerminalNode",
+                                          "description" : "Vous êtes mort !"
+                                        }
+                                      ]
+                                    }
+                                  ]                              
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-      "type": "DecisionNode",
-      "description": "Empereur",
-      "choices": [
+      "type" : "DecisionNode",
+      "description" : "Vous êtes un Empereur ! ",
+      "pathfile" : {
+        "Image" : "src/Images/Run.gif"
+      },
+      "choices" : [
         {
-          "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 2."
+          "type" : "DecisionNode",
+          "description" : "Fantassin",
+          "choices" : [
+            {
+              "type" : "ChanceNode",
+              "description" : "Infiltrer les rangs ennemis",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Empoisonner le Général ennemi",
+                  "choices" : [
+                    {
+                      "type" : "TerminalNode",
+                      "description" : "Vous avez éliminer le général ennemi"
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Rentrer à la base vivant",
+                      "choices" : [
+                        {
+                          "type" :"ChanceNode",
+                          "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                          "choices" : [
+                            {
+                              "type" : "CombatNode",
+                              "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
+                              "choices" : [
+                                {
+                                  "type" : "CombatNode",
+                                  "description" : "Remplacer le Général Ryuujin sur l'aile droite",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre les armées démoniaques",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez sauvé l'Empire"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "L'Empire est tombé"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" :"TerminalNode",
+                                      "description" : "Vous êtes mort !"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type" :"TerminalNode",
+                                  "description" : "Vous êtes mort !"
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }    
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
+            }
+          ]
         },
         {
-          "type": "TerminalNode",
-          "description": "Vous avez atteint la fin du chemin 3."
+          "type" : "DecisionNode",
+          "description" : "Cavalier",
+          "choices" : [
+            {
+              "type" : "ChanceNode",
+              "description" : "Infiltrer les rangs ennemis",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Empoisonner le Général ennemi",
+                  "choices" : [
+                    {
+                      "type" : "TerminalNode",
+                      "description" : "Vous avez éliminer le général ennemi"
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Rentrer à la base vivant",
+                      "choices" : [
+                        {
+                          "type" :"ChanceNode",
+                          "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                          "choices" : [
+                            {
+                              "type" : "CombatNode",
+                              "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
+                              "choices" : [
+                                {
+                                  "type" : "CombatNode",
+                                  "description" : "Remplacer le Général Ryuujin sur l'aile droite",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre les armées démoniaques",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez sauvé l'Empire"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "L'Empire est tombé"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" :"TerminalNode",
+                                      "description" : "Vous êtes mort !"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type" :"TerminalNode",
+                                  "description" : "Vous êtes mort !"
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }    
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
+            }
+          ]
         },
         {
-          "type": "ChanceNode",
-          "description": "Vous arrivez à un autre autre croisement. Choisissez une direction.",
-          "choices": [
+          "type" : "DecisionNode",
+          "description" : "Archer",
+          "choices" : [
             {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 4."
-            },
-            {
-              "type": "TerminalNode",
-              "description": "Vous avez atteint la fin du chemin 5."
+              "type" : "ChanceNode",
+              "description" : "Infiltrer les rangs ennemis",
+              "choices" : [
+                {
+                  "type" : "ChanceNode",
+                  "description" : "Empoisonner le Général ennemi",
+                  "choices" : [
+                    {
+                      "type" : "TerminalNode",
+                      "description" : "Vous avez éliminer le général ennemi"
+                    },
+                    {
+                      "type" :"ChanceNode",
+                      "description" : "Rentrer à la base vivant",
+                      "choices" : [
+                        {
+                          "type" :"ChanceNode",
+                          "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
+                          "choices" : [
+                            {
+                              "type" : "CombatNode",
+                              "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
+                              "choices" : [
+                                {
+                                  "type" : "CombatNode",
+                                  "description" : "Remplacer le Général Ryuujin sur l'aile droite",
+                                  "choices" : [
+                                    {
+                                      "type" : "ChanceNode",
+                                      "description" : "Compléter la formation de général (aléatoire réussite ou mort)",
+                                      "choices" : [
+                                        {
+                                          "type" : "CombatNode",
+                                          "description" : "Vaincre les armées démoniaques",
+                                          "choices" : [
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "Vous avez sauvé l'Empire"
+                                            },
+                                            {
+                                              "type" : "TerminalNode",
+                                              "description" : "L'Empire est tombé"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type" :"TerminalNode",
+                                      "description" : "Vous êtes mort !"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type" :"TerminalNode",
+                                  "description" : "Vous êtes mort !"
+                                }
+                              ]
+                            },
+                            {
+                              "type" :"TerminalNode",
+                              "description" : "Vous êtes mort !"
+                            }
+                          ]
+                        },
+                        {
+                          "type" :"TerminalNode",
+                          "description" : "Vous êtes mort !"
+                        }
+                      ]
+                    }    
+                  ]
+                },
+                {
+                  "type" :"TerminalNode",
+                  "description" : "Vous êtes mort !"
+                }
+              ]
             }
           ]
         }
