@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sauvegarde.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sauvegarde.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/CombatNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/CombatNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Personnage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +139,10 @@
       <workItem from="1701691721167" duration="4896000" />
       <workItem from="1701710506466" duration="10140000" />
       <workItem from="1701764740810" duration="1930000" />
-      <workItem from="1701869227609" duration="11745000" />
+      <workItem from="1701869227609" duration="15624000" />
+      <workItem from="1701937808769" duration="490000" />
+      <workItem from="1701941370376" duration="1356000" />
+      <workItem from="1702027428421" duration="622000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
@@ -177,6 +179,11 @@
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>15</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Representation/Scenario.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -19,6 +19,9 @@ public class CombatNode extends InnerNode{
 
     @Override
     public Event chooseNext(JPanel pnlRoot) {
+        if(gamePanel == null){
+            gamePanel = new GamePanel();
+        }
         gamePanel.setLayout(new BorderLayout());
         JButton startGame = new JButton("START GAME");
         gamePanel.add(startGame,BorderLayout.SOUTH);

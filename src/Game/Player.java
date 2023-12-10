@@ -10,7 +10,8 @@ public class Player extends Entity{
     public boolean isMooving = false;
     GamePanel gamePanel;
     KeyHandler keyH;
-    public BufferedImage run, stand;
+    BufferedImage run,stand;
+
 
     public Player(GamePanel gamePanel, KeyHandler keyH){
         this.gamePanel = gamePanel;
@@ -25,6 +26,8 @@ public class Player extends Entity{
     }
 
     public void setDefaultValues(){
+        worldX = gamePanel.tileSize * 23;
+        worldY = gamePanel.tileSize * 21;
         x = 100;
         y = 100;
         speed = 4;
@@ -33,18 +36,34 @@ public class Player extends Entity{
     public void update(){
         isMooving = false;
         if(keyH.upPressed){
+            direction = "up";
             y -= speed;
             isMooving = true;
         } else if (keyH.downPressed) {
+            direction = "down";
             y  += speed;
             isMooving = true;
         } else if (keyH.leftPressed){
+            direction = "left";
             x -= speed;
             isMooving = true;
         } else if (keyH.rightPressed) {
+            direction = "right";
             x += speed;
             isMooving = true;
         }
+
+        collisionOn = false;
+        gamePanel.cChecker.checkTile(this);
+
+//        if(!collisionOn){
+//            switch (direction) {
+//                case "up" -> worldY -= speed;
+//                case "down" -> worldY += speed;
+//                case "left" -> worldX -= speed;
+//                case "right" -> worldX += speed;
+//            }
+//        }
     }
 
     public void getPlayerImage(){
@@ -59,6 +78,16 @@ public class Player extends Entity{
     public void draw(Graphics2D g2){
         g2.setColor(Color.WHITE);
         BufferedImage image = null;
+//        switch (direction){
+//            if(spriteCounter == 1){
+//                image = up1;
+//            }
+//            if(spriteNum == 2){
+//                image = up1
+//            }
+//            case "up":
+//                image =
+//        }
         if(isMooving){
             image = run;
         }else{

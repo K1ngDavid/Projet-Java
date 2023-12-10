@@ -217,8 +217,6 @@ public class Scenario extends JFrame{
         jpanelMenu.setOpaque(false);
         jpanelMenu.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        // Set a colored border with a specific color
-//        jpanelMenu.setBorder(new LineBorder(Color.RED, 2));
         pnlRoot.add(jpanelMenu);
         this.pack();
         this.setTitle("Kingdom War");
