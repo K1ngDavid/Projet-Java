@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable {
-    final int originalTileSize = 20;
+    final int originalTileSize = 16;
     final int scale = 3;
     public final int tileSize = originalTileSize * scale;
     public final int maxScreenCol = 20;
@@ -17,6 +17,11 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     CollisionChecker cChecker = new CollisionChecker(this);
     Player player = new Player(this,keyH);
+
+    public final int maxWorldCol = 50;
+    public final int maxWorldRow = 50;
+    public final int worldWith = tileSize * maxWorldCol;
+    public final int worldHeight = tileSize * maxWorldRow;
     // Set player's default position
     int playerX = 100;
     int playerY = 100;

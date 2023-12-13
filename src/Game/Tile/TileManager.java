@@ -17,7 +17,7 @@ public class TileManager {
     public  TileManager(GamePanel gamePanel){
         this.gamePanel = gamePanel;
         tiles = new Tile[10];
-        mapTileNum = new int[gamePanel.maxScreenCol][gamePanel.maxScreenRow];
+        mapTileNum = new int[gamePanel.maxWorldCol][gamePanel.maxWorldRow];
         getTileImage();
         loadMap("../maps/map01.txt");
     }
@@ -72,7 +72,6 @@ public class TileManager {
         int y = 0;
         while (col< gamePanel.maxScreenCol && row < gamePanel.maxScreenRow){
             int tileNum = mapTileNum[col][row];
-            System.out.println(tileNum);
             g2.drawImage(tiles[tileNum].image,x,y,gamePanel.tileSize,gamePanel.tileSize,null);
             col++;
             x+= gamePanel.tileSize;

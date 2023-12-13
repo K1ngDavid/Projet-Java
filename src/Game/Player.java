@@ -6,7 +6,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Player extends Entity{
-    public int x,y;
     public boolean isMooving = false;
     GamePanel gamePanel;
     KeyHandler keyH;
@@ -31,39 +30,36 @@ public class Player extends Entity{
         x = 100;
         y = 100;
         speed = 4;
+        direction = "down";
     }
 
     public void update(){
         isMooving = false;
         if(keyH.upPressed){
             direction = "up";
-            y -= speed;
             isMooving = true;
         } else if (keyH.downPressed) {
             direction = "down";
-            y  += speed;
             isMooving = true;
         } else if (keyH.leftPressed){
             direction = "left";
-            x -= speed;
             isMooving = true;
         } else if (keyH.rightPressed) {
             direction = "right";
-            x += speed;
             isMooving = true;
         }
 
         collisionOn = false;
         gamePanel.cChecker.checkTile(this);
-
-//        if(!collisionOn){
-//            switch (direction) {
-//                case "up" -> worldY -= speed;
-//                case "down" -> worldY += speed;
-//                case "left" -> worldX -= speed;
-//                case "right" -> worldX += speed;
-//            }
-//        }
+        System.out.println("Collision ?" + collisionOn);
+        if(!collisionOn && isMooving){
+            switch (direction) {
+                case "up" -> y -= speed;
+                case "down" -> y += speed;
+                case "left" -> x -= speed;
+                case "right" -> x += speed;
+            }
+        }
     }
 
     public void getPlayerImage(){
@@ -96,4 +92,5 @@ public class Player extends Entity{
         g2.drawImage(image,x,y, gamePanel.tileSize * 2, gamePanel.tileSize*2,null);
     }
 }
+
 
