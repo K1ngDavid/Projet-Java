@@ -1,5 +1,7 @@
 package Representation;
 
+import Univers.Personnage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.Serializable;
@@ -25,8 +27,8 @@ public abstract class DecoratorNode implements Event, Serializable {
     }
 
     @Override
-    public Event chooseNext(JPanel jPanel) {
-        return node.chooseNext(jPanel);
+    public Event chooseNext(JPanel jPanel, Personnage personnage) {
+        return node.chooseNext(jPanel, personnage);
     }
 
     @Override

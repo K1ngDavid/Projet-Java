@@ -2,12 +2,12 @@ package Representation;
 
 //TODO : Création de 'TerminalNode.java'
 
+import Univers.Personnage;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class TerminalNode extends Node {
 
@@ -25,7 +25,7 @@ public class TerminalNode extends Node {
 
 
     @Override
-    public Event chooseNext(JPanel pnlRoot) {
+    public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         return this;
     }
 

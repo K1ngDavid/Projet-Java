@@ -1,5 +1,7 @@
 package Representation;
 
+import Univers.Personnage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +31,7 @@ public class ChanceNode extends InnerNode{
 
 
     @Override
-    public Event chooseNext(JPanel pnlRoot) {
+    public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         pnlRoot.removeAll();
         pnlRoot.setLayout(new BorderLayout());
 

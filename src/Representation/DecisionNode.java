@@ -1,11 +1,10 @@
 package Representation;
 
 import Tools.BugReport;
+import Univers.Personnage;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -37,8 +36,8 @@ public class DecisionNode extends InnerNode{
 
 
     /**
-     *
-     * @param pnlRoot which is the Jpanel of the window
+     * @param pnlRoot    which is the Jpanel of the window
+     * @param personnage
      * @return a node which is an Event type
      */
     @BugReport(
@@ -48,7 +47,7 @@ public class DecisionNode extends InnerNode{
             status = BugReport.STATUS.FIXED
     )
     @Override
-    public Event chooseNext(JPanel pnlRoot) {
+    public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         pnlRoot.removeAll();
         pnlRoot.setLayout(new GridBagLayout());
 

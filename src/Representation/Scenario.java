@@ -3,14 +3,10 @@ package Representation;
 import Tools.BackgroundPanel;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import Univers.Espece;
-import Univers.EvoluerPersonnage;
 import Univers.Personnage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -20,10 +16,6 @@ import org.json.simple.parser.ParseException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-
-import static Univers.EvoluerPersonnage.EvoluerPersonnage;
 
 public class Scenario extends JFrame{
     public Event initialNode;
@@ -147,9 +139,15 @@ public class Scenario extends JFrame{
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
-            currentNode = currentNode.chooseNext(pnlRoot);
+            if(currentNode instanceof CombatNode){
+                currentNode = currentNode.chooseNext(pnlRoot,personnage);
+            }
+            currentNode = currentNode.chooseNext(pnlRoot, personnage);
             if(!(personnage.isDemon() | personnage.isEmpereur())) {
                 personnage.setEspeceFromString(currentNode.toString());
+                if(personnage.isDemon()){
+                    personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
+                }
             }
             if(checkpoints.size() % 4 == 0) {
                 personnage.evoluerGrade();

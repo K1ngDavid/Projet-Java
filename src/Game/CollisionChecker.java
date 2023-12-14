@@ -28,7 +28,9 @@ public class CollisionChecker {
 
                 if (gp.tileManager.tiles[tileNum1].collision || gp.tileManager.tiles[tileNum2].collision) {
                     entity.collisionOn = true;
-                    System.out.println("IL Y A COLLISION");
+                }
+                if(tileNum1 == 3 || tileNum2 == 3){
+                    gp.isFinished = true;
                 }
             }
             case "down" -> {
@@ -41,6 +43,10 @@ public class CollisionChecker {
                     entity.collisionOn = true;
                     System.out.println("IL Y A COLLISION");
                 }
+                if(tileNum1 == 3 || tileNum2 == 3){
+                    gp.isFinished = true;
+                }
+
             }
             case "left" -> {
                 entityLeftCol = (entityLeftWorldX - entity.speed) / gp.tileSize;
@@ -52,6 +58,9 @@ public class CollisionChecker {
                     entity.collisionOn = true;
                     System.out.println("IL Y A COLLISION");
                 }
+                if(tileNum1 == 3 || tileNum2 == 3){
+                    gp.isFinished = true;
+                }
             }
             case "right" -> {
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
@@ -62,6 +71,9 @@ public class CollisionChecker {
                 if (gp.tileManager.tiles[tileNum1].collision || gp.tileManager.tiles[tileNum2].collision) {
                     entity.collisionOn = true;
                     System.out.println("IL Y A COLLISION");
+                }
+                if(tileNum1 == 3 || tileNum2 == 3){
+                    gp.isFinished = true;
                 }
             }
         }

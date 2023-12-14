@@ -9,19 +9,29 @@ public class Player extends Entity{
     public boolean isMooving = false;
     GamePanel gamePanel;
     KeyHandler keyH;
-    BufferedImage run,stand;
+
+    public void setImages(String runString,String standString) {
+        this.runString = runString;
+        this.standString = standString;
+        this.getPlayerImage();
+    }
+
+    public String runString = "../Images/Run.gif";
+    public String standString = "../Images/Stand.png";
 
 
-    public Player(GamePanel gamePanel, KeyHandler keyH){
+    public Player(GamePanel gamePanel, KeyHandler keyH,String run,String stand){
         this.gamePanel = gamePanel;
         this.keyH = keyH;
         solidArea = new Rectangle();
-        solidArea.x = 8;
-        solidArea.y = 16;
+        solidArea.x = 32;
+        solidArea.y = 32;
         solidArea.width = 32;
         solidArea.height = 32;
         setDefaultValues();
         getPlayerImage();
+        this.runString = run ;
+        this.standString = stand;
     }
 
     public void setDefaultValues(){
@@ -64,8 +74,9 @@ public class Player extends Entity{
 
     public void getPlayerImage(){
         try{
-            run = ImageIO.read(getClass().getResourceAsStream("../Images/Run.gif"));
-            stand = ImageIO.read(getClass().getResourceAsStream("../Images/Stand.png"));
+            System.out.println(runString);
+            run = ImageIO.read(getClass().getResourceAsStream(this.runString));
+            stand = ImageIO.read(getClass().getResourceAsStream(this.standString));
         }catch (IOException e){
             e.printStackTrace();
         }

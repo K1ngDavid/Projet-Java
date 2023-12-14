@@ -1,5 +1,7 @@
 package Representation;
 
+import Univers.Personnage;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
@@ -25,13 +27,13 @@ public class SoundNode extends DecoratorNode{
     }
 
     /**
-     *
      * @param pnlRoot
+     * @param personnage
      * @return
      */
     @Override
-    public Event chooseNext(JPanel pnlRoot) {
-        return node.chooseNext(pnlRoot);
+    public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
+        return node.chooseNext(pnlRoot, personnage);
     }
 
     /**

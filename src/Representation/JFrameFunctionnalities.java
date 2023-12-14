@@ -1,5 +1,7 @@
 package Representation;
 
+import Game.GamePanel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,11 +18,37 @@ public  class JFrameFunctionnalities extends JFrame {
     private JPanel pnlRoot;
 
     static void waitForSelection(JButton jButton, JPanel pnlRoot){
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
         jButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 synchronized (lock){
                     lock.notify();
+                }
+            }
+        });
+
+        pnlRoot.revalidate();
+        pnlRoot.repaint();
+
+        synchronized (lock) {
+            try {
+                lock.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    static void waitForSelection(JButton jButton, JPanel pnlRoot, GamePanel gamePanel){
+        jButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                synchronized (lock){
+                    if(gamePanel.isFinished){
+                        lock.notify();
+                    }
                 }
             }
         });

@@ -13,10 +13,11 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxScreenRow = 12;
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
+    public boolean isFinished = false;
     KeyHandler keyH = new KeyHandler();
-    Thread gameThread;
+    public Thread gameThread;
     CollisionChecker cChecker = new CollisionChecker(this);
-    Player player = new Player(this,keyH);
+    public Player player = new Player(this,keyH,"../Images/Run.gif","../Images/Stand.png");
 
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
@@ -24,7 +25,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int worldHeight = tileSize * maxWorldRow;
     // Set player's default position
     int playerX = 100;
-    int playerY = 100;
+    int playerY = 500;
     int playerSpeed = 4;
     int FPS = 60;
     TileManager tileManager = new TileManager(this);
@@ -85,7 +86,13 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update(){
         player.update();
+        if(isFinished){
+            System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+            JOptionPane.showConfirmDialog(null,"BRAVOOO");
+            this.gameThread.interrupt();
+        }
     }
+
 
     @Override
     protected void paintComponent(Graphics g) {

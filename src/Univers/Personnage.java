@@ -117,8 +117,16 @@ public class Personnage implements ActionsPersonnage, Serializable {
     public static void setImageFile(String image){
         imageFile = image;
     }
+    public void setImageFilePersonnage(String image){
+        imageFile = image;
+        this.image = image;
+    }
+
     public static String getImage(){
         return imageFile;
+    }
+    public String getImagePersonnage(){
+        return image;
     }
 
     public void setEspeceFromString(String especeString) {

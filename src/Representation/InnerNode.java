@@ -1,5 +1,7 @@
 package Representation;
 
+import Univers.Personnage;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public abstract class InnerNode extends Node {
         this.nextNodes.add(node);
     }
 
-    public abstract Event chooseNext(JPanel pnlRoot);
+    public abstract Event chooseNext(JPanel pnlRoot, Personnage personnage);
 
     @Override
     public List<Event> getNextNodes() {

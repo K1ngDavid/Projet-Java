@@ -1,10 +1,10 @@
 // Node.java
 package Representation;
 
+import Univers.Personnage;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.List;
 
@@ -62,7 +62,7 @@ public abstract class Node implements Event, Serializable {
         JFrameFunctionnalities.waitForSelection(nextButton,pnlRoot);
     }
 
-    public abstract Event chooseNext(JPanel pnlRoot);
+    public abstract Event chooseNext(JPanel pnlRoot, Personnage personnage);
 
     public String getDescription() {
         return this.description;

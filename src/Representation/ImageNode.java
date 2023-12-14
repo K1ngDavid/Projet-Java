@@ -1,16 +1,12 @@
 package Representation;
 import Univers.Personnage;
 
-import javax.imageio.IIOException;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.Period;
 import java.util.List;
 
 
@@ -76,8 +72,8 @@ public class ImageNode extends DecoratorNode{
     }
 
     @Override
-    public Event chooseNext(JPanel pnlRoot) {
-        return node.chooseNext(pnlRoot);
+    public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
+        return node.chooseNext(pnlRoot, personnage);
     }
 
     /*Ajout Victorien*/
