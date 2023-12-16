@@ -43,10 +43,14 @@ public class ChanceNode extends InnerNode{
         }
         pnlRoot.removeAll();
         Random random = new Random();
-        int randomChoice = random.nextInt(nextNodes.size());
-
+        //int randomChoice = random.nextInt(nextNodes.size());
+        int randomChocie = new Random().nextInt(7);
         System.out.println("Un événement aléatoire se produit...");
-        JLabel jLabel1 = new JLabel("Vous êtes redirigés vers : " + nextNodes.get(randomChoice).toString());
+        JLabel jLabel1;
+        if(randomChocie <= 4)
+            jLabel1 = new JLabel("Vous êtes redirigés vers : " + nextNodes.get(0).toString());
+        else
+            jLabel1 = new JLabel("Vous êtes redirigés vers : " + nextNodes.get(1).toString());
         jLabel1.setFont(new Font("Minecraftia", Font.PLAIN, 60));
         jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
         pnlRoot.add(jLabel1,BorderLayout.NORTH);
@@ -55,7 +59,10 @@ public class ChanceNode extends InnerNode{
         pnlRoot.add(imageLabel,BorderLayout.CENTER);
         Node.nextButton(pnlRoot);
 
-        return nextNodes.get(randomChoice);
+        if(randomChocie <= 4)
+            return nextNodes.get(0);
+        return nextNodes.get(1);
+        //return nextNodes.get(randomChoice);
     }
 
     private void displaySuccessorChoices(JPanel pnlRoot) throws InterruptedException {
