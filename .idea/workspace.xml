@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sauvegarde.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sauvegarde.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" afterDir="false" />
@@ -143,7 +144,7 @@
       <workItem from="1702503188268" duration="6316000" />
       <workItem from="1702550959026" duration="15068000" />
       <workItem from="1702734100870" duration="357000" />
-      <workItem from="1702734753505" duration="3952000" />
+      <workItem from="1702734753505" duration="4309000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
