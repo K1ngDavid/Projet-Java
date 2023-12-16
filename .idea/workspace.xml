@@ -7,27 +7,9 @@
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sauvegarde.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sauvegarde.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/CollisionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/maps/map01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/maps/map01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Images/cheatSheet networkx (4).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ChanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ChanceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/CombatNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/CombatNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecoratorNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/ImageNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/ImageNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/InnerNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/InnerNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/TerminalNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/TerminalNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Univers/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Univers/Personnage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,17 +53,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;88&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/k1ngdavid/CODE/JAVA/ProjetJava&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "88",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Game/maps" />
@@ -160,6 +142,8 @@
       <workItem from="1702027428421" duration="622000" />
       <workItem from="1702503188268" duration="6316000" />
       <workItem from="1702550959026" duration="15068000" />
+      <workItem from="1702734100870" duration="357000" />
+      <workItem from="1702734753505" duration="3952000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
@@ -194,8 +178,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Representation/Scenario.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="17" />
+          <line>152</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

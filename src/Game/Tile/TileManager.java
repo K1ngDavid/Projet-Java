@@ -19,7 +19,8 @@ public class TileManager {
         tiles = new Tile[10];
         mapTileNum = new int[gamePanel.maxWorldCol][gamePanel.maxWorldRow];
         getTileImage();
-        loadMap("../maps/map01.txt");
+//        loadMap("../maps/map01.txt");
+        loadRandomMap();
     }
 
     public void getTileImage(){
@@ -66,6 +67,39 @@ public class TileManager {
             br.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public  void loadRandomMap(){
+        // Définir les limites de la carte avec des collisions
+        for (int i = 0; i < gamePanel.maxScreenCol; i++) {
+            mapTileNum[i][0] = 1; // Bord gauche
+            mapTileNum[i][gamePanel.maxScreenRow - 1] = 1; // Bord droit
+        }
+
+        for (int j = 0; j < gamePanel.maxScreenRow; j++) {
+            mapTileNum[0][j] = 1; // Bord supérieur
+            mapTileNum[gamePanel.maxScreenCol - 1][j] = 1; // Bord inférieur
+        }
+
+        boolean specialValueAdded = false;
+
+        for (int i = 1; i < gamePanel.maxScreenCol - 1; i++) {
+            for (int j = 1; j < gamePanel.maxScreenRow - 1; j++) {
+                // Ajouter la valeur 3 une fois et seulement une fois
+                if (!specialValueAdded && Math.random() < 0.01) {
+                    mapTileNum[i][j] = 3;
+                    specialValueAdded = true;
+                } else {
+                    // Remplir l'intérieur de la carte avec des valeurs aléatoires (0, 1, ou 2)
+                    mapTileNum[i][j] = (int) (Math.random() * 3);
+
+                    // Assurer que le joueur peut se déplacer librement
+                    if (i % 2 == 0 || j % 2 == 0) {
+                        mapTileNum[i][j] = 0; // Emplacements pairs pour permettre au joueur de se déplacer
+                    }
+                }
+            }
         }
     }
 

@@ -128,7 +128,7 @@ public class Scenario extends JFrame{
                 JButton button1 = (JButton) nestedPanel.getComponent(2);
                 Sauvegarde savedPartie = JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
                 if(savedPartie != null){
-                    currentNode = savedPartie.getPartie().get(0).get(3);
+                    currentNode = savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(2);
                     personnage = savedPartie.getPersonnage();
                     currentNode.display(this.pnlRoot);
                 }
@@ -149,11 +149,14 @@ public class Scenario extends JFrame{
                     personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
                 }
             }
-            if(checkpoints.size() % 4 == 0) {
+            if(checkpoints.size() % 3 == 0) {
                 personnage.evoluerGrade();
                 partie.add(checkpoints);
                 checkpoints = new ArrayList<>();
                 pnlRoot.add(checkpointLabel,BorderLayout.SOUTH);
+                pnlRoot.revalidate();
+                pnlRoot.repaint();
+                System.out.println("Nouveau checkpoint !");
                 checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
                 sauvegarde.setPersonnage(personnage);
             }

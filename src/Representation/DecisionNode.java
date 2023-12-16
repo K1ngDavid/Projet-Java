@@ -1,5 +1,6 @@
 package Representation;
 
+import Tools.BackgroundPanel;
 import Tools.BugReport;
 import Univers.Personnage;
 
@@ -49,7 +50,9 @@ public class DecisionNode extends InnerNode{
     @Override
     public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         pnlRoot.removeAll();
-        pnlRoot.setLayout(new GridBagLayout());
+        JPanel buttonPanel = new BackgroundPanel("src/Background/background1.png");
+        buttonPanel.setLayout(new GridBagLayout());
+        pnlRoot.add(buttonPanel, BorderLayout.CENTER);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -61,16 +64,17 @@ public class DecisionNode extends InnerNode{
 
             JButton choiceButton = new JButton((i + 1) + ": " + node);
             choiceButton.addActionListener(e -> {
-                pnlRoot.removeAll();
+                // Ne retirez pas les composants directement du panneau racine (pnlRoot),
+                // retirez-les du panneau de boutons (buttonPanel) à la place.
+                buttonPanel.removeAll();
                 pnlRoot.revalidate();
                 pnlRoot.repaint();
                 setSelectedNode(node);
             });
 
             gbc.gridy = i; // Change the row for each button
-            pnlRoot.add(choiceButton, gbc);
+            buttonPanel.add(choiceButton, gbc);
         }
-
         pnlRoot.revalidate();
         pnlRoot.repaint();
 
