@@ -33,7 +33,8 @@ public class CombatNode extends InnerNode{
         gamePanel.setBorder(BorderFactory.createLineBorder(Color.black));
         gamePanel.startGameThread();
 
-        if(!gamePanel.isFinished) Node.nextButton(pnlRoot);
+        while(!gamePanel.isFinished)
+            Node.nextButton(pnlRoot);
         gamePanel.stopGameThread();
         return this.nextNodes.get(0);
     }
