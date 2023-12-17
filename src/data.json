@@ -6,7 +6,8 @@
       "type" : "DecisionNode",
       "description" : "Vous êtes un Démon ! ",
       "pathfile" : {
-        "Image" : "src/Images/Skeleton_Walk.gif"
+        "Image" : "src/Images/Skeleton_Walk.gif",
+        "Sound" : "src/Sounds/gameOver.wav"
       },
       "choices" : [
         {

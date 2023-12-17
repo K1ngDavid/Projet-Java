@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Random;
 
 import Univers.Personnage;
 import org.json.simple.JSONArray;
@@ -111,7 +112,7 @@ public class Scenario extends JFrame{
     /**
      * @param initialNode
      */
-    public void playScenario(Event initialNode) throws ClassNotFoundException, IOException {
+    public void playScenario(Event initialNode) throws ClassNotFoundException, IOException, InterruptedException {
         this.sauvegarde = new Sauvegarde();
         personnage = this.sauvegarde.getPersonnage();
         Event currentNode = initialNode;
@@ -178,7 +179,8 @@ public class Scenario extends JFrame{
 
 
     private void createUIComponents() throws IOException {
-        this.pnlRoot = new BackgroundPanel("src/Background/background1.png");
+        Random random = new Random();
+        this.pnlRoot = new BackgroundPanel("src/Background/background"+ random.nextInt(1,5) + ".png");
         this.setContentPane(pnlRoot);
         this.pnlRoot.setLayout(new BorderLayout()); // Use FlowLayout for simplicity
 
@@ -186,6 +188,7 @@ public class Scenario extends JFrame{
         lbl.setFont(new Font("Arial",Font.PLAIN,30));
         lbl.setHorizontalAlignment(0);
         pnlRoot.add(lbl,BorderLayout.NORTH);
+        this.setResizable(false);
 
         JPanel jpanelMenu = new JPanel(new GridBagLayout());
         jpanelMenu.setPreferredSize(new Dimension(200, 100));

@@ -17,6 +17,8 @@ public class Main {
             scenario.playScenario(scenario.initialNode);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
 //        System.out.println(Sauvegarde.reprendrePartie());

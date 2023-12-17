@@ -2,14 +2,20 @@ package Representation;
 
 import Univers.Personnage;
 
+import javax.swing.*;
 import javax.swing.text.html.StyleSheet;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Sauvegarde implements Serializable {
+public class Sauvegarde extends JFrame implements Serializable  {
     private ArrayList<Event> checkpoints;
     private ArrayList<ArrayList<Event>> partie;
     private Personnage personnage;
+    private JPanel pnlSauvegarde = new JPanel();
+    boolean isPartieSaved = false;
 
     public Sauvegarde() throws IOException {
         checkpoints = new ArrayList<>();
@@ -34,10 +40,34 @@ public class Sauvegarde implements Serializable {
         this.partie = partie;
     }
 
-    public void savePartie() throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("sauvegarde.txt")))) {
+    public boolean savePartie() throws IOException, InterruptedException {
+        isPartieSaved = false;
+        JTextField jTextField = new JTextField();
+        jTextField.setBounds(200,100,200,30);
+        JButton valider = new JButton("Valider !");
+        this.setVisible(true);
+        this.add(new JLabel("Nommez votre sauvegarde :)"),BorderLayout.NORTH);
+        pnlSauvegarde.add(jTextField);
+        pnlSauvegarde.add(valider);
+        this.add(pnlSauvegarde,BorderLayout.CENTER);
+        this.setSize(400,400);
+        this.revalidate();
+        this.repaint();
+        valider.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isPartieSaved = true;
+            }
+        });
+
+        while (!isPartieSaved){
+            System.out.println("wait");
+            Thread.sleep(300);
+        }
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(jTextField.getText() + ".txt")))) {
             oos.writeObject(this);
         }
+        return true;
     }
 
     public static Sauvegarde reprendrePartie() throws IOException, ClassNotFoundException {
