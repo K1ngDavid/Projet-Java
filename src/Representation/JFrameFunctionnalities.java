@@ -12,6 +12,7 @@ public  class JFrameFunctionnalities extends JFrame {
     protected static final Object lock = new Object();
     private static JButton nextButton = new JButton("Suivant");;
     static Sauvegarde savedPartie = null;
+    static boolean isClicked = false;
 
 
 
@@ -65,23 +66,24 @@ public  class JFrameFunctionnalities extends JFrame {
         }
     }
 
-    static Sauvegarde waitForSelection(JButton[] buttons, JPanel pnlRoot) {
+    static Sauvegarde waitForSelection(JButton[] buttons, JPanel pnlRoot) throws InterruptedException, IOException {
+        Sauvegarde sauvegarde = new Sauvegarde();
         for (JButton jButton : buttons) {
-            jButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    synchronized (lock) {
-                        lock.notify();
-                        if(jButton.getText().equals("Reprendre depuis une sauvegarde")){
-                            Sauvegarde sauvegarde;
-                            try {
-                                sauvegarde = Sauvegarde.reprendrePartie();
-                            } catch (IOException | ClassNotFoundException ex) {
-                                throw new RuntimeException(ex);
-                            }
-                            savedPartie = sauvegarde;
+            if(isClicked){
+                break;
+            }
+            jButton.addActionListener(e -> {
+                isClicked = true;
+
+                if (jButton.getText().equals("Reprendre depuis une sauvegarde")) {
+                    isClicked = false;
+                        try {
+                            sauvegarde.reprendrePartie();
+                            System.out.println("La sauvegarde --> " + sauvegarde.getSauvegarde());
+                            savedPartie = sauvegarde.getSauvegarde();
+                        } catch (IOException | ClassNotFoundException | InterruptedException ex) {
+                            throw new RuntimeException(ex);
                         }
-                    }
                 }
             });
         }
@@ -89,15 +91,18 @@ public  class JFrameFunctionnalities extends JFrame {
         pnlRoot.revalidate();
         pnlRoot.repaint();
 
-        synchronized (lock) {
-            try {
-                lock.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        while (savedPartie == null) {
+            if(isClicked){
+                System.out.println("Ca passe");
+                return null;
             }
+            savedPartie = sauvegarde.getSauvegarde();
+            Thread.sleep(300);
         }
+        System.out.println(savedPartie);
         return savedPartie;
     }
+
 
 
 }

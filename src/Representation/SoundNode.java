@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SoundNode extends DecoratorNode{
 
-    private Clip clip;
+    private transient Clip clip;
 
     public SoundNode(Node node, String filePath) throws LineUnavailableException, IOException {
         super(node, filePath);

@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sauvegarde.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sauvegarde.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Tile/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/DecisionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/DecisionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,7 +68,8 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -72,6 +79,7 @@
       <recent name="$PROJECT_DIR$/src/Sounds" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -144,7 +152,7 @@
       <workItem from="1702503188268" duration="6316000" />
       <workItem from="1702550959026" duration="15068000" />
       <workItem from="1702734100870" duration="357000" />
-      <workItem from="1702734753505" duration="4309000" />
+      <workItem from="1702734753505" duration="25911000" />
     </task>
     <task id="LOCAL-00001" summary="Résolution de conflits">
       <created>1699536589175</created>
@@ -175,20 +183,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Résolution de conflits" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Representation/Scenario.java</url>
-          <line>152</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Representation.ChanceNode" memberName="nextNodes" />
         <PinnedItemInfo parentTag="Representation.DecisionNode" memberName="nextNodes" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

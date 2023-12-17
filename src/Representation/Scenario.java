@@ -3,6 +3,8 @@ package Representation;
 import Tools.BackgroundPanel;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class Scenario extends JFrame{
     private JPanel pnlRoot;
     public static Image imagePlayer;
     private Sauvegarde sauvegarde;
+    private Sauvegarde savedPartie;
     JFrame jFrame = this;
     JLabel checkpointLabel;
     Personnage personnage;
@@ -127,7 +130,8 @@ public class Scenario extends JFrame{
                 JPanel nestedPanel = (JPanel) pnlRoot.getComponent(1);
                 JButton button = (JButton) nestedPanel.getComponent(0);
                 JButton button1 = (JButton) nestedPanel.getComponent(2);
-                Sauvegarde savedPartie = JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
+                savedPartie = JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
+                System.out.println(savedPartie);
                 if(savedPartie != null){
                     currentNode = savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(2);
                     personnage = savedPartie.getPersonnage();
@@ -150,6 +154,12 @@ public class Scenario extends JFrame{
                     personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
                 }
             }
+            if(currentNode instanceof DecoratorNode){
+                if(((DecoratorNode) currentNode).node instanceof TerminalNode){
+                    currentNode = ((DecoratorNode) currentNode).node;
+                }
+            }
+
             if(checkpoints.size() % 3 == 0) {
                 personnage.evoluerGrade();
                 partie.add(checkpoints);
@@ -170,7 +180,7 @@ public class Scenario extends JFrame{
         if(!partie.isEmpty()){
             if(JOptionPane.showConfirmDialog(pnlRoot,"Voulez vous sauvegardez votre partie ? (checkpoint n°"+ partie.size()  +"/4)","SAUVEGARDE",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
                 sauvegarde.savePartie();
-                System.out.println(Sauvegarde.reprendrePartie());
+//                System.out.println(Sauvegarde.reprendrePartie());
             }
         }
         // Le jeu est terminé
