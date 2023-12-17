@@ -23,7 +23,7 @@
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
-                      "type" : "CombatNode",
+                      "type" : "ChanceNode",
                       "description" : "Tuer le Roi des Empereurs",
                       "choices" : [
                         {
@@ -166,7 +166,7 @@
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
-                      "type" : "CombatNode",
+                      "type" : "ChanceNode",
                       "description" : "Tuer le Roi des Empereurs",
                       "choices" : [
                         {
@@ -309,7 +309,7 @@
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
-                      "type" : "CombatNode",
+                      "type" : "ChanceNode",
                       "description" : "Tuer le Roi des Empereurs",
                       "choices" : [
                         {
@@ -476,7 +476,7 @@
                           "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                           "choices" : [
                             {
-                              "type" : "CombatNode",
+                              "type" : "ChanceNode",
                               "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
                               "choices" : [
                                 {
@@ -586,7 +586,7 @@
                           "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                           "choices" : [
                             {
-                              "type" : "CombatNode",
+                              "type" : "ChanceNode",
                               "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
                               "choices" : [
                                 {
@@ -696,7 +696,7 @@
                           "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                           "choices" : [
                             {
-                              "type" : "CombatNode",
+                              "type" : "ChanceNode",
                               "description" : "Mener une unité pour libérer le Général des armées de l'Est Ryuujin",
                               "choices" : [
                                 {

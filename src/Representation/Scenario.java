@@ -148,10 +148,13 @@ public class Scenario extends JFrame{
                 currentNode = currentNode.chooseNext(pnlRoot,personnage);
             }
             currentNode = currentNode.chooseNext(pnlRoot, personnage);
-            if(!(personnage.isDemon() | personnage.isEmpereur())) {
+            if(!(personnage.isDemon() || personnage.isEmpereur())) {
                 personnage.setEspeceFromString(currentNode.toString());
                 if(personnage.isDemon()){
                     personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
+                }
+                else if(personnage.isEmpereur()){
+                    personnage.setImageFilePersonnage("../Images/Run.gif");
                 }
             }
             if(currentNode instanceof DecoratorNode){
