@@ -19,8 +19,8 @@
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "type" : "CombatNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
                       "type" : "CombatNode",
@@ -28,11 +28,17 @@
                       "choices" : [
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                          "description" : "Vous avez vaincu le Roi des Empereurs.",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameWon.wav"
+                          }
                         },
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez été vaincu"
+                          "description" : "Vous avez été vaincu",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     },
@@ -41,32 +47,41 @@
                       "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                       "choices" : [
                         {
-                          "type" : "ChanceNode",
+                          "type" : "CombatNode",
                           "description" : "Détruire le catalyseur impérial protégeant la capitale",
                           "choices" : [
                             {
-                              "type" : "ChanceNode",
+                              "type" : "CombatNode",
                               "description" : "Sceller la source de l'Ordre",
                               "choices" : [
                                 {
                                   "type" : "TerminalNode",
-                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameWon.wav"
+                                  }
                                 },
                                 {
-                                  "type" : "ChanceNode",
+                                  "type" : "CombatNode",
                                   "description" : "Récupérer la clé vers l'espace chaotique",
                                   "choices" : [
                                     {
-                                      "type" : "ChanceNode",
+                                      "type" : "CombatNode",
                                       "description" : "Libérer la source du chaos",
                                       "choices" : [
                                         {
                                           "type" : "TerminalNode",
-                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                          "description" : "Vous avez libéré la source du chaos éteignant ainsi toutes sources de vie non maléfiques",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameWon.wav"
+                                          }
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     },
@@ -80,17 +95,26 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez vaincu l'armée impériale"
+                                              "description" : "Vous avez vaincu l'armée impériale",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez été vaincu"
+                                              "description" : "Vous avez été vaincu",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     }
@@ -100,13 +124,19 @@
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -114,7 +144,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
@@ -129,8 +162,8 @@
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "type" : "CombatNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
                       "type" : "CombatNode",
@@ -138,11 +171,17 @@
                       "choices" : [
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                          "description" : "Vous avez vaincu le Roi des Empereurs.",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameWon.wav"
+                          }
                         },
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez été vaincu"
+                          "description" : "Vous avez été vaincu",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     },
@@ -151,32 +190,41 @@
                       "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                       "choices" : [
                         {
-                          "type" : "ChanceNode",
+                          "type" : "CombatNode",
                           "description" : "Détruire le catalyseur impérial protégeant la capitale",
                           "choices" : [
                             {
-                              "type" : "ChanceNode",
+                              "type" : "CombatNode",
                               "description" : "Sceller la source de l'Ordre",
                               "choices" : [
                                 {
                                   "type" : "TerminalNode",
-                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameWon.wav"
+                                  }
                                 },
                                 {
-                                  "type" : "ChanceNode",
+                                  "type" : "CombatNode",
                                   "description" : "Récupérer la clé vers l'espace chaotique",
                                   "choices" : [
                                     {
-                                      "type" : "ChanceNode",
+                                      "type" : "CombatNode",
                                       "description" : "Libérer la source du chaos",
                                       "choices" : [
                                         {
                                           "type" : "TerminalNode",
-                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                          "description" : "Vous avez libéré la source du chaos éteignant ainsi toutes sources de vie non maléfiques",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameWon.wav"
+                                          }
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     },
@@ -190,17 +238,26 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez vaincu l'armée impériale"
+                                              "description" : "Vous avez vaincu l'armée impériale",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez été vaincu"
+                                              "description" : "Vous avez été vaincu",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     }
@@ -210,13 +267,19 @@
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -224,7 +287,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
@@ -239,8 +305,8 @@
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer",
+                  "type" : "CombatNode",
+                  "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
                       "type" : "CombatNode",
@@ -248,11 +314,17 @@
                       "choices" : [
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez vaincu le Roi des Empereurs."
+                          "description" : "Vous avez vaincu le Roi des Empereurs.",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameWon.wav"
+                          }
                         },
                         {
                           "type" : "TerminalNode",
-                          "description" : "Vous avez été vaincu"
+                          "description" : "Vous avez été vaincu",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     },
@@ -261,32 +333,41 @@
                       "description" : "Compléter la formation de capitaine (aléatoire réussite ou mort)",
                       "choices" : [
                         {
-                          "type" : "ChanceNode",
+                          "type" : "CombatNode",
                           "description" : "Détruire le catalyseur impérial protégeant la capitale",
                           "choices" : [
                             {
-                              "type" : "ChanceNode",
+                              "type" : "CombatNode",
                               "description" : "Sceller la source de l'Ordre",
                               "choices" : [
                                 {
                                   "type" : "TerminalNode",
-                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité"
+                                  "description" : "Vous avez scellé la source de l'Ordre. Les Empereurs ont perdu leur vitalité",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameWon.wav"
+                                  }
                                 },
                                 {
-                                  "type" : "ChanceNode",
+                                  "type" : "CombatNode",
                                   "description" : "Récupérer la clé vers l'espace chaotique",
                                   "choices" : [
                                     {
-                                      "type" : "ChanceNode",
+                                      "type" : "CombatNode",
                                       "description" : "Libérer la source du chaos",
                                       "choices" : [
                                         {
                                           "type" : "TerminalNode",
-                                          "description" : "Vous avez libéré la source du chaos éteignant toute source de vie non maléfique"
+                                          "description" : "Vous avez libéré la source du chaos éteignant ainsi toutes sources de vie non maléfiques",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameWon.wav"
+                                          }
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     },
@@ -300,17 +381,26 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez vaincu l'armée impériale"
+                                              "description" : "Vous avez vaincu l'armée impériale",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez été vaincu"
+                                              "description" : "Vous avez été vaincu",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         },
                                         {
                                           "type" :"TerminalNode",
-                                          "description" : "Vous êtes mort !"
+                                          "description" : "Vous êtes mort !",
+                                          "pathfile" : {
+                                            "Sound" : "src/Sounds/gameOver.wav"
+                                          }
                                         }
                                       ]
                                     }
@@ -320,13 +410,19 @@
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -334,7 +430,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
@@ -358,15 +457,18 @@
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Empoisonner le Général ennemi",
+                  "type" : "CombatNode",
+                  "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
                       "type" : "TerminalNode",
-                      "description" : "Vous avez éliminer le général ennemi"
+                      "description" : "Vous avez éliminé le général ennemi",
+                      "pathfile" : {
+                        "Sound" : "src/Sounds/gameWon.wav"
+                      }
                     },
                     {
-                      "type" :"ChanceNode",
+                      "type" :"CombatNode",
                       "description" : "Rentrer à la base vivant",
                       "choices" : [
                         {
@@ -391,11 +493,17 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez sauvé l'Empire"
+                                              "description" : "Vous avez sauvé l'Empire",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "L'Empire est tombé"
+                                              "description" : "L'Empire est tombé",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         }
@@ -403,25 +511,37 @@
                                     },
                                     {
                                       "type" :"TerminalNode",
-                                      "description" : "Vous êtes mort !"
+                                      "description" : "Vous êtes mort !",
+                                      "pathfile" : {
+                                        "Sound" : "src/Sounds/gameOver.wav"
+                                      }
                                     }
                                   ]
                                 },
                                 {
                                   "type" :"TerminalNode",
-                                  "description" : "Vous êtes mort !"
+                                  "description" : "Vous êtes mort !",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameOver.wav"
+                                  }
                                 }
                               ]
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -429,7 +549,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
@@ -444,15 +567,18 @@
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Empoisonner le Général ennemi",
+                  "type" : "CombatNode",
+                  "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
                       "type" : "TerminalNode",
-                      "description" : "Vous avez éliminer le général ennemi"
+                      "description" : "Vous avez éliminé le général ennemi",
+                      "pathfile" : {
+                        "Sound" : "src/Sounds/gameWon.wav"
+                      }
                     },
                     {
-                      "type" :"ChanceNode",
+                      "type" :"CombatNode",
                       "description" : "Rentrer à la base vivant",
                       "choices" : [
                         {
@@ -477,11 +603,17 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez sauvé l'Empire"
+                                              "description" : "Vous avez sauvé l'Empire",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "L'Empire est tombé"
+                                              "description" : "L'Empire est tombé",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         }
@@ -489,25 +621,37 @@
                                     },
                                     {
                                       "type" :"TerminalNode",
-                                      "description" : "Vous êtes mort !"
+                                      "description" : "Vous êtes mort !",
+                                      "pathfile" : {
+                                        "Sound" : "src/Sounds/gameOver.wav"
+                                      }
                                     }
                                   ]
                                 },
                                 {
                                   "type" :"TerminalNode",
-                                  "description" : "Vous êtes mort !"
+                                  "description" : "Vous êtes mort !",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameOver.wav"
+                                  }
                                 }
                               ]
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -515,7 +659,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
@@ -530,15 +677,18 @@
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "ChanceNode",
-                  "description" : "Empoisonner le Général ennemi",
+                  "type" : "CombatNode",
+                  "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
                       "type" : "TerminalNode",
-                      "description" : "Vous avez éliminer le général ennemi"
+                      "description" : "Vous avez éliminé le général ennemi",
+                      "pathfile" : {
+                        "Sound" : "src/Sounds/gameWon.wav"
+                      }
                     },
                     {
-                      "type" :"ChanceNode",
+                      "type" :"CombatNode",
                       "description" : "Rentrer à la base vivant",
                       "choices" : [
                         {
@@ -563,11 +713,17 @@
                                           "choices" : [
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "Vous avez sauvé l'Empire"
+                                              "description" : "Vous avez sauvé l'Empire",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameWon.wav"
+                                              }
                                             },
                                             {
                                               "type" : "TerminalNode",
-                                              "description" : "L'Empire est tombé"
+                                              "description" : "L'Empire est tombé",
+                                              "pathfile" : {
+                                                "Sound" : "src/Sounds/gameOver.wav"
+                                              }
                                             }
                                           ]
                                         }
@@ -575,25 +731,37 @@
                                     },
                                     {
                                       "type" :"TerminalNode",
-                                      "description" : "Vous êtes mort !"
+                                      "description" : "Vous êtes mort !",
+                                      "pathfile" : {
+                                        "Sound" : "src/Sounds/gameOver.wav"
+                                      }
                                     }
                                   ]
                                 },
                                 {
                                   "type" :"TerminalNode",
-                                  "description" : "Vous êtes mort !"
+                                  "description" : "Vous êtes mort !",
+                                  "pathfile" : {
+                                    "Sound" : "src/Sounds/gameOver.wav"
+                                  }
                                 }
                               ]
                             },
                             {
                               "type" :"TerminalNode",
-                              "description" : "Vous êtes mort !"
+                              "description" : "Vous êtes mort !",
+                              "pathfile" : {
+                                "Sound" : "src/Sounds/gameOver.wav"
+                              }
                             }
                           ]
                         },
                         {
                           "type" :"TerminalNode",
-                          "description" : "Vous êtes mort !"
+                          "description" : "Vous êtes mort !",
+                          "pathfile" : {
+                            "Sound" : "src/Sounds/gameOver.wav"
+                          }
                         }
                       ]
                     }
@@ -601,7 +769,10 @@
                 },
                 {
                   "type" :"TerminalNode",
-                  "description" : "Vous êtes mort !"
+                  "description" : "Vous êtes mort !",
+                  "pathfile" : {
+                    "Sound" : "src/Sounds/gameOver.wav"
+                  }
                 }
               ]
             }
