@@ -3,8 +3,6 @@ package Representation;
 import Tools.BackgroundPanel;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -140,6 +138,12 @@ public class Scenario extends JFrame{
             }
             else{
                 currentNode.display(this.pnlRoot);
+                if(currentNode instanceof DecoratorNode){
+                    if(((DecoratorNode) currentNode).node instanceof TerminalNode){
+                        currentNode = ((DecoratorNode) currentNode).node;
+                    }
+                }
+
             }
             if(currentNode instanceof TerminalNode){
                 iterate = false;
@@ -153,14 +157,9 @@ public class Scenario extends JFrame{
                 if(personnage.isDemon()){
                     personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
                 }
-                else if(personnage.isEmpereur()){
-                    personnage.setImageFilePersonnage("../Images/Run.gif");
-                }
-            }
-            if(currentNode instanceof DecoratorNode){
-                if(((DecoratorNode) currentNode).node instanceof TerminalNode){
-                    currentNode = ((DecoratorNode) currentNode).node;
-                }
+//                else if(personnage.isEmpereur()){
+//                    personnage.setImageFilePersonnage("../Images/Run.gif");
+//                }
             }
 
             if(checkpoints.size() % 3 == 0) {
@@ -183,7 +182,6 @@ public class Scenario extends JFrame{
         if(!partie.isEmpty()){
             if(JOptionPane.showConfirmDialog(pnlRoot,"Voulez vous sauvegardez votre partie ? (checkpoint n°"+ partie.size()  +"/4)","SAUVEGARDE",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
                 sauvegarde.savePartie();
-//                System.out.println(Sauvegarde.reprendrePartie());
             }
         }
         // Le jeu est terminé
@@ -195,7 +193,7 @@ public class Scenario extends JFrame{
         Random random = new Random();
         this.pnlRoot = new BackgroundPanel("src/Background/background"+ random.nextInt(1,5) + ".png");
         this.setContentPane(pnlRoot);
-        this.pnlRoot.setLayout(new BorderLayout()); // Use FlowLayout for simplicity
+        this.pnlRoot.setLayout(new BorderLayout());
 
         JLabel lbl = new JLabel("Kingdom War");
         lbl.setFont(new Font("Arial",Font.PLAIN,30));

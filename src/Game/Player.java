@@ -10,14 +10,20 @@ public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyH;
 
+    public String runString = "../Images/Run.gif";
+    public String standString = "../Images/Stand.png";
+
     public void setImages(String runString,String standString) {
-        this.runString = runString;
-        this.standString = standString;
+        if(!(runString.isEmpty() || standString.isEmpty())){
+            System.out.println("RunString -->" +runString);
+            System.out.println("StandString -->" +standString);
+            this.runString = runString;
+            this.standString = standString;
+        }
         this.getPlayerImage();
     }
 
-    public String runString = "../Images/Run.gif";
-    public String standString = "../Images/Stand.png";
+
 
 
     public Player(GamePanel gamePanel, KeyHandler keyH,String run,String stand){
@@ -61,7 +67,6 @@ public class Player extends Entity{
 
         collisionOn = false;
         gamePanel.cChecker.checkTile(this);
-        System.out.println("Collision ?" + collisionOn);
         if(!collisionOn && isMooving){
             switch (direction) {
                 case "up" -> y -= speed;
@@ -74,7 +79,6 @@ public class Player extends Entity{
 
     public void getPlayerImage(){
         try{
-            System.out.println(runString);
             run = ImageIO.read(getClass().getResourceAsStream(this.runString));
             stand = ImageIO.read(getClass().getResourceAsStream(this.standString));
         }catch (IOException e){

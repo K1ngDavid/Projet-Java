@@ -57,6 +57,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void stopGameThread(){
         gameThread.interrupt();
+        gameThread = null;
     }
 
     @Override
@@ -68,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable {
             update();
 
             repaint();
-
+            if(this.gameThread !=null){
             try {
                 double remainingTime = nextDrawTime - System.nanoTime();
                 remainingTime = remainingTime/1000000;
@@ -81,6 +82,7 @@ public class GamePanel extends JPanel implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            }
         }
     }
 
@@ -88,8 +90,8 @@ public class GamePanel extends JPanel implements Runnable {
         player.update();
         if(isFinished){
             System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
-            JOptionPane.showConfirmDialog(null,"BRAVOOO");
-            this.gameThread.interrupt();
+            JOptionPane.showMessageDialog(null,"Vous pouvez desormais passer à la suite en cliquant sur 'Suivant'","BRAVO !",JOptionPane.INFORMATION_MESSAGE);
+            this.stopGameThread();
         }
     }
 

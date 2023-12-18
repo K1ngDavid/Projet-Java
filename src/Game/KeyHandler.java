@@ -28,13 +28,13 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_W){
+        if(code == KeyEvent.VK_Z){
             upPressed = true;
         }
         if(code == KeyEvent.VK_S){
             downPressed = true;
         }
-        if(code == KeyEvent.VK_A){
+        if(code == KeyEvent.VK_Q){
             leftPressed = true;
         }
         if(code == KeyEvent.VK_D){
@@ -52,13 +52,13 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_W){
+        if(code == KeyEvent.VK_Z){
             upPressed = false;
         }
         if(code == KeyEvent.VK_S){
             downPressed = false;
         }
-        if(code == KeyEvent.VK_A){
+        if(code == KeyEvent.VK_Q){
             leftPressed = false;
         }
         if(code == KeyEvent.VK_D){

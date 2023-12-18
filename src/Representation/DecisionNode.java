@@ -10,26 +10,51 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Classe DecisionNode, classe fille la classe InnerNode, elle est abstraite car on ne l'utilise pas directement, on utilise ses enfants
+ * La classe implémente Event et Serialisable
+ * @author David Roufé
+ */
 public class DecisionNode extends InnerNode{
     List<Event> nextNodes;
     private Event selectedNode;
+    private JPanel buttonPanel;
 
-    private static final Scanner myScanner = new Scanner(System.in);
+    /**
+     * Constructeur de la classe DecisionNode avec une description et une liste de noeuds suivants.
+     *
+     * @param description La description du noeud de décision.
+     * @param nextNodes   La liste des noeuds suivants possibles.
+     */
     public DecisionNode(String description,List<Event> nextNodes) {
         super(description);
         this.nextNodes = nextNodes;
     }
 
+    /**
+     * Constructeur de la classe DecisionNode avec une description. Initialise la liste des noeuds suivants à une liste vide.
+     *
+     * @param description La description du noeud de décision.
+     */
     public DecisionNode(String description){
         super(description);
         this.nextNodes = new ArrayList<>();
     }
+    /**
+     * Ajoute un noeud à la liste des noeuds suivants.
+     *
+     * @param node Le noeud à ajouter.
+     */
     @Override
     public void addNode(Event node){
         nextNodes.add(node);
     }
 
-
+    /**
+     * Affiche le noeud de décision sur l'interface utilisateur.
+     *
+     * @param pnlRoot Le JPanel racine de la fenêtre.
+     */
     @Override
     public void display(JPanel pnlRoot) {
         super.display(pnlRoot);
@@ -37,9 +62,11 @@ public class DecisionNode extends InnerNode{
 
 
     /**
-     * @param pnlRoot    which is the Jpanel of the window
-     * @param personnage
-     * @return a node which is an Event type
+     * Permet à l'utilisateur de choisir le noeud suivant parmi les options disponibles.
+     *
+     * @param pnlRoot    Le JPanel de la fenêtre.
+     * @param personnage Le personnage associé à la décision.
+     * @return Un noeud de type Event, correspondant au choix de l'utilisateur.
      */
     @BugReport(
             reportedBy = {"David"},
@@ -50,7 +77,8 @@ public class DecisionNode extends InnerNode{
     @Override
     public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         pnlRoot.removeAll();
-        JPanel buttonPanel = new BackgroundPanel("src/Background/background1.png");
+        buttonPanel = new JPanel();
+        buttonPanel.setOpaque(false);
         buttonPanel.setLayout(new GridBagLayout());
         pnlRoot.add(buttonPanel, BorderLayout.CENTER);
 
@@ -100,7 +128,11 @@ public class DecisionNode extends InnerNode{
             lock.notify();
         }
     }
-
+    /**
+     * Renvoie la liste des noeuds suivants possibles à partir de ce noeud de décision.
+     *
+     * @return La liste des noeuds suivants possibles.
+     */
     @Override
     public List<Event> getNextNodes() {
         return nextNodes;
