@@ -1,5 +1,7 @@
 package Game;
 
+import Univers.Personnage;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -10,6 +12,7 @@ public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyH;
 
+    Personnage personnage;
     public String runString = "../Images/Run.gif";
     public String standString = "../Images/Stand.png";
 
@@ -24,9 +27,11 @@ public class Player extends Entity{
     }
 
 
+    public void setPersonnage(Personnage personnage) {
+        this.personnage = personnage;
+    }
 
-
-    public Player(GamePanel gamePanel, KeyHandler keyH,String run,String stand){
+    public Player(GamePanel gamePanel, KeyHandler keyH, String run, String stand){
         this.gamePanel = gamePanel;
         this.keyH = keyH;
         solidArea = new Rectangle();

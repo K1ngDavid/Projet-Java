@@ -2,7 +2,7 @@ package Representation;
 
 import Tools.BackgroundPanel;
 import Tools.BugReport;
-import Univers.Personnage;
+import Univers.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +19,8 @@ public class DecisionNode extends InnerNode{
     List<Event> nextNodes;
     private Event selectedNode;
     private JPanel buttonPanel;
+    private JLabel jLabel = new JLabel("Faites votre choix");
+
 
     /**
      * Constructeur de la classe DecisionNode avec une description et une liste de noeuds suivants.
@@ -56,8 +58,8 @@ public class DecisionNode extends InnerNode{
      * @param pnlRoot Le JPanel racine de la fenêtre.
      */
     @Override
-    public void display(JPanel pnlRoot) {
-        super.display(pnlRoot);
+    public void display(JPanel pnlRoot,Personnage personnage) {
+        super.display(pnlRoot,personnage);
     }
 
 
@@ -80,6 +82,9 @@ public class DecisionNode extends InnerNode{
         buttonPanel = new JPanel();
         buttonPanel.setOpaque(false);
         buttonPanel.setLayout(new GridBagLayout());
+        jLabel.setFont(new Font("Minecraftia", Font.PLAIN,30));
+        jLabel.setHorizontalAlignment(0);
+        pnlRoot.add(jLabel,BorderLayout.NORTH);
         pnlRoot.add(buttonPanel, BorderLayout.CENTER);
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -114,7 +119,6 @@ public class DecisionNode extends InnerNode{
                 e.printStackTrace();
             }
         }
-
         // Retourner le nœud sélectionné
         return selectedNode;
     }

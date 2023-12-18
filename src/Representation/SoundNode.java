@@ -50,9 +50,9 @@ public class SoundNode extends DecoratorNode {
      * @param personnage Le personnage associé à la décision.
      */
     @Override
-    public void display(JPanel pnlRoot) {
+    public void display(JPanel pnlRoot,Personnage personnage) {
         this.clip.start();
-        if (node instanceof TerminalNode) node.display(pnlRoot);
+        if (node instanceof TerminalNode) node.display(pnlRoot,personnage);
     }
 
     /**

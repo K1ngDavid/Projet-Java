@@ -108,7 +108,6 @@ public class Sauvegarde extends JFrame implements Serializable  {
                 Thread t1 = new Thread(() -> {
                     try {
                         sauvegarde = loadSauvegarde(file);
-                        System.out.println("HELLOOOO");
                     } catch (IOException | ClassNotFoundException ex) {
                         throw new RuntimeException(ex);
                     }
@@ -140,8 +139,6 @@ public class Sauvegarde extends JFrame implements Serializable  {
 
         // Utiliser SwingUtilities.invokeLater pour afficher la fenêtre
         SwingUtilities.invokeLater(() -> setVisible(true));
-        System.out.println("LA SAUVEGARDE A LA FIN DE LA MÉTHODE " + sauvegarde);
-//        return sauvegarde;
     }
 
     private ArrayList<File> loadSauvegardeFiles() {
@@ -151,6 +148,8 @@ public class Sauvegarde extends JFrame implements Serializable  {
         File[] sauvegardeFiles = sauvegardeDirectory.listFiles();
 
         if (sauvegardeFiles != null) {
+            Arrays.sort(sauvegardeFiles, (f1, f2) -> Long.compare(f2.lastModified(), f1.lastModified()));
+
             for (File file : sauvegardeFiles) {
                 if (file.isFile() && file.getName().endsWith(".txt")) {
                     files.add(file);
@@ -160,6 +159,7 @@ public class Sauvegarde extends JFrame implements Serializable  {
 
         return files;
     }
+
 
 
     private Sauvegarde loadSauvegarde(File file) throws IOException, ClassNotFoundException {

@@ -1,12 +1,15 @@
 package Univers;
 
+import Game.GamePanel;
+
 import java.io.Serializable;
 
 //abstract ?
 public class Personnage implements ActionsPersonnage, Serializable {
     private String pseudo;
-    private String image;
+    public String image;
     private int force;
+    private boolean aEvolue;
     private int pointDeVie;
     private int mana;
     private boolean statutVivant = true;
@@ -59,6 +62,15 @@ public class Personnage implements ActionsPersonnage, Serializable {
         return null;
     }
 
+    public static Personnage evoluerGradePerso(Personnage p){
+        if (p instanceof Capitaine) {
+            p = Capitaine.evoluerGrade(p);
+        }else{
+            p = Soldat.evoluerGrade(p);
+        }
+        return p;
+    }
+
     private void mourir() {
         this.statutVivant= false;
     }
@@ -69,8 +81,8 @@ public class Personnage implements ActionsPersonnage, Serializable {
         this.mana = mana;
     }
 
-    public Personnage setPersonnage(Personnage p){
-         return null;
+    public void setPersonnage(Personnage p){
+
     }
 
     public void setGestionnaireArmee(GestionnaireArmee gestionnaireArmee){
@@ -147,5 +159,13 @@ public class Personnage implements ActionsPersonnage, Serializable {
             // Gérez le cas où la chaîne ne correspond à aucune espèce connue
             throw new IllegalArgumentException("Espèce inconnue : " + especeString);
         }
+    }
+
+    public void setaEvolue(boolean aEvolue) {
+        this.aEvolue = aEvolue;
+    }
+
+    public boolean aEvolue() {
+        return aEvolue;
     }
 }

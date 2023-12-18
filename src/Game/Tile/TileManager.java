@@ -1,6 +1,7 @@
 package Game.Tile;
 
 import Game.GamePanel;
+import Game.Monster;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -68,6 +69,13 @@ public class TileManager {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void setMonster(){
+        gamePanel.monster = new Monster(gamePanel,"Méchant");
+        gamePanel.monster.worldX = gamePanel.tileSize * 5;
+        gamePanel.monster.worldY = gamePanel.tileSize * 5;
+
     }
 
     public  void loadRandomMap(){

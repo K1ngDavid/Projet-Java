@@ -8,7 +8,7 @@ public class Archer extends Soldat{
     }
 
     @Override
-    public Archer setPersonnage(Personnage personnage) {
+    public void setPersonnage(Personnage personnage) {
         personnage = new Archer(personnage.getEspece());
         //personnage = new Archer();
         if(personnage.isEmpereur()){
@@ -17,18 +17,17 @@ public class Archer extends Soldat{
         else if(personnage.isDemon()){
             personnage.setStatistiques(10, 15, 10);
         }
-        return (Archer) personnage;
     }
 
-//    public static Archer setArcher(Personnage personnage){
-//        personnage = new Archer(personnage.getEspece());
-//        //personnage = new Archer();
-//        if(personnage.isEmpereur()){
-//            personnage.setStatistiques(5, 5, 10);
-//        }
-//        else if(personnage.isDemon()){
-//            personnage.setStatistiques(10, 15, 10);
-//        }
-//        return (Archer) personnage;
-//    }
+    public static Archer setArcher(Personnage personnage) {
+        Archer archer = new Archer(personnage.getEspece());
+
+        if (personnage.isEmpereur()) {
+            archer.setStatistiques(5, 5, 10);
+        } else if (personnage.isDemon()) {
+            archer.setStatistiques(10, 15, 10);
+        }
+
+        return archer;
+    }
 }

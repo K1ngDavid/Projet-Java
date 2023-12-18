@@ -65,7 +65,7 @@ public class ImageNode extends DecoratorNode {
      * @param pnlRoot Le JPanel de la fenêtre où afficher l'événement.
      */
     @Override
-    public void display(JPanel pnlRoot) {
+    public void display(JPanel pnlRoot,Personnage personnage) {
         pnlRoot.removeAll();
         pnlRoot.setLayout(new BorderLayout());
 

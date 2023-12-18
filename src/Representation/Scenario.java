@@ -8,6 +8,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 
+import Univers.Archer;
+import Univers.Cavalier;
+import Univers.Fantassin;
 import Univers.Personnage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -25,7 +28,6 @@ public class Scenario extends JFrame{
     private Sauvegarde sauvegarde;
     private Sauvegarde savedPartie;
     JFrame jFrame = this;
-    JLabel checkpointLabel;
     Personnage personnage;
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
@@ -115,13 +117,11 @@ public class Scenario extends JFrame{
      */
     public void playScenario(Event initialNode) throws ClassNotFoundException, IOException, InterruptedException {
         this.sauvegarde = new Sauvegarde();
-        personnage = this.sauvegarde.getPersonnage();
+
         Event currentNode = initialNode;
         boolean iterate = true;
         ArrayList<Event> checkpoints = new ArrayList<>();
         ArrayList<ArrayList<Event>> partie = new ArrayList<>();
-        checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
-        checkpointLabel.setFont(new Font("Arial",Font.PLAIN,30));
         while (iterate && currentNode!=null) {
             checkpoints.add(currentNode);
             if(currentNode.getId() == 0){
@@ -133,11 +133,11 @@ public class Scenario extends JFrame{
                 if(savedPartie != null){
                     currentNode = savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(2);
                     personnage = savedPartie.getPersonnage();
-                    currentNode.display(this.pnlRoot);
+                    currentNode.display(this.pnlRoot,personnage);
                 }
             }
             else{
-                currentNode.display(this.pnlRoot);
+                currentNode.display(this.pnlRoot,personnage);
                 if(currentNode instanceof DecoratorNode){
                     if(((DecoratorNode) currentNode).node instanceof TerminalNode){
                         currentNode = ((DecoratorNode) currentNode).node;
@@ -148,29 +148,33 @@ public class Scenario extends JFrame{
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
-            if(currentNode instanceof CombatNode){
-                currentNode = currentNode.chooseNext(pnlRoot,personnage);
-            }
-            currentNode = currentNode.chooseNext(pnlRoot, personnage);
+//            if(currentNode instanceof CombatNode){
+//                currentNode = currentNode.chooseNext(pnlRoot,personnage);
+//            }
+                currentNode = currentNode.chooseNext(pnlRoot, personnage);
+                switch (currentNode.toString()) {
+                    case "Fantassin" -> personnage = Fantassin.setFantassin(personnage);
+                    case "Cavalier" -> personnage = Cavalier.setCavalier(personnage);
+                    case "Archer" -> personnage = Archer.setArcher(personnage);
+                }
+
+
             if(!(personnage.isDemon() || personnage.isEmpereur())) {
                 personnage.setEspeceFromString(currentNode.toString());
                 if(personnage.isDemon()){
                     personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
                 }
-//                else if(personnage.isEmpereur()){
-//                    personnage.setImageFilePersonnage("../Images/Run.gif");
-//                }
+                else{
+                    personnage.setImageFilePersonnage("../Images/Run.gif");
+                }
             }
 
             if(checkpoints.size() % 3 == 0) {
-                personnage.evoluerGrade();
+                personnage = Personnage.evoluerGradePerso(personnage);
+                personnage.setaEvolue(true);
                 partie.add(checkpoints);
                 checkpoints = new ArrayList<>();
-                pnlRoot.add(checkpointLabel,BorderLayout.SOUTH);
-                pnlRoot.revalidate();
-                pnlRoot.repaint();
                 System.out.println("Nouveau checkpoint !");
-                checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
                 sauvegarde.setPersonnage(personnage);
             }
 
@@ -190,6 +194,7 @@ public class Scenario extends JFrame{
 
 
     private void createUIComponents() throws IOException {
+        this.setIconImage(new ImageIcon("src/Images/icon.png").getImage());
         Random random = new Random();
         this.pnlRoot = new BackgroundPanel("src/Background/background"+ random.nextInt(1,5) + ".png");
         this.setContentPane(pnlRoot);

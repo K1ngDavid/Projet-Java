@@ -4,7 +4,6 @@ import Representation.Sauvegarde;
 import Representation.Scenario;
 import Univers.Archer;
 import Univers.Espece;
-import Univers.EvoluerPersonnage;
 import Univers.Personnage;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;

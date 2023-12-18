@@ -19,8 +19,12 @@ public abstract class Node implements Event, Serializable {
     private String description;
     private static int nbNodes = 0;
     protected JLabel jLabel;
+    private JLabel imageLabel;
+    private ImageIcon image;
     protected static final Object lock = new Object();
+    public JPanel pnlNorth = new JPanel();
     static JButton nextButton = new JButton("Suivant");
+    private JLabel checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
 
 
     /**
@@ -46,16 +50,35 @@ public abstract class Node implements Event, Serializable {
      * Méthode display, elle affiche le noeud sur l'interface.
      * @param pnlRoot de type JPanel
      */
-    public void display(JPanel pnlRoot) {
-            pnlRoot.removeAll();
-            pnlRoot.setLayout(new BorderLayout());
+    public void display(JPanel pnlRoot,Personnage personnage) {
+        pnlRoot.removeAll();
+        pnlRoot.setLayout(new BorderLayout());
+        checkpointLabel.setHorizontalAlignment(0);
+        checkpointLabel.setFont(new Font("Arial",Font.PLAIN,30));
 
-            jLabel = new JLabel(this.description);
-            jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
-            jLabel.setHorizontalAlignment(SwingConstants.CENTER);
-            pnlRoot.add(jLabel, BorderLayout.NORTH);
+        pnlNorth.setLayout(new BorderLayout());
+        jLabel = new JLabel(this.description);
+        jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 25));
+        jLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel.setAlignmentX(0);
 
-            nextButton(pnlRoot);
+//            if(!personnage.getImagePersonnage().isEmpty()){
+//                System.out.println("Hello world");
+//                image = new ImageIcon("src/Images/Run.gif");
+//                imageLabel = new JLabel("",image,JLabel.RIGHT);
+//                imageLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+//                imageLabel.setAlignmentX(0);
+//                pnlNorth.add(imageLabel,BorderLayout.EAST);
+//            }
+        pnlNorth.add(jLabel,BorderLayout.CENTER);
+        pnlNorth.setOpaque(false);
+        pnlRoot.add(pnlNorth, BorderLayout.NORTH);
+        if(personnage.aEvolue()){
+            checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
+            pnlRoot.add(checkpointLabel,BorderLayout.CENTER);
+        }
+        personnage.setaEvolue(false);
+        nextButton(pnlRoot);
     }
 
     /**

@@ -133,8 +133,8 @@ public class ChanceNode extends InnerNode {
      * @param pnlRoot Le JPanel de la fenêtre.
      */
     @Override
-    public void display(JPanel pnlRoot) {
-        super.display(pnlRoot);
+    public void display(JPanel pnlRoot,Personnage personnage) {
+        super.display(pnlRoot,personnage);
     }
 
     /**

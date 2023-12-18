@@ -16,6 +16,7 @@ public class GamePanel extends JPanel implements Runnable {
     public boolean isFinished = false;
     KeyHandler keyH = new KeyHandler();
     public Thread gameThread;
+    public Monster monster;
     CollisionChecker cChecker = new CollisionChecker(this);
     public Player player = new Player(this,keyH,"../Images/Run.gif","../Images/Stand.png");
 

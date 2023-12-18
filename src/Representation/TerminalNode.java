@@ -30,8 +30,8 @@ public class TerminalNode extends Node {
     }
 
     @Override
-    public void display(JPanel pnlRoot) {
-        super.display(pnlRoot);
+    public void display(JPanel pnlRoot,Personnage personnage) {
+        super.display(pnlRoot,personnage);
         pnlRoot.setLayout(new BorderLayout());
         pnlRoot.add(new JLabel(""),BorderLayout.PAGE_START);
         lblGameOver.setFont(new Font("Arial",Font.PLAIN,50));

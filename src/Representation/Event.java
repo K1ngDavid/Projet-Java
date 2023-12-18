@@ -32,7 +32,7 @@ public interface Event {
      *
      * @param pnlRoot Le JPanel de la fenêtre.
      */
-    void display(JPanel pnlRoot);
+    void display(JPanel pnlRoot,Personnage personnage);
 
     /**
      * Méthode permettant d'ajouter un nœud à la liste des nœuds suivants possibles.

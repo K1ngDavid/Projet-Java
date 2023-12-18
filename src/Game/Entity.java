@@ -5,7 +5,11 @@ import java.awt.image.BufferedImage;
 
 public class Entity {
     public int worldX,worldY;
+    GamePanel gp;
     public int speed;
+    public int maxLife;
+    public int life;
+    public int actionLockCounter = 0;
 
     public int x,y;
     public Rectangle solidArea;
@@ -14,6 +18,8 @@ public class Entity {
     public int spriteCounter = 0;
     public int spriteNum = 1;
     public BufferedImage run,stand;
+
+
 
 
     public int getWorldX() {
