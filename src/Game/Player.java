@@ -32,6 +32,7 @@ public class Player extends Entity{
     }
 
     public Player(GamePanel gamePanel, KeyHandler keyH, String run, String stand){
+        super(gamePanel);
         this.gamePanel = gamePanel;
         this.keyH = keyH;
         solidArea = new Rectangle();

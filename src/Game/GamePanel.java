@@ -74,7 +74,6 @@ public class GamePanel extends JPanel implements Runnable {
             try {
                 double remainingTime = nextDrawTime - System.nanoTime();
                 remainingTime = remainingTime/1000000;
-                ;
                 if(remainingTime < 0){
                     remainingTime = 0;
                 }

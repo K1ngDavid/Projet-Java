@@ -19,6 +19,9 @@ public class Entity {
     public int spriteNum = 1;
     public BufferedImage run,stand;
 
+    public Entity(GamePanel gp){
+        this.gp = gp;
+    }
 
 
 

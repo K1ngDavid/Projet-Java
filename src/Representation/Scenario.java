@@ -148,15 +148,13 @@ public class Scenario extends JFrame{
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
-//            if(currentNode instanceof CombatNode){
-//                currentNode = currentNode.chooseNext(pnlRoot,personnage);
-//            }
-                currentNode = currentNode.chooseNext(pnlRoot, personnage);
-                switch (currentNode.toString()) {
-                    case "Fantassin" -> personnage = Fantassin.setFantassin(personnage);
-                    case "Cavalier" -> personnage = Cavalier.setCavalier(personnage);
-                    case "Archer" -> personnage = Archer.setArcher(personnage);
-                }
+
+            currentNode = currentNode.chooseNext(pnlRoot, personnage);
+            switch (currentNode.toString()) {
+                case "Fantassin" -> personnage = Fantassin.setFantassin(personnage);
+                case "Cavalier" -> personnage = Cavalier.setCavalier(personnage);
+                case "Archer" -> personnage = Archer.setArcher(personnage);
+            }
 
 
             if(!(personnage.isDemon() || personnage.isEmpereur())) {

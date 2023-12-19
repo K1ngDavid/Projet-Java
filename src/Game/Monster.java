@@ -8,20 +8,25 @@ public class Monster extends Entity{
     public String name;
 
     public Monster(GamePanel gp,String name){
+        super(gp);
         this.gp = gp;
         this.name=name;
         speed = 1;
         maxLife = 4;
         life = maxLife;
-
+        getImage();
         solidArea.x = 3;
         solidArea.y = 18;
         solidArea.width = 42;
         solidArea.height = 30;
     }
-    public void getImage() throws IOException {
-        run = ImageIO.read(getClass().getResourceAsStream("../Images/Run.gif"));
-        stand = ImageIO.read(getClass().getResourceAsStream("../Images/Stand.png"));
+    public void getImage()  {
+        try {
+            run = ImageIO.read(getClass().getResourceAsStream("../Images/Run.gif"));
+            stand = ImageIO.read(getClass().getResourceAsStream("../Images/Stand.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setAction(){
