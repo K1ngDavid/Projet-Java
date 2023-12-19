@@ -31,6 +31,7 @@ public class CombatNode extends InnerNode{
         gamePanel.setLayout(new BorderLayout());
         pnlRoot.add(gamePanel,BorderLayout.CENTER);
         gamePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+//        gamePanel.setUpGame();
         gamePanel.startGameThread();
 
         while(!gamePanel.isFinished)

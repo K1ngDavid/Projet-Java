@@ -1,5 +1,7 @@
 package Univers;
 
+import java.lang.invoke.VarHandle;
+
 public class Archer extends Soldat{
 
 
@@ -7,20 +9,12 @@ public class Archer extends Soldat{
         super(espece);
     }
 
-    @Override
-    public void setPersonnage(Personnage personnage) {
-        personnage = new Archer(personnage.getEspece());
-        //personnage = new Archer();
-        if(personnage.isEmpereur()){
-            personnage.setStatistiques(5, 5, 10);
-        }
-        else if(personnage.isDemon()){
-            personnage.setStatistiques(10, 15, 10);
-        }
+    public Archer(Espece espece,String image){
+        super(espece,image);
     }
 
     public static Archer setArcher(Personnage personnage) {
-        Archer archer = new Archer(personnage.getEspece());
+        Archer archer = new Archer(personnage.getEspece(),personnage.getImagePersonnage());
 
         if (personnage.isEmpereur()) {
             archer.setStatistiques(5, 5, 10);

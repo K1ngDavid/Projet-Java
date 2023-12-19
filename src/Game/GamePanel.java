@@ -16,11 +16,13 @@ public class GamePanel extends JPanel implements Runnable {
     public boolean isFinished = false;
     KeyHandler keyH = new KeyHandler();
     public Thread gameThread;
-    public Monster monster;
+    public Monster monster = new Monster(this,"monster");
+    public Entity lapins[] = new Entity[5];
     CollisionChecker cChecker = new CollisionChecker(this);
     public Player player = new Player(this,keyH,"../Images/Run.gif","../Images/Stand.png");
 
     public final int maxWorldCol = 50;
+    AssetSetter aSetter = new AssetSetter(this);
     public final int maxWorldRow = 50;
     public final int worldWith = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
@@ -61,6 +63,7 @@ public class GamePanel extends JPanel implements Runnable {
         gameThread = null;
     }
 
+
     @Override
     public void run() {
         double drawInterval = 1000000000/FPS;
@@ -86,8 +89,18 @@ public class GamePanel extends JPanel implements Runnable {
         }
     }
 
+    public void setUpGame(){
+        aSetter.setNPC();
+    }
+
     public void update(){
         player.update();
+        for(int i = 0; i < lapins.length;i++){
+            if(lapins[i] != null){
+                lapins[i].update();
+            }
+        }
+        monster.update();
         if(isFinished){
             System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
             JOptionPane.showMessageDialog(null,"Vous pouvez desormais passer à la suite en cliquant sur 'Suivant'","BRAVO !",JOptionPane.INFORMATION_MESSAGE);
@@ -102,6 +115,12 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
         tileManager.draw(g2);
+//        for(int i = 0;i< lapins.length;i++){
+//            if(lapins[i] != null){
+//                lapins[i].draw(g2);
+//            }
+//        }
+
         player.draw(g2);
 
         g2.dispose();

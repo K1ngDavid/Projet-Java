@@ -4,36 +4,24 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.util.Random;
 
-public class Monster extends Entity{
-    public String name;
+public class NPC_LAPIN extends Entity{
 
-    public Monster(GamePanel gp,String name){
+    public NPC_LAPIN(GamePanel gp){
         super(gp);
-        this.gp = gp;
-        this.name=name;
+        direction = "down";
         speed = 1;
-        maxLife = 4;
-        life = maxLife;
+
         getImage();
-        collisionOn = false;
-        solidArea.x = 32;
-        solidArea.y = 32;
-        solidArea.width = 32;
-        solidArea.height = 32;
-        x = 50;
-        y = 50;
-        speed = 4;
     }
-    public void getImage()  {
-        try {
+
+    public void getImage(){
+        try{
             run = ImageIO.read(getClass().getResourceAsStream("../Images/Run.gif"));
             stand = ImageIO.read(getClass().getResourceAsStream("../Images/Stand.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
-
-
 
     public void setAction(){
         actionLockCounter++;

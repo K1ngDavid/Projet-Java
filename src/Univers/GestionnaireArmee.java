@@ -1,7 +1,9 @@
 package Univers;
 
+import java.io.Serializable;
+
 //abstract ?
-public class GestionnaireArmee {
+public class GestionnaireArmee implements Serializable {
 
     private int nombreFantassins;
     private int nombreArchers;

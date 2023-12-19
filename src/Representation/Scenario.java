@@ -148,22 +148,22 @@ public class Scenario extends JFrame{
             if(currentNode instanceof TerminalNode){
                 iterate = false;
             }
-
+            personnage.setaEvolue(false);
             currentNode = currentNode.chooseNext(pnlRoot, personnage);
             switch (currentNode.toString()) {
                 case "Fantassin" -> personnage = Fantassin.setFantassin(personnage);
                 case "Cavalier" -> personnage = Cavalier.setCavalier(personnage);
                 case "Archer" -> personnage = Archer.setArcher(personnage);
             }
-
+            personnage.setaEvolue(currentNode.toString().equals("Fantassin") || currentNode.toString().equals("Cavalier") || currentNode.toString().equals("Archer"));
 
             if(!(personnage.isDemon() || personnage.isEmpereur())) {
                 personnage.setEspeceFromString(currentNode.toString());
                 if(personnage.isDemon()){
-                    personnage.setImageFilePersonnage("../Images/Skeleton_Walk.gif");
+                    personnage.setImageFilePersonnage("src/Images/Skeleton_Walk.gif");
                 }
                 else{
-                    personnage.setImageFilePersonnage("../Images/Run.gif");
+                    personnage.setImageFilePersonnage("src/Images/Run.gif");
                 }
             }
 

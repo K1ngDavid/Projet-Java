@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Player extends Entity{
-    public boolean isMooving = false;
     GamePanel gamePanel;
     KeyHandler keyH;
 
@@ -35,6 +34,7 @@ public class Player extends Entity{
         super(gamePanel);
         this.gamePanel = gamePanel;
         this.keyH = keyH;
+        isMooving = false;
         solidArea = new Rectangle();
         solidArea.x = 32;
         solidArea.y = 32;
@@ -47,8 +47,6 @@ public class Player extends Entity{
     }
 
     public void setDefaultValues(){
-        worldX = gamePanel.tileSize * 23;
-        worldY = gamePanel.tileSize * 21;
         x = 100;
         y = 100;
         speed = 4;
@@ -73,6 +71,10 @@ public class Player extends Entity{
 
         collisionOn = false;
         gamePanel.cChecker.checkTile(this);
+
+//        int npcIndex = gp.cChecker.checkEntity(this, gp.lapins);
+//        interactNPC(npcIndex);
+
         if(!collisionOn && isMooving){
             switch (direction) {
                 case "up" -> y -= speed;
@@ -92,19 +94,16 @@ public class Player extends Entity{
         }
     }
 
+    public void interactNPC(int i){
+        if(i != 999){
+            System.out.println("You are hitting an npc !");
+        }
+    }
+
     public void draw(Graphics2D g2){
         g2.setColor(Color.WHITE);
         BufferedImage image = null;
-//        switch (direction){
-//            if(spriteCounter == 1){
-//                image = up1;
-//            }
-//            if(spriteNum == 2){
-//                image = up1
-//            }
-//            case "up":
-//                image =
-//        }
+
         if(isMooving){
             image = run;
         }else{

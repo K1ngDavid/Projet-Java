@@ -25,6 +25,7 @@ public abstract class Node implements Event, Serializable {
     public JPanel pnlNorth = new JPanel();
     static JButton nextButton = new JButton("Suivant");
     private JLabel checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
+    private JLabel personnageLabel = new JLabel();
 
 
     /**
@@ -56,28 +57,34 @@ public abstract class Node implements Event, Serializable {
         checkpointLabel.setHorizontalAlignment(0);
         checkpointLabel.setFont(new Font("Arial",Font.PLAIN,30));
 
-        pnlNorth.setLayout(new BorderLayout());
         jLabel = new JLabel(this.description);
+        pnlRoot.add(jLabel,BorderLayout.NORTH);
         jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 25));
         jLabel.setHorizontalAlignment(SwingConstants.CENTER);
         jLabel.setAlignmentX(0);
+        pnlNorth.setLayout(new BorderLayout());
 
-//            if(!personnage.getImagePersonnage().isEmpty()){
-//                System.out.println("Hello world");
-//                image = new ImageIcon("src/Images/Run.gif");
-//                imageLabel = new JLabel("",image,JLabel.RIGHT);
-//                imageLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-//                imageLabel.setAlignmentX(0);
-//                pnlNorth.add(imageLabel,BorderLayout.EAST);
-//            }
-        pnlNorth.add(jLabel,BorderLayout.CENTER);
-        pnlNorth.setOpaque(false);
-        pnlRoot.add(pnlNorth, BorderLayout.NORTH);
-        if(personnage.aEvolue()){
-            checkpointLabel.setBorder(BorderFactory.createEmptyBorder(0, 0, 50, 0));
-            pnlRoot.add(checkpointLabel,BorderLayout.CENTER);
+        if(!personnage.getImagePersonnage().isEmpty()){
+            System.out.println("Hello world");
+            System.out.println(personnage.getImagePersonnage());
+            image = new ImageIcon(personnage.getImagePersonnage());
+            if(personnage.isDemon()) image = new ImageIcon(this.image.getImage().getScaledInstance(60, 80, Image.SCALE_DEFAULT));
+            else image = new ImageIcon(this.image.getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
+            imageLabel = new JLabel("",image,SwingConstants.RIGHT);
+
+            pnlNorth.add(imageLabel,BorderLayout.NORTH);
         }
-        personnage.setaEvolue(false);
+
+        if(personnage.aEvolue()){
+            personnageLabel.setText("<html>Vous avez évolué ! <br/>Vous voila " + personnage.getClass().getSimpleName() + "<br/>Voici vos statistiques :" +personnage +"</html>");
+            personnageLabel.setHorizontalAlignment(0);
+            personnageLabel.setFont(new Font("Minecraftia",Font.PLAIN,18));
+            pnlNorth.add(checkpointLabel);
+            pnlNorth.add(personnageLabel);
+        }
+        pnlNorth.setOpaque(false);
+        pnlRoot.add(pnlNorth, BorderLayout.CENTER);
+
         nextButton(pnlRoot);
     }
 

@@ -31,6 +31,7 @@ public class TerminalNode extends Node {
 
     @Override
     public void display(JPanel pnlRoot,Personnage personnage) {
+        pnlRoot.removeAll();
         super.display(pnlRoot,personnage);
         pnlRoot.setLayout(new BorderLayout());
         pnlRoot.add(new JLabel(""),BorderLayout.PAGE_START);

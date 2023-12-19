@@ -35,12 +35,7 @@ public class SoundNode extends DecoratorNode {
      */
     public SoundNode(Node node, String filePath) throws LineUnavailableException, IOException {
         super(node, filePath);
-        try {
-            this.clip = AudioSystem.getClip();
-            this.clip.open(AudioSystem.getAudioInputStream(new File(this.filePath)));
-        } catch (UnsupportedAudioFileException e) {
-            throw new RuntimeException("Le fichier n'est pas un fichier audio");
-        }
+        setClip();
     }
 
     /**
@@ -51,8 +46,21 @@ public class SoundNode extends DecoratorNode {
      */
     @Override
     public void display(JPanel pnlRoot,Personnage personnage) {
+        System.out.println(this.filePath);
+        if(this.clip ==null) setClip();
         this.clip.start();
         if (node instanceof TerminalNode) node.display(pnlRoot,personnage);
+    }
+
+    public void setClip(){
+        try {
+            this.clip = AudioSystem.getClip();
+            this.clip.open(AudioSystem.getAudioInputStream(new File(this.filePath)));
+        } catch (UnsupportedAudioFileException e) {
+            throw new RuntimeException("Le fichier n'est pas un fichier audio");
+        } catch (LineUnavailableException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

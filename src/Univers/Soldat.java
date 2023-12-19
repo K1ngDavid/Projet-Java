@@ -8,6 +8,9 @@ public abstract class Soldat extends Personnage {
     public Soldat(Espece espece){
         super(espece);
     }
+    public Soldat(Espece espece,String image){
+        super(espece,image);
+    }
 
     public static Capitaine evoluerGrade(Personnage personnage){
         if(personnage.isEmpereur()){

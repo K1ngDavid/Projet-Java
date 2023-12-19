@@ -20,6 +20,7 @@ public class TileManager {
         tiles = new Tile[10];
         mapTileNum = new int[gamePanel.maxWorldCol][gamePanel.maxWorldRow];
         getTileImage();
+//        setMonster();
 //        loadMap("../maps/map01.txt");
         loadRandomMap();
     }
@@ -73,8 +74,8 @@ public class TileManager {
 
     public void setMonster(){
         gamePanel.monster = new Monster(gamePanel,"Méchant");
-        gamePanel.monster.worldX = gamePanel.tileSize * 5;
-        gamePanel.monster.worldY = gamePanel.tileSize * 5;
+        gamePanel.monster.x = 200;
+        gamePanel.monster.y = 200;
 
     }
 

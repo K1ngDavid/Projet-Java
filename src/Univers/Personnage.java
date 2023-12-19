@@ -32,11 +32,15 @@ public class Personnage implements ActionsPersonnage, Serializable {
         //this.gestionnaireArmee = new GestionnaireArmee();
     }
 
-    public Personnage(String pseudo, String image, GestionnaireArmee gestionnaireArmee, Espece espece){
+    public Personnage(String pseudo, String image, Espece espece){
         this.pseudo=pseudo;
         this.image=image;
         this.espece= espece;
-        //this.gestionnaireArmee = gestionnaireArmee;
+    }
+
+    public Personnage(Espece espece, String image){
+        this.image=image;
+        this.espece= espece;
     }
 
     public void attaquer(Personnage personnage) {
