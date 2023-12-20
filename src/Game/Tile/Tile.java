@@ -6,4 +6,5 @@ public class Tile  {
 
     public transient   BufferedImage image;
     public boolean collision = false;
+    public boolean mortel = false;
 }

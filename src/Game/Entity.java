@@ -1,5 +1,7 @@
 package Game;
 
+import Univers.Personnage;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
@@ -12,7 +14,9 @@ public class Entity {
     public int maxLife;
     public transient BufferedImage image;
     public int life;
+    public boolean isDead = false;
     public int actionLockCounter = 0;
+    public Personnage personnage;
     public Rectangle solidArea = new Rectangle(0,0,28,28);
     public int x,y;
     public boolean collisionOn = false;

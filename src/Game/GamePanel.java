@@ -102,8 +102,12 @@ public class GamePanel extends JPanel implements Runnable {
         }
 //        monster.update();
         if(isFinished){
-            System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
-            JOptionPane.showMessageDialog(null,"Vous pouvez desormais passer à la suite en cliquant sur 'Suivant'","BRAVO !",JOptionPane.INFORMATION_MESSAGE);
+            if(player.isDead){
+                JOptionPane.showMessageDialog(null,"Vous êtes mort :/'","MORT !",JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+                JOptionPane.showMessageDialog(null,"Vous pouvez desormais passer à la suite en cliquant sur 'Suivant'","BRAVO !",JOptionPane.INFORMATION_MESSAGE);
+            }
             this.stopGameThread();
         }
     }

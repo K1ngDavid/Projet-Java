@@ -10,9 +10,13 @@ import java.io.IOException;
 public class Player extends Entity{
     transient GamePanel gamePanel;
     transient KeyHandler keyH;
-    Personnage personnage;
     public String runString = "../Images/Run.gif";
     public String standString = "../Images/Stand.png";
+    private boolean isDialoging = false;
+
+    public boolean getIsDialoging(){
+        return this.isDialoging;
+    }
 
     public void setImages(String runString,String standString) {
         if(!(runString.isEmpty() || standString.isEmpty())){
@@ -27,6 +31,7 @@ public class Player extends Entity{
 
     public void setPersonnage(Personnage personnage) {
         this.personnage = personnage;
+        maxLife = personnage.getPointDeVie();
         getPlayerImage();
     }
 
@@ -105,7 +110,9 @@ public class Player extends Entity{
 
     public void interactNPC(int i){
         if(i != 999){
-            System.out.println("You are hitting an npc !");
+            isDialoging = true;
+        }else {
+            isDialoging = false;
         }
     }
 
@@ -118,6 +125,14 @@ public class Player extends Entity{
             image = stand;
         }
         g2.drawImage(image,x,y, gamePanel.tileSize * 2, gamePanel.tileSize*2,null);
+        if(isDialoging){
+            Color c = new Color(0,0,0);
+            g2.setColor(c);
+            g2.fillRoundRect(gp.tileSize *2,gp.tileSize/2,gp.screenWidth -(gp.tileSize*4),gp.tileSize*2,35,35);
+            g2.setFont(new Font("Arial",Font.PLAIN,20));
+            g2.setColor(Color.WHITE);
+            g2.drawString("Te revoila ! Pour passer cette épreuve, tu dois atteindre la boite noire sans toucher aux morceaux de volcan",gp.tileSize *2,gp.tileSize + 5);
+        }
     }
 }
 

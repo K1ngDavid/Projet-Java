@@ -34,6 +34,12 @@ public class CollisionChecker {
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
                 }
+                if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
+                    if(entity instanceof Player){
+                        entity.isDead = true;
+                        gp.isFinished = true;
+                    }
+                }
             }
             case "down" -> {
                 entityBottomRow = (entityBottomWorldY + entity.speed) / gp.tileSize;
@@ -46,6 +52,12 @@ public class CollisionChecker {
                 if (gp.tileManager.tiles[tileNum1].collision || gp.tileManager.tiles[tileNum2].collision) {
                     entity.collisionOn = true;
 //                    System.out.println("IL Y A COLLISION");
+                }
+                if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
+                    if(entity instanceof Player){
+                        entity.isDead = true;
+                        gp.isFinished = true;
+                    }
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
@@ -65,6 +77,12 @@ public class CollisionChecker {
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
                 }
+                if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
+                    if(entity instanceof Player){
+                        entity.isDead = true;
+                        gp.isFinished = true;
+                    }
+                }
             }
             case "right" -> {
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
@@ -78,6 +96,12 @@ public class CollisionChecker {
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
+                }
+                if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
+                    if(entity instanceof Player){
+                        entity.isDead = true;
+                        gp.isFinished = true;
+                    }
                 }
             }
         }
@@ -107,7 +131,6 @@ public class CollisionChecker {
                             entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
-                            System.out.println("HELLO WORLDDDDDDDDDDD");
                         }
                         break;
                     case "down":
@@ -115,7 +138,6 @@ public class CollisionChecker {
                             entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
-                            System.out.println("HELLO WORLDDDDDDDDDDD");
                         }
                         break;
                     case "left":
@@ -123,7 +145,6 @@ public class CollisionChecker {
                             entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
-                            System.out.println("HELLO WORLDDDDDDDDDDD");
                         }
                         break;
                     case "right":
@@ -131,7 +152,6 @@ public class CollisionChecker {
                             entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
-                            System.out.println("HELLO WORLDDDDDDDDDDD");
                         }
                         break;
                     }
@@ -140,6 +160,9 @@ public class CollisionChecker {
 
                     target[i].solidArea.x = tmp2x;
                     target[i].solidArea.y = tmp2y;
+                    if(entity instanceof Player){
+                        if (((Player) entity).getIsDialoging()) target[i].collisionOn = true;
+                    }
             }
             }
         return index;
