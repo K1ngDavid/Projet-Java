@@ -64,16 +64,7 @@ public abstract class Node implements Event, Serializable {
         jLabel.setAlignmentX(0);
         pnlNorth.setLayout(new BorderLayout());
 
-        if(!personnage.getImagePersonnage().isEmpty()){
-            System.out.println("Hello world");
-            System.out.println(personnage.getImagePersonnage());
-            image = new ImageIcon(personnage.getImagePersonnage());
-            if(personnage.isDemon()) image = new ImageIcon(this.image.getImage().getScaledInstance(60, 80, Image.SCALE_DEFAULT));
-            else image = new ImageIcon(this.image.getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
-            imageLabel = new JLabel("",image,SwingConstants.RIGHT);
-
-            pnlNorth.add(imageLabel,BorderLayout.NORTH);
-        }
+        setPlayerIcon(personnage);
 
         if(personnage.aEvolue()){
             personnageLabel.setText("<html>Vous avez évolué ! <br/>Vous voila " + personnage.getClass().getSimpleName() + "<br/>Voici vos statistiques :" +personnage +"</html>");
@@ -86,6 +77,19 @@ public abstract class Node implements Event, Serializable {
         pnlRoot.add(pnlNorth, BorderLayout.CENTER);
 
         nextButton(pnlRoot);
+    }
+
+    public void setPlayerIcon(Personnage personnage){
+        if(!personnage.getImagePersonnage().isEmpty()){
+            System.out.println("Hello world");
+            System.out.println(personnage.getImagePersonnage());
+            image = new ImageIcon(personnage.getImagePersonnage());
+            if(personnage.isDemon()) image = new ImageIcon(this.image.getImage().getScaledInstance(60, 80, Image.SCALE_DEFAULT));
+            else image = new ImageIcon(this.image.getImage().getScaledInstance(100, 80, Image.SCALE_DEFAULT));
+            imageLabel = new JLabel("",image,SwingConstants.RIGHT);
+
+            pnlNorth.add(imageLabel,BorderLayout.NORTH);
+        }
     }
 
     /**

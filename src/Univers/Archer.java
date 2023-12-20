@@ -7,6 +7,11 @@ public class Archer extends Soldat{
 
     public Archer(Espece espece){
         super(espece);
+        if(this.isEmpereur()){
+            image = "src/Images/archer_empereur.png";
+        }else{
+            image = "src/Images/archer_demon.png";
+        }
     }
 
     public Archer(Espece espece,String image){
@@ -14,7 +19,7 @@ public class Archer extends Soldat{
     }
 
     public static Archer setArcher(Personnage personnage) {
-        Archer archer = new Archer(personnage.getEspece(),personnage.getImagePersonnage());
+        Archer archer = new Archer(personnage.getEspece());
 
         if (personnage.isEmpereur()) {
             archer.setStatistiques(5, 5, 10);

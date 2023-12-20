@@ -9,6 +9,7 @@ public class NemesisDuChaos extends General {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public NemesisDuChaos(){
         super(Espece.DEMON);
+        image = "src/Images/nemesis.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
 

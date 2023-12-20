@@ -6,13 +6,17 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
 
 public class Player extends Entity{
     transient GamePanel gamePanel;
     transient KeyHandler keyH;
+    public Personnage personnage;
     public String runString = "../Images/Run.gif";
     public String standString = "../Images/Stand.png";
     private boolean isDialoging = false;
+    private String dialogue = "Te revoila ! Pour passer cette épreuve, tu dois atteindre \nla boite noire sans toucher aux morceaux de volcan";
 
     public boolean getIsDialoging(){
         return this.isDialoging;
@@ -59,6 +63,7 @@ public class Player extends Entity{
     }
 
     public void update(){
+
         isMooving = false;
         if(keyH.upPressed){
             direction = "up";
@@ -80,6 +85,10 @@ public class Player extends Entity{
         int index = gp.cChecker.checkEntity(this,gp.lapins);
         interactNPC(index);
 
+        if(!isDialoging){
+            gamePanel.cChecker.setNoCollisionToNPC(gamePanel.lapins);
+        }
+
         if(!collisionOn && isMooving){
             switch (direction) {
                 case "up" -> y -= speed;
@@ -90,23 +99,25 @@ public class Player extends Entity{
         }
     }
 
-    public void getPlayerImage(){
-        try{
-            if(this.personnage != null){
-                if(this.personnage.isDemon()) {
-                    run = ImageIO.read(getClass().getResourceAsStream("../Images/Skeleton_Walk.gif"));
-                    stand = ImageIO.read(getClass().getResourceAsStream("../Images/Skeleton_Walk.gif"));
-                }
-            }
-            else{
+    public void getPlayerImage() {
+        try {
+            if (this.personnage != null) {
+                String imagePath = personnage.getImagePersonnage();
+                System.out.println("L'image path -->" + imagePath);
+                URL imageURL = Paths.get(imagePath).toUri().toURL();
+                System.out.println(imageURL);
+
+                run = ImageIO.read(imageURL);
+                stand = ImageIO.read(imageURL);
+            } else {
                 run = ImageIO.read(getClass().getResourceAsStream(runString));
                 stand = ImageIO.read(getClass().getResourceAsStream(standString));
             }
-
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void interactNPC(int i){
         if(i != 999){
@@ -131,7 +142,11 @@ public class Player extends Entity{
             g2.fillRoundRect(gp.tileSize *2,gp.tileSize/2,gp.screenWidth -(gp.tileSize*4),gp.tileSize*2,35,35);
             g2.setFont(new Font("Arial",Font.PLAIN,20));
             g2.setColor(Color.WHITE);
-            g2.drawString("Te revoila ! Pour passer cette épreuve, tu dois atteindre la boite noire sans toucher aux morceaux de volcan",gp.tileSize *2,gp.tileSize + 5);
+            int y = 5;
+            for(String line : dialogue.split("\n")){
+                g2.drawString(line,gp.tileSize *2,gp.tileSize + y);
+                y +=40;
+            }
         }
     }
 }

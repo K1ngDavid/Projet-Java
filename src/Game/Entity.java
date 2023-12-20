@@ -16,7 +16,6 @@ public class Entity {
     public int life;
     public boolean isDead = false;
     public int actionLockCounter = 0;
-    public Personnage personnage;
     public Rectangle solidArea = new Rectangle(0,0,28,28);
     public int x,y;
     public boolean collisionOn = false;
@@ -39,7 +38,7 @@ public class Entity {
     public void update(){
 
         setAction();
-        collisionOn = false;
+        System.out.println("LE CHAT EST BLOQUÉ ?" + collisionOn);
         gp.cChecker.checkTile(this);
 
         if(!collisionOn) {
@@ -64,7 +63,6 @@ public class Entity {
             image = stand;
         }
         g2.drawImage(image,x,y, gp.tileSize * 2, gp.tileSize*2,null);
-
 
     }
 

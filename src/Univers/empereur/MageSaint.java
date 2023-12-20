@@ -9,6 +9,7 @@ public class MageSaint extends General {
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public MageSaint(){
         super(Espece.EMPEREUR);
+        image = "src/Images/mage_saint.png";
         //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));

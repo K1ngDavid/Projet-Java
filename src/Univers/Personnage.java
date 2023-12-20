@@ -83,8 +83,12 @@ public class Personnage implements ActionsPersonnage, Serializable {
         return p;
     }
 
-    private void mourir() {
+    public void mourir() {
         this.statutVivant= false;
+    }
+
+    public boolean estVivant(){
+        return this.statutVivant;
     }
 
     public void setStatistiques(int force, int pointDeVie, int mana){

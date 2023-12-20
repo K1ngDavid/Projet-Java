@@ -7,10 +7,15 @@ public class Fantassin extends Soldat{
     }
     public Fantassin(Espece espece){
         super(espece);
+        if(this.isEmpereur()){
+            image = "src/Images/fantassin_empereur.png";
+        }else{
+            image = "src/Images/fantassin_demon.png";
+        }
     }
 
     public static Fantassin setFantassin(Personnage personnage){
-        personnage = new Fantassin(personnage.getEspece(),personnage.getImagePersonnage());
+        personnage = new Fantassin(personnage.getEspece());
         //personnage = new Fantassin();
 
         if(personnage.isEmpereur()){

@@ -9,6 +9,7 @@ public class SaintPaladin extends General {
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public SaintPaladin(){
         super(Espece.EMPEREUR);
+        image = "src/Images/saint_paladin.png";
         //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));

@@ -9,6 +9,7 @@ public class DieuDemon extends Capitaine {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public DieuDemon(){
         super(Espece.DEMON);
+        image = "src/Images/dieu_demon.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeDemons.setArmee(this));

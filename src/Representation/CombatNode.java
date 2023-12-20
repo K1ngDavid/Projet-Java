@@ -27,6 +27,7 @@ public class CombatNode extends InnerNode{
         }
 //        gamePanel.player.setImages(personnage.getImagePersonnage(),personnage.getImagePersonnage());
         gamePanel.player.setPersonnage(personnage);
+        System.out.println(personnage.getImagePersonnage());
 
         gamePanel.setLayout(new BorderLayout());
         pnlRoot.add(gamePanel,BorderLayout.CENTER);
@@ -41,7 +42,7 @@ public class CombatNode extends InnerNode{
 
     @Override
     public void display(JPanel pnlRoot,Personnage personnage) {
-//        super.display(pnlRoot);
+//        super.display(pnlRoot,personnage);
         pnlRoot.removeAll();
         jLabel.setFont(new Font("Minecraftia", Font.PLAIN, 30));
         jLabel.setHorizontalAlignment(SwingConstants.CENTER);

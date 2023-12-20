@@ -9,6 +9,7 @@ public class Antechrist extends Capitaine {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public Antechrist(){
         super(Espece.DEMON);
+        image = "src/Images/antechrist.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeDemons.setArmee(this));

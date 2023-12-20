@@ -9,6 +9,7 @@ public class Necromancien extends General {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public Necromancien(){
         super(Espece.DEMON);
+        image = "src/Images/necromancien.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
 

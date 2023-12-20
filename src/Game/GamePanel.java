@@ -102,7 +102,7 @@ public class GamePanel extends JPanel implements Runnable {
         }
 //        monster.update();
         if(isFinished){
-            if(player.isDead){
+            if(!player.personnage.estVivant()){
                 JOptionPane.showMessageDialog(null,"Vous êtes mort :/'","MORT !",JOptionPane.INFORMATION_MESSAGE);
             }else{
                 System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");

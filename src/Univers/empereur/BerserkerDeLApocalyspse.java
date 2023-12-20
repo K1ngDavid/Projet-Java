@@ -9,6 +9,7 @@ public class BerserkerDeLApocalyspse extends General {
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
     public BerserkerDeLApocalyspse(){
         super(Espece.EMPEREUR);
+        image = "src/Images/berserker.png";
         //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
 

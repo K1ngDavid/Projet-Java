@@ -9,6 +9,7 @@ public class CavalierDuNeant extends General {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public CavalierDuNeant(){
         super(Espece.DEMON);
+        image = "src/Images/cavalier_du_neant.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
 

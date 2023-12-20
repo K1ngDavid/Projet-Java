@@ -10,6 +10,7 @@ public class SilloneurDesTrefonds extends Capitaine {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
     public SilloneurDesTrefonds(){
         super(Espece.DEMON);
+        image = "src/Images/sillonneur_des_trefonds.png";
         //this.gestionnaireArmeeDemon = new GestionnaireArmeeDemons();
         //this.gestionnaireArmeeDemon = GestionnaireArmeeDemons.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeDemons.setArmee(this));

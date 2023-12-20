@@ -11,6 +11,7 @@ public class Silvios extends Capitaine {
 
     public Silvios(){
         super(Espece.EMPEREUR);
+        image = "src/Images/silvios.png";
         //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));

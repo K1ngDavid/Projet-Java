@@ -11,6 +11,7 @@ public class Epeiste extends Capitaine {
 
     public Epeiste(){
         super(Espece.EMPEREUR);
+        image = "src/Images/epeiste.png";
         //this.gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         //this.gestionnaireArmeeEmpereur= GestionnaireArmeeEmpereur.setArmee(this);
         this.setGestionnaireArmee(GestionnaireArmeeEmpereur.setArmee(this));

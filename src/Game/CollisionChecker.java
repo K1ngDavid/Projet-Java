@@ -36,7 +36,7 @@ public class CollisionChecker {
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
-                        entity.isDead = true;
+                        ((Player) entity).personnage.mourir();
                         gp.isFinished = true;
                     }
                 }
@@ -55,7 +55,7 @@ public class CollisionChecker {
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
-                        entity.isDead = true;
+                        ((Player) entity).personnage.mourir();
                         gp.isFinished = true;
                     }
                 }
@@ -68,18 +68,16 @@ public class CollisionChecker {
                 entityLeftCol = (entityLeftWorldX - entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileManager.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileManager.mapTileNum[entityLeftCol][entityBottomRow];
-//                System.out.println("Tile Num --> " + tileNum1);
 
                 if (gp.tileManager.tiles[tileNum1].collision || gp.tileManager.tiles[tileNum2].collision) {
                     entity.collisionOn = true;
-//                    System.out.println("IL Y A COLLISION");
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
-                        entity.isDead = true;
+                        ((Player) entity).personnage.mourir();
                         gp.isFinished = true;
                     }
                 }
@@ -88,21 +86,27 @@ public class CollisionChecker {
                 entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
                 tileNum1 = gp.tileManager.mapTileNum[entityRightCol][entityTopRow];
                 tileNum2 = gp.tileManager.mapTileNum[entityRightCol][entityBottomRow];
-//                System.out.println("Tile Num --> " + tileNum1);
 
                 if (gp.tileManager.tiles[tileNum1].collision || gp.tileManager.tiles[tileNum2].collision) {
                     entity.collisionOn = true;
-//                    System.out.println("IL Y A COLLISION");
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
                     gp.isFinished = true;
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
-                        entity.isDead = true;
+                        ((Player) entity).personnage.mourir();
                         gp.isFinished = true;
                     }
                 }
+            }
+        }
+    }
+
+    public void setNoCollisionToNPC(Entity[] target){
+        for (Entity entity : target) {
+            if(entity != null){
+                entity.collisionOn = false;
             }
         }
     }
@@ -128,28 +132,28 @@ public class CollisionChecker {
                 switch (entity.direction) {
                     case "up":
                         if (entity.solidArea.intersects(target[i].solidArea)) {
-                            entity.collisionOn = true;
+//                            entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
                         }
                         break;
                     case "down":
                         if (entity.solidArea.intersects(target[i].solidArea)) {
-                            entity.collisionOn = true;
+//                            entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
                         }
                         break;
                     case "left":
                         if (entity.solidArea.intersects(target[i].solidArea)) {
-                            entity.collisionOn = true;
+//                            entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
                         }
                         break;
                     case "right":
                         if (entity.solidArea.intersects(target[i].solidArea)) {
-                            entity.collisionOn = true;
+//                            entity.collisionOn = true;
                             target[i].collisionOn = true;
                             index = i;
                         }
