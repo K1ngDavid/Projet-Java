@@ -15,11 +15,11 @@
           "description" : "Fantassin",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
@@ -158,11 +158,11 @@
           "description" : "Cavalier",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
@@ -301,11 +301,11 @@
           "description" : "Archer",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Transmettre les coordonnées géographiques vers le royaume des Empereurs",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Défaire le sceaux des enfers (si échec scellement en enfer)",
                   "choices" : [
                     {
@@ -453,11 +453,11 @@
           "description" : "Fantassin",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
@@ -563,11 +563,11 @@
           "description" : "Cavalier",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
@@ -673,11 +673,11 @@
           "description" : "Archer",
           "choices" : [
             {
-              "type" : "ChanceNode",
+              "type" : "CombatNode",
               "description" : "Infiltrer les rangs ennemis",
               "choices" : [
                 {
-                  "type" : "CombatNode",
+                  "type" : "ChanceNode",
                   "description" : "Éliminer le Général ennemi",
                   "choices" : [
                     {
