@@ -22,11 +22,11 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
 public class Scenario extends JFrame{
-    transient public Event initialNode;
+    public Event initialNode;
     private JPanel pnlRoot;
-    transient private Sauvegarde sauvegarde;
-    transient private Sauvegarde savedPartie;
-    transient Personnage personnage;
+    private Sauvegarde sauvegarde;
+    private Sauvegarde savedPartie;
+    Personnage personnage;
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
         personnage = new Personnage();

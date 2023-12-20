@@ -19,13 +19,13 @@ public abstract class Node implements Event, Serializable {
     private String description;
     private static int nbNodes = 0;
     protected JLabel jLabel;
-    private transient JLabel imageLabel;
+    private JLabel imageLabel;
     private transient ImageIcon image;
     protected static final Object lock = new Object();
     public JPanel pnlNorth = new JPanel();
     static JButton nextButton = new JButton("Suivant");
-    private transient JLabel checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
-    private transient JLabel personnageLabel = new JLabel();
+    private  JLabel checkpointLabel = new JLabel("Vous avez atteint un nouveau checkpoint !");
+    private  JLabel personnageLabel = new JLabel();
 
 
     /**

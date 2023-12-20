@@ -22,7 +22,7 @@ public class Sauvegarde extends JFrame implements Serializable  {
 
     public Thread t1;
     private ArrayList<ArrayList<Event>> partie;
-    private transient Personnage personnage;
+    private Personnage personnage;
     private transient JPanel pnlSauvegarde = new BackgroundPanel("src/Background/background3.png");
     boolean isPartieSaved = false;
     boolean isPartieRegained = false;

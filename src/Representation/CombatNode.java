@@ -8,9 +8,8 @@ import java.awt.*;
 
 public class CombatNode extends InnerNode{
     private transient GamePanel gamePanel;
-    private transient static final Object lock = new Object();
-    private transient JLabel jLabel = new JLabel("Touches du joueur");
-    private transient JLabel jLabel1 = new JLabel();
+    private JLabel jLabel = new JLabel("Touches du joueur");
+    private JLabel jLabel1 = new JLabel();
     public CombatNode(String description) {
         super(description);
         this.gamePanel = new GamePanel();
