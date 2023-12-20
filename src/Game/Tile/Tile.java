@@ -1,10 +1,9 @@
 package Game.Tile;
 
 import java.awt.image.BufferedImage;
-import java.io.Serializable;
 
 public class Tile  {
 
-    public  BufferedImage image;
+    public transient   BufferedImage image;
     public boolean collision = false;
 }

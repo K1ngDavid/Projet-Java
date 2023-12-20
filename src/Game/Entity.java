@@ -9,6 +9,7 @@ public class Entity {
     GamePanel gp;
     public int speed;
     public int maxLife;
+    public transient BufferedImage image;
     public int life;
     public int actionLockCounter = 0;
     public Rectangle solidArea = new Rectangle(0,0,28,28);
@@ -17,7 +18,7 @@ public class Entity {
     public String direction;
     public int spriteCounter = 0;
     public int spriteNum = 1;
-    public BufferedImage run,stand;
+    transient public BufferedImage run,stand;
 
     public Entity(GamePanel gp){
         this.gp = gp;
@@ -49,7 +50,7 @@ public class Entity {
         y + gp.tileSize > gp.player.y - gp.player.gamePanel.tileSize * 2 &&
         y - gp.tileSize < gp.player.x + gp.player.gamePanel.tileSize * 2){
             g2.setColor(Color.WHITE);
-            BufferedImage image = null;
+            image = null;
 
             if(isMooving){
                 image = run;

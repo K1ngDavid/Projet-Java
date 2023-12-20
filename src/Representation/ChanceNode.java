@@ -22,10 +22,10 @@ public class ChanceNode extends InnerNode {
     private final List<Event> nextNodes;
 
     /** Image représentant l'événement aléatoire. */
-    private final ImageIcon image = new ImageIcon("src/Images/dice-gif.gif");
+    private transient final  ImageIcon image = new ImageIcon("src/Images/dice-gif.gif");
 
     /** Étiquette affichant l'image de l'événement aléatoire. */
-    JLabel imageLabel = new JLabel("", image, JLabel.CENTER);
+    transient JLabel imageLabel = new JLabel("", image, JLabel.CENTER);
 
     /**
      * Constructeur de la classe ChanceNode avec une description et une liste de nœuds suivants possibles.

@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class BackgroundPanel extends JPanel {
-    private Image backgroundImage;
+    private transient Image backgroundImage;
 
     public BackgroundPanel(String imagePath) {
         try {

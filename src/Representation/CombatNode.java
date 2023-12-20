@@ -1,6 +1,6 @@
 package Representation;
 
-import Game.GamePanel;
+import  Game.GamePanel;
 import Univers.Personnage;
 
 import javax.swing.*;
@@ -8,9 +8,9 @@ import java.awt.*;
 
 public class CombatNode extends InnerNode{
     private transient GamePanel gamePanel;
-    private static final Object lock = new Object();
-    private JLabel jLabel = new JLabel("Touches du joueur");
-    private JLabel jLabel1 = new JLabel();
+    private transient static final Object lock = new Object();
+    private transient JLabel jLabel = new JLabel("Touches du joueur");
+    private transient JLabel jLabel1 = new JLabel();
     public CombatNode(String description) {
         super(description);
         this.gamePanel = new GamePanel();
@@ -26,8 +26,9 @@ public class CombatNode extends InnerNode{
         if(gamePanel == null){
             gamePanel = new GamePanel();
         }
-        gamePanel.player.setImages(personnage.getImagePersonnage(),personnage.getImagePersonnage());
+//        gamePanel.player.setImages(personnage.getImagePersonnage(),personnage.getImagePersonnage());
         gamePanel.player.setPersonnage(personnage);
+
         gamePanel.setLayout(new BorderLayout());
         pnlRoot.add(gamePanel,BorderLayout.CENTER);
         gamePanel.setBorder(BorderFactory.createLineBorder(Color.black));

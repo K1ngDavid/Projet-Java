@@ -19,14 +19,5 @@ public class Main {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-//        System.out.println(Sauvegarde.reprendrePartie());
-//        Personnage personnage = new Personnage();
-//        Personnage archerEvolue = EvoluerPersonnage.EvoluerPersonnage(personnage, Archer.class, Espece.EMPEREUR);
-//        System.out.println(archerEvolue);
-//        ImageNode imageNode = new ImageNode("OK","pl");
-//        imageNode.loadImage();
-//        ImageNode imageNode = new ImageNode("src/Run.gif");
-//        imageNode.display();
     }
 }

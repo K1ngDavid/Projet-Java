@@ -19,7 +19,7 @@ public class DecisionNode extends InnerNode{
     List<Event> nextNodes;
     private Event selectedNode;
     private JPanel buttonPanel;
-    private JLabel jLabel = new JLabel("Faites votre choix");
+    private transient JLabel jLabel = new JLabel("Faites votre choix");
 
 
     /**

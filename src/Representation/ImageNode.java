@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class ImageNode extends DecoratorNode {
 
-    private ImageIcon image;
+    private transient ImageIcon image;
 
     /**
      * Constructeur de la classe ImageNode.

@@ -69,7 +69,7 @@ public class Personnage implements ActionsPersonnage, Serializable {
     public static Personnage evoluerGradePerso(Personnage p){
         if (p instanceof Capitaine) {
             p = Capitaine.evoluerGrade(p);
-        }else{
+        }else if(p instanceof Soldat){
             p = Soldat.evoluerGrade(p);
         }
         return p;

@@ -10,7 +10,7 @@ public abstract class DecoratorNode implements Event, Serializable {
 
     protected String filePath;
     protected Event node;
-    protected JLabel jLabel;
+    protected transient JLabel jLabel;
     public DecoratorNode(Event node,String filePath) {
         this.node = node;
         this.filePath = filePath;

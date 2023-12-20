@@ -1,5 +1,6 @@
 package Representation;
 
+import Tools.BackgroundPanel;
 import Univers.Personnage;
 
 import javax.swing.*;
@@ -21,8 +22,8 @@ public class Sauvegarde extends JFrame implements Serializable  {
 
     public Thread t1;
     private ArrayList<ArrayList<Event>> partie;
-    private Personnage personnage;
-    private JPanel pnlSauvegarde = new JPanel();
+    private transient Personnage personnage;
+    private transient JPanel pnlSauvegarde = new BackgroundPanel("src/Background/background3.png");
     boolean isPartieSaved = false;
     boolean isPartieRegained = false;
 
@@ -30,6 +31,8 @@ public class Sauvegarde extends JFrame implements Serializable  {
         checkpoints = new ArrayList<>();
         partie = new ArrayList<>();
         personnage = new Personnage();
+        this.setLocationRelativeTo(null);
+        this.setSize(400,400);
     }
 
 
@@ -58,12 +61,13 @@ public class Sauvegarde extends JFrame implements Serializable  {
         pnlSauvegarde.setLayout(new BorderLayout());
         pnlSauvegarde.add(jTextField,BorderLayout.NORTH);
         pnlSauvegarde.add(valider,BorderLayout.SOUTH);
-        this.setVisible(true);
+
         this.add(new JLabel("Nommez votre sauvegarde :)"),BorderLayout.NORTH);
         this.add(pnlSauvegarde,BorderLayout.CENTER);
-        this.setSize(400,400);
         this.revalidate();
         this.repaint();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
         valider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,6 +79,7 @@ public class Sauvegarde extends JFrame implements Serializable  {
             System.out.println("wait");
             Thread.sleep(300);
         }
+//        JOptionPane.showMessageDialog(this,"Votre sauvegarde a bien été effectuée","Sauvegarde éfféctuée",JOptionPane.INFORMATION_MESSAGE);
         // Vérifier si le dossier "Sauvegarde" existe, sinon le créer
         Path sauvegardeDirectory = Paths.get("Sauvegarde");
         if (!Files.exists(sauvegardeDirectory)) {
@@ -98,9 +103,10 @@ public class Sauvegarde extends JFrame implements Serializable  {
         setLayout(new BorderLayout());
 
         JLabel label = new JLabel("Choisissez votre sauvegarde :)");
+        label.setHorizontalAlignment(0);
         add(label, BorderLayout.NORTH);
         sauvegardeFiles = loadSauvegardeFiles();
-        JPanel sauvegardePanel = new JPanel(new GridLayout(sauvegardeFiles.size(), 1));
+        pnlSauvegarde = new JPanel(new GridLayout(sauvegardeFiles.size(), 1));
 
         for (File file : sauvegardeFiles) {
             JButton button = new JButton(file.getName());
@@ -128,14 +134,16 @@ public class Sauvegarde extends JFrame implements Serializable  {
                     // Faites quelque chose avec la sauvegarde...
                 }
             });
-            sauvegardePanel.add(button);
+            pnlSauvegarde.add(button);
 //            return sauvegarde;
         }
 
-        JScrollPane scrollPane = new JScrollPane(sauvegardePanel);
+        JScrollPane scrollPane = new JScrollPane(pnlSauvegarde);
+
         add(scrollPane, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
+        this.setSize(400,400);
 
         // Utiliser SwingUtilities.invokeLater pour afficher la fenêtre
         SwingUtilities.invokeLater(() -> setVisible(true));

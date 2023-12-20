@@ -8,9 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Player extends Entity{
-    GamePanel gamePanel;
-    KeyHandler keyH;
-
+    transient GamePanel gamePanel;
+    transient KeyHandler keyH;
     Personnage personnage;
     public String runString = "../Images/Run.gif";
     public String standString = "../Images/Stand.png";
@@ -28,6 +27,7 @@ public class Player extends Entity{
 
     public void setPersonnage(Personnage personnage) {
         this.personnage = personnage;
+        getPlayerImage();
     }
 
     public Player(GamePanel gamePanel, KeyHandler keyH, String run, String stand){
@@ -72,9 +72,6 @@ public class Player extends Entity{
         collisionOn = false;
         gamePanel.cChecker.checkTile(this);
 
-//        int npcIndex = gp.cChecker.checkEntity(this, gp.lapins);
-//        interactNPC(npcIndex);
-
         if(!collisionOn && isMooving){
             switch (direction) {
                 case "up" -> y -= speed;
@@ -87,8 +84,17 @@ public class Player extends Entity{
 
     public void getPlayerImage(){
         try{
-            run = ImageIO.read(getClass().getResourceAsStream(this.runString));
-            stand = ImageIO.read(getClass().getResourceAsStream(this.standString));
+            if(this.personnage != null){
+                if(this.personnage.isDemon()) {
+                    run = ImageIO.read(getClass().getResourceAsStream("../Images/Skeleton_Walk.gif"));
+                    stand = ImageIO.read(getClass().getResourceAsStream("../Images/Skeleton_Walk.gif"));
+                }
+            }
+            else{
+                run = ImageIO.read(getClass().getResourceAsStream(runString));
+                stand = ImageIO.read(getClass().getResourceAsStream(standString));
+            }
+
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -102,8 +108,7 @@ public class Player extends Entity{
 
     public void draw(Graphics2D g2){
         g2.setColor(Color.WHITE);
-        BufferedImage image = null;
-
+        image = null;
         if(isMooving){
             image = run;
         }else{

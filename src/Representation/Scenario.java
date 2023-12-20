@@ -22,13 +22,11 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
 public class Scenario extends JFrame{
-    public Event initialNode;
+    transient public Event initialNode;
     private JPanel pnlRoot;
-    public static Image imagePlayer;
-    private Sauvegarde sauvegarde;
-    private Sauvegarde savedPartie;
-    JFrame jFrame = this;
-    Personnage personnage;
+    transient private Sauvegarde sauvegarde;
+    transient private Sauvegarde savedPartie;
+    transient Personnage personnage;
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
         personnage = new Personnage();
@@ -132,6 +130,9 @@ public class Scenario extends JFrame{
                 System.out.println(savedPartie);
                 if(savedPartie != null){
                     currentNode = savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(2);
+                    checkpoints.add(savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(0));
+                    checkpoints.add(savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(1));
+                    partie = savedPartie.getPartie();
                     personnage = savedPartie.getPersonnage();
                     currentNode.display(this.pnlRoot,personnage);
                 }
@@ -192,7 +193,6 @@ public class Scenario extends JFrame{
 
 
     private void createUIComponents() throws IOException {
-        this.setIconImage(new ImageIcon("src/Images/icon.png").getImage());
         Random random = new Random();
         this.pnlRoot = new BackgroundPanel("src/Background/background"+ random.nextInt(1,5) + ".png");
         this.setContentPane(pnlRoot);
@@ -208,7 +208,6 @@ public class Scenario extends JFrame{
         jpanelMenu.setPreferredSize(new Dimension(200, 100));
         JButton btnStart = new JButton("Commencer la partie");
         JButton btnSave = new JButton("Reprendre depuis une sauvegarde");
-
 
         Sauvegarde sauvegarde1 = new Sauvegarde();
 

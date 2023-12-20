@@ -9,20 +9,20 @@ public class GamePanel extends JPanel implements Runnable {
     final int originalTileSize = 16;
     final int scale = 3;
     public final int tileSize = originalTileSize * scale;
-    public final int maxScreenCol = 20;
-    public final int maxScreenRow = 12;
+    public final int maxScreenCol = 21;
+    public final int maxScreenRow = 15;
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
     public boolean isFinished = false;
-    KeyHandler keyH = new KeyHandler();
-    public Thread gameThread;
-    public Monster monster = new Monster(this,"monster");
-    public Entity lapins[] = new Entity[5];
-    CollisionChecker cChecker = new CollisionChecker(this);
-    public Player player = new Player(this,keyH,"../Images/Run.gif","../Images/Stand.png");
+    transient KeyHandler keyH = new KeyHandler();
+    public transient Thread gameThread;
+    public transient Monster monster = new Monster(this,"monster");
+    public transient Entity lapins[] = new Entity[5];
+    transient CollisionChecker cChecker = new CollisionChecker(this);
+    public transient Player player = new Player(this,keyH,"../Images/Run.gif","../Images/Stand.png");
 
     public final int maxWorldCol = 50;
-    AssetSetter aSetter = new AssetSetter(this);
+    transient AssetSetter aSetter = new AssetSetter(this);
     public final int maxWorldRow = 50;
     public final int worldWith = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable {
     int playerY = 500;
     int playerSpeed = 4;
     int FPS = 60;
-    TileManager tileManager = new TileManager(this);
+    transient TileManager tileManager = new TileManager(this);
 
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
