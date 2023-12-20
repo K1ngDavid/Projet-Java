@@ -72,6 +72,9 @@ public class Player extends Entity{
         collisionOn = false;
         gamePanel.cChecker.checkTile(this);
 
+        int index = gp.cChecker.checkEntity(this,gp.lapins);
+        interactNPC(index);
+
         if(!collisionOn && isMooving){
             switch (direction) {
                 case "up" -> y -= speed;

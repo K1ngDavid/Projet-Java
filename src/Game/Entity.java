@@ -49,7 +49,7 @@ public class Entity {
         }
         if(collisionOn) isMooving = false;
 
-//        gp.cChecker.checkPlayer(this);
+        gp.cChecker.checkPlayer(this);
 
 
     }

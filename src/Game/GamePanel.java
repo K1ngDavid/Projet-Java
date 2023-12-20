@@ -95,9 +95,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update(){
         player.update();
-        for(int i = 0; i < lapins.length;i++){
-            if(lapins[i] != null){
-                lapins[i].update();
+        for (Entity lapin : lapins) {
+            if (lapin != null) {
+                lapin.update();
             }
         }
 //        monster.update();
