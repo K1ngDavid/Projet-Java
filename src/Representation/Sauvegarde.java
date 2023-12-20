@@ -79,7 +79,8 @@ public class Sauvegarde extends JFrame implements Serializable  {
             System.out.println("wait");
             Thread.sleep(300);
         }
-//        JOptionPane.showMessageDialog(this,"Votre sauvegarde a bien été effectuée","Sauvegarde éfféctuée",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this,"Votre sauvegarde a bien été effectuée","Sauvegarde éfféctuée",JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
         // Vérifier si le dossier "Sauvegarde" existe, sinon le créer
         Path sauvegardeDirectory = Paths.get("Sauvegarde");
         if (!Files.exists(sauvegardeDirectory)) {

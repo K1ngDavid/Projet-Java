@@ -16,15 +16,17 @@ public class NPC_LAPIN extends Entity{
 
     public void getImage(){
         try{
-            run = ImageIO.read(getClass().getResourceAsStream("../Images/Run.gif"));
-            stand = ImageIO.read(getClass().getResourceAsStream("../Images/Stand.png"));
+            run = ImageIO.read(getClass().getResourceAsStream("../Images/gif_w_nb.gif"));
+            stand = ImageIO.read(getClass().getResourceAsStream("../Images/gif_w_nb.gif"));
         }catch (IOException e){
             e.printStackTrace();
         }
     }
 
+    @Override
     public void setAction(){
         actionLockCounter++;
+        isMooving = false;
         if(actionLockCounter == 120){
             Random random = new Random();
             int i = random.nextInt(100)+1;
@@ -41,8 +43,9 @@ public class NPC_LAPIN extends Entity{
             if(i > 75){
                 direction = "right";
             }
+            actionLockCounter = 0;
+            isMooving = true;
         }
-        actionLockCounter = 0;
 
     }
 }

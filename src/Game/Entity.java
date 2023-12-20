@@ -2,6 +2,7 @@ package Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 public class Entity {
     public int worldX,worldY;
@@ -16,8 +17,7 @@ public class Entity {
     public int x,y;
     public boolean collisionOn = false;
     public String direction;
-    public int spriteCounter = 0;
-    public int spriteNum = 1;
+
     transient public BufferedImage run,stand;
 
     public Entity(GamePanel gp){
@@ -33,32 +33,34 @@ public class Entity {
 
     }
     public void update(){
-        setAction();
 
+        setAction();
         collisionOn = false;
         gp.cChecker.checkTile(this);
+
+        if(!collisionOn) {
+            isMooving = true;
+            switch (direction) {
+                case "up" -> y -= speed;
+                case "down" -> y += speed;
+                case "left" -> x -= speed;
+                case "right" -> x += speed;
+            }
+        }
+        if(collisionOn) isMooving = false;
+
 //        gp.cChecker.checkPlayer(this);
 
 
     }
     public void draw(Graphics2D g2){
-        x = x - gp.player.x + gp.player.gamePanel.tileSize * 2;
-        y = y - gp.player.y + gp.player.gamePanel.tileSize * 2;
-
-        if(x + gp.tileSize > gp.player.x - gp.player.gamePanel.tileSize * 2 &&
-        x - gp.tileSize < gp.player.worldX + gp.player.gamePanel.tileSize * 2 &&
-        y + gp.tileSize > gp.player.y - gp.player.gamePanel.tileSize * 2 &&
-        y - gp.tileSize < gp.player.x + gp.player.gamePanel.tileSize * 2){
-            g2.setColor(Color.WHITE);
-            image = null;
-
-            if(isMooving){
-                image = run;
-            }else{
-                image = stand;
-            }
-            g2.drawImage(image,x,y, gp.tileSize * 2, gp.tileSize*2,null);
+        if(isMooving){
+            image = run;
+        }else {
+            image = stand;
         }
+        g2.drawImage(image,x,y, gp.tileSize * 2, gp.tileSize*2,null);
+
 
     }
 

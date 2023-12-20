@@ -100,7 +100,7 @@ public class GamePanel extends JPanel implements Runnable {
                 lapins[i].update();
             }
         }
-        monster.update();
+//        monster.update();
         if(isFinished){
             System.out.println("FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
             JOptionPane.showMessageDialog(null,"Vous pouvez desormais passer à la suite en cliquant sur 'Suivant'","BRAVO !",JOptionPane.INFORMATION_MESSAGE);
@@ -115,11 +115,11 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
         tileManager.draw(g2);
-//        for(int i = 0;i< lapins.length;i++){
-//            if(lapins[i] != null){
-//                lapins[i].draw(g2);
-//            }
-//        }
+        for(int i = 0;i< lapins.length;i++){
+            if(lapins[i] != null){
+                lapins[i].draw(g2);
+            }
+        }
 
         player.draw(g2);
 
