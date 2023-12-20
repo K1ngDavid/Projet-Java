@@ -16,7 +16,7 @@ public class Player extends Entity{
     public String runString = "../Images/Run.gif";
     public String standString = "../Images/Stand.png";
     private boolean isDialoging = false;
-    private String dialogue = "Te revoila ! Pour passer cette épreuve, tu dois atteindre \nla boite noire sans toucher aux morceaux de volcan";
+    private String dialogue = "Te revoila ! Pour passer cette épreuve, tu dois atteindre la boite noire sans \n toucher aux morceaux de volcan";
 
     public boolean getIsDialoging(){
         return this.isDialoging;

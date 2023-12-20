@@ -25,7 +25,11 @@ public class CombatNode extends InnerNode{
         if(gamePanel == null){
             gamePanel = new GamePanel();
         }
-//        gamePanel.player.setImages(personnage.getImagePersonnage(),personnage.getImagePersonnage());
+
+        if(this.getDescription().contains("Vaincre")){
+            //La il faut créer le combat contre le boss
+        }
+
         gamePanel.player.setPersonnage(personnage);
         System.out.println(personnage.getImagePersonnage());
 
@@ -37,6 +41,10 @@ public class CombatNode extends InnerNode{
 
         while(!gamePanel.isFinished)
             Node.nextButton(pnlRoot);
+
+        if(!personnage.estVivant()){
+            return this.nextNodes.get(1);
+        }
         return this.nextNodes.get(0);
     }
 
