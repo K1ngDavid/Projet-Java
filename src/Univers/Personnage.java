@@ -44,7 +44,15 @@ public class Personnage implements ActionsPersonnage, Serializable {
     }
 
     public void attaquer(Personnage personnage) {
-        personnage.perdrePV(this.force);
+//        if(!this.statutVivant)
+//            throw new DeadCharacterException("Un personnage mort ne peut pas attaquer");
+        try {
+            if(!this.statutVivant)
+                throw new DeadCharacterException("Un personnage mort ne peut pas attaquer");
+            personnage.perdrePV(this.force);
+        }catch (DeadCharacterException e){
+            e.printStackTrace();
+        }
     }
 
     public void attaquerMana(Personnage personnage){
