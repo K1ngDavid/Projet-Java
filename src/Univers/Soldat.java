@@ -3,6 +3,10 @@ package Univers;
 import Univers.empereur.*;
 import Univers.demon.*;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version version 1
+ */
 public abstract class Soldat extends Personnage {
 
     public Soldat(Espece espece){
@@ -12,6 +16,11 @@ public abstract class Soldat extends Personnage {
         super(espece,image);
     }
 
+    /**
+     * Prend en entrée un personnage qui est un soldat et le fait évoluer en capitaine selon sa classe de soldat
+     * @param personnage
+     * @return Capitaine
+     */
     public static Capitaine evoluerGrade(Personnage personnage){
         if(personnage.isEmpereur()){
             if(personnage instanceof Fantassin){

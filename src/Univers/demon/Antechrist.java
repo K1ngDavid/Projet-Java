@@ -5,8 +5,16 @@ import Univers.Capitaine;
 import Univers.Espece;
 import Univers.Personnage;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class Antechrist extends Capitaine {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
+
+    /**
+     * Crée un antéchrist avec notamment ses statistiques et son armée (i.e gestionnaireArmeeDemons)
+     */
     public Antechrist(){
         super(Espece.DEMON);
         image = "src/Images/antechrist.png";
@@ -23,6 +31,10 @@ public class Antechrist extends Capitaine {
 
      */
 
+    /**
+     * Renvoie une description textuelle d'un cavalier d'un antéchrist
+     * @return
+     */
     @Override
     public String toString(){
         return super.toString() + "\n" + this.getGestionnaireArmee();

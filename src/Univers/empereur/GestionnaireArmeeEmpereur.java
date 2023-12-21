@@ -3,12 +3,22 @@ package Univers.empereur;
 import Univers.*;
 
 public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
+
     private int nombreSilvios;
     private int nomrbreTank;
     private int nombreEpeiste;
 
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private Silvios troupeSilvios;
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private Tank troupeTanks;
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private Epeiste troupeEpeistes;
 
     public GestionnaireArmeeEmpereur(){
@@ -19,12 +29,22 @@ public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
         this.nombreEpeiste = 0;
     }
 
+    /**
+     * initialise les troupes à l'aide de la classe mère qui prend en entrée l'espèce, ici, Empereur
+     */
     public void initTroupes(){
         super.initTroupes(Espece.EMPEREUR);
         //this.troupeSilvios= new Silvios();
         //this.troupeTanks = new Tank();
         //this.troupeEpeistes= new Epeiste();
     }
+
+    /**
+     * Définit les caractéristiques de l'armée en fonction de la classe du personnage donné en paramètre
+     * et renvoie la dite armée
+     * @param personnage
+     * @return
+     */
     public static GestionnaireArmeeEmpereur setArmee(Personnage personnage){
         GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur = new GestionnaireArmeeEmpereur();
         gestionnaireArmeeEmpereur.initTroupes();
@@ -142,12 +162,21 @@ public class GestionnaireArmeeEmpereur extends GestionnaireArmee {
     }
 
 
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesTroupesSilvios(int force, int pointDeVie, int mana){
         this.troupeSilvios.setStatistiques(force*this.nombreSilvios, pointDeVie*this.nombreSilvios, mana*this.nombreSilvios);
     }
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesTroupesTank(int force, int pointDeVie, int mana){
         this.troupeTanks.setStatistiques(force*this.nomrbreTank, pointDeVie*this.nomrbreTank, mana*this.nomrbreTank);
     }
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesTroupesEpeiste(int force, int pointDeVie, int mana){
         this.troupeEpeistes.setStatistiques(force*this.nombreEpeiste, pointDeVie*this.nombreEpeiste, mana*this.nombreEpeiste);
     }

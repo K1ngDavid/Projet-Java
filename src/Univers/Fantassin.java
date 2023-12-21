@@ -1,5 +1,9 @@
 package Univers;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class Fantassin extends Soldat{
 
     public Fantassin(Espece espece,String image){
@@ -14,6 +18,11 @@ public class Fantassin extends Soldat{
         }
     }
 
+    /**
+     * Fait d'un personnage un fantassin et lui définit des statistiques en fonction de son espèce
+     * @param personnage
+     * @return
+     */
     public static Fantassin setFantassin(Personnage personnage){
         personnage = new Fantassin(personnage.getEspece());
         //personnage = new Fantassin();
