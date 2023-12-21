@@ -9,10 +9,19 @@ import Univers.empereur.SaintPaladin;
 
 public abstract class General extends Personnage{
 
+    /**
+     * Crée un général d'une espèce donnée
+     * @param espece
+     */
     public General(Espece espece){
         super(espece);
     }
 
+    /**
+     * Donne des facultés spéciales aux troupes du Général en fonction de la classe du Général
+     * @param personnage
+     * @return
+     */
     public static General faculteSpeciale(Personnage personnage){
         if(personnage instanceof BerserkerDeLApocalyspse){
             personnage.getGestionnaireArmee().getTroupeFantassins().setStatistiques(

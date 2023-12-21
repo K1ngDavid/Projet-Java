@@ -1,5 +1,9 @@
 package Univers;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class Cavalier extends Soldat{
 
     public Cavalier(Espece espece){
@@ -14,8 +18,11 @@ public class Cavalier extends Soldat{
         super(espece,image);
     }
 
-
-
+    /**
+     * Fait d'un personnage un cavalier et lui définit des statistiques en fonction de son espèce
+     * @param personnage
+     * @return
+     */
     public static Cavalier setCavalier(Personnage personnage){
         personnage = new Cavalier(personnage.getEspece());
         //personnage = new Cavalier();

@@ -5,8 +5,16 @@ import Univers.Espece;
 import Univers.General;
 import Univers.Personnage;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class BerserkerDeLApocalyspse extends General {
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
+
+    /**
+     * Crée un berserker avec notamment ses statistiques et son armée (i.e gestionnaireArmeeEmpereur)
+     */
     public BerserkerDeLApocalyspse(){
         super(Espece.EMPEREUR);
         image = "src/Images/berserker.png";
@@ -24,6 +32,10 @@ public class BerserkerDeLApocalyspse extends General {
 
      */
 
+    /**
+     * Renvoie une description textuelle d'un berserker
+     * @return
+     */
     @Override
     public String toString(){
         return super.toString() + "\n" + this.getGestionnaireArmee();

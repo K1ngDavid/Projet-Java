@@ -5,10 +5,17 @@ import Univers.Capitaine;
 import Univers.Espece;
 import Univers.Personnage;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class Epeiste extends Capitaine {
 
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
 
+    /**
+     * Crée un épéiste avec notamment ses statistiques et son armée (i.e gestionnaireArmeeEmpereur)
+     */
     public Epeiste(){
         super(Espece.EMPEREUR);
         image = "src/Images/epeiste.png";
@@ -25,6 +32,10 @@ public class Epeiste extends Capitaine {
 
      */
 
+    /**
+     * Renvoie une description textuelle d'un épéiste
+     * @return
+     */
     @Override
     public String toString(){
         return super.toString() + "\n" + this.getGestionnaireArmee();

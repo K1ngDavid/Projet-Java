@@ -9,8 +9,17 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
     private int nombreSilloneurDesTrefonds;
     private int nombreAntechrist;
 
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private DieuDemon troupeDieuDemon;
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private SilloneurDesTrefonds troupeSilloneurDesTrefonds;
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     private Antechrist troupeAntechrist;
 
     public GestionnaireArmeeDemons(){
@@ -21,6 +30,9 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
         this.nombreAntechrist = 0;
     }
 
+    /**
+     * initialise les troupes à l'aide de la classe mère qui prend en entrée l'espèce, ici, Démon
+     */
     public void initTroupes(){
         super.initTroupes(Espece.DEMON);
         //this.troupeDieuDemon = new DieuDemon();
@@ -28,6 +40,12 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
         //this.troupeAntechrist = new Antechrist();
     }
 
+    /**
+     * Définit les caractéristiques de l'armée en fonction de la classe du personnage donné en paramètre
+     * et renvoie la dite armée
+     * @param personnage
+     * @return
+     */
     public static GestionnaireArmeeDemons setArmee(Personnage personnage){
         GestionnaireArmeeDemons gestionnaireArmeeDemons = new GestionnaireArmeeDemons();
         gestionnaireArmeeDemons.initTroupes();
@@ -142,12 +160,23 @@ public class GestionnaireArmeeDemons extends GestionnaireArmee {
     }
 
 
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesDieuDemon(int force, int pointDeVie, int mana){
         this.troupeDieuDemon.setStatistiques(force, pointDeVie, mana);
     }
+
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesSilloneurDesTrefonds(int force, int pointDeVie, int mana){
         this.troupeSilloneurDesTrefonds.setStatistiques(force, pointDeVie, mana);
     }
+
+    /**
+     * @deprecated Non utilisé car crée une StackOverflow error
+     */
     public void setCaractéristiquesAntechrist(int force, int pointDeVie, int mana){
         this.troupeAntechrist.setStatistiques(force, pointDeVie, mana);
     }

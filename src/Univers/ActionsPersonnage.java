@@ -1,5 +1,10 @@
 package Univers;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ * Indique les actions que tout personnage doit pouvoir effectuer
+ */
 public interface ActionsPersonnage {
 
     public abstract void attaquer(Personnage personnage);

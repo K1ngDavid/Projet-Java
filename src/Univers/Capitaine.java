@@ -9,6 +9,12 @@ public abstract class Capitaine extends Personnage{
         super(espece);
     }
 
+    /**
+     * Prend en entrée un personnage qui est un capitaine et le fait évoluer en général selon sa classe de capitaine
+     * Elle définit également les facultés spéciales de son armée
+     * @param personnage
+     * @return Capitaine
+     */
     public static General evoluerGrade(Personnage personnage){
         if(personnage.isEmpereur()){
             if(personnage instanceof Epeiste){

@@ -5,8 +5,16 @@ import Univers.Espece;
 import Univers.General;
 import Univers.Personnage;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class CavalierDuNeant extends General {
     //private GestionnaireArmeeDemons gestionnaireArmeeDemon;
+
+    /**
+     * Crée un cavalier du néant avec notamment ses statistiques et son armée (i.e gestionnaireArmeeDemons)
+     */
     public CavalierDuNeant(){
         super(Espece.DEMON);
         image = "src/Images/cavalier_du_neant.png";
@@ -24,6 +32,10 @@ public class CavalierDuNeant extends General {
 
      */
 
+    /**
+     * Renvoie une description textuelle d'un cavalier du néant
+     * @return
+     */
     @Override
     public String toString(){
         return super.toString() + "\n" + this.getGestionnaireArmee();

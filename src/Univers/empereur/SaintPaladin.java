@@ -5,8 +5,16 @@ import Univers.Espece;
 import Univers.General;
 import Univers.Personnage;
 
+/**
+ * @author Victorien GBAGUIDI
+ * @version Version 1
+ */
 public class SaintPaladin extends General {
     //private GestionnaireArmeeEmpereur gestionnaireArmeeEmpereur;
+
+    /**
+     * Crée un saint paladin avec notamment ses statistiques et son armée (i.e gestionnaireArmeeEmpereur)
+     */
     public SaintPaladin(){
         super(Espece.EMPEREUR);
         image = "src/Images/saint_paladin.png";
@@ -23,6 +31,10 @@ public class SaintPaladin extends General {
 
      */
 
+    /**
+     * Renvoie une description textuelle d'un saint paladin
+     * @return
+     */
     @Override
     public String toString(){
         return super.toString() + "\n" + this.getGestionnaireArmee();
