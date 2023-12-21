@@ -92,23 +92,29 @@ public class TileManager {
             mapTileNum[gamePanel.maxScreenCol - 1][j] = 1; // Bord inférieur
         }
 
-        int specialValueX = 1 + (int) (Math.random() * (gamePanel.maxScreenCol - 3));
-        int specialValueY = 1 + (int) (Math.random() * (gamePanel.maxScreenRow - 3));
+        boolean specialValueAdded = false;
 
-        mapTileNum[specialValueX][specialValueY] = 3;
 
         for (int i = 1; i < gamePanel.maxScreenCol - 1; i++) {
             for (int j = 1; j < gamePanel.maxScreenRow - 1; j++) {
-                // Assurer que le joueur peut se déplacer librement
-                if (i % 2 == 0 || j % 2 == 0) {
-                    mapTileNum[i][j] = 0; // Emplacements pairs pour permettre au joueur de se déplacer
-                } else if (mapTileNum[i][j] != 3) {
-                    // Remplir l'intérieur de la carte avec des valeurs aléatoires (0, 1, ou 2) sauf si la case contient déjà la valeur 3
+                // Ajouter la valeur 3 une fois et seulement une fois
+                if (!specialValueAdded && Math.random() < 0.1 && i!=3 && j != 3) {
+                    mapTileNum[i][j] = 3;
+                    specialValueAdded = true;
+                } else {
+                    // Remplir l'intérieur de la carte avec des valeurs aléatoires (0, 1, ou 2)
                     mapTileNum[i][j] = (int) (Math.random() * 3);
+
+                    // Assurer que le joueur peut se déplacer librement
+                    if (i % 2 == 0 || j % 2 == 0) {
+                        mapTileNum[i][j] = 0; // Emplacements pairs pour permettre au joueur de se déplacer
+                    }
                 }
             }
         }
-        mapTileNum[3][3] = 0; // Garantir que le joueur ne spawn pas sur un block de lave
+        if(mapTileNum[3][3] != 3){
+            mapTileNum[3][3] = 0;
+        }
     }
 
 

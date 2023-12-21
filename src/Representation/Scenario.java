@@ -127,7 +127,6 @@ public class Scenario extends JFrame{
                 JButton button = (JButton) nestedPanel.getComponent(0);
                 JButton button1 = (JButton) nestedPanel.getComponent(2);
                 savedPartie = JFrameFunctionnalities.waitForSelection(new JButton[]{button, button1}, nestedPanel);
-                System.out.println(savedPartie);
                 if(savedPartie != null){
                     currentNode = savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(2);
                     checkpoints.add(savedPartie.getPartie().get(savedPartie.getPartie().size() -1).get(0));

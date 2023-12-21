@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 public class TerminalNode extends Node {
 
     private final JLabel lblGameOver = new JLabel("Game Over",SwingConstants.CENTER);
+    private transient ImageIcon imgGameOver = new ImageIcon("src/Images/GAME_OVER.png");
 
     public TerminalNode(String description) {
         super(description);
@@ -35,7 +36,6 @@ public class TerminalNode extends Node {
         super.display(pnlRoot,personnage);
         pnlRoot.setLayout(new BorderLayout());
         pnlRoot.add(new JLabel(""),BorderLayout.PAGE_START);
-        lblGameOver.setFont(new Font("Arial",Font.PLAIN,50));
         pnlRoot.add(lblGameOver, BorderLayout.CENTER);
         nextButton.setText("Fermer");
         nextButton.addActionListener(new ActionListener() {

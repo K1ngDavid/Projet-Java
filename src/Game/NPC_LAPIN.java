@@ -8,7 +8,7 @@ public class NPC_LAPIN extends Entity{
 
     public NPC_LAPIN(GamePanel gp){
         super(gp);
-        direction = "down";
+//        direction = "down";
         speed = 1;
 
         getImage();

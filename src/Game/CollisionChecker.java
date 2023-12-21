@@ -32,7 +32,8 @@ public class CollisionChecker {
                     entity.collisionOn = true;
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
-                    gp.isFinished = true;
+                    if(entity instanceof Player)    gp.isFinished = true;
+
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
@@ -60,7 +61,8 @@ public class CollisionChecker {
                     }
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
-                    gp.isFinished = true;
+                    if(entity instanceof Player)    gp.isFinished = true;
+
                 }
 
             }
@@ -73,7 +75,7 @@ public class CollisionChecker {
                     entity.collisionOn = true;
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
-                    gp.isFinished = true;
+                    if(entity instanceof Player)    gp.isFinished = true;
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
@@ -91,7 +93,7 @@ public class CollisionChecker {
                     entity.collisionOn = true;
                 }
                 if(tileNum1 == 3 || tileNum2 == 3){
-                    gp.isFinished = true;
+                    if(entity instanceof Player)    gp.isFinished = true;
                 }
                 if(gp.tileManager.tiles[tileNum1].mortel || gp.tileManager.tiles[tileNum2].mortel){
                     if(entity instanceof Player){
