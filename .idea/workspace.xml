@@ -4,183 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="Résolution de conflits">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sauvegarde/sauvegarde4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/JFrameFunctionnalities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Sauvegarde.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/Scenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Representation/SoundNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Representation/SoundNode.java" afterDir="false" />
+    <list default="true" id="498bcbf5-0ca1-42c3-93ad-52eebd6913ae" name="Changes" comment="Résolution de conflits">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Annotation" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/io/EOFException.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/io/ObjectInputStream.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/io/ObjectStreamClass.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/ReflectiveOperationException.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/RuntimeException.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
-  <component name="ProjectId" id="2WCW14LZs4JyheSeJS9idsqfB1N" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "88",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/k1ngdavid/CODE/JAVA/ProjetJava",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.editor"
-  }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Game/maps" />
-      <recent name="$PROJECT_DIR$/src/Images" />
-      <recent name="$PROJECT_DIR$/src/Sounds" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="RUN" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="ProjetJava" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="4ed02a2e-e01f-4848-ad31-1c627b10511d" name="Changes" comment="" />
-      <created>1696236824134</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1696236824134</updated>
-      <workItem from="1696236825771" duration="2340000" />
-      <workItem from="1696241226762" duration="1710000" />
-      <workItem from="1696516300563" duration="623000" />
-      <workItem from="1697113498648" duration="2238000" />
-      <workItem from="1697364957352" duration="4930000" />
-      <workItem from="1697791805736" duration="3257000" />
-      <workItem from="1698410390267" duration="1015000" />
-      <workItem from="1698413926025" duration="10427000" />
-      <workItem from="1698440798086" duration="2580000" />
-      <workItem from="1698477777755" duration="11900000" />
-      <workItem from="1698509336863" duration="1622000" />
-      <workItem from="1698751465675" duration="3157000" />
-      <workItem from="1699264408744" duration="19000" />
-      <workItem from="1699266801337" duration="301000" />
-      <workItem from="1699364030263" duration="1743000" />
-      <workItem from="1699449015602" duration="922000" />
-      <workItem from="1699456072211" duration="2336000" />
-      <workItem from="1699534929738" duration="3497000" />
-      <workItem from="1699808921716" duration="5314000" />
-      <workItem from="1699862788164" duration="5863000" />
-      <workItem from="1699872704367" duration="1312000" />
-      <workItem from="1699970303071" duration="11644000" />
-      <workItem from="1699995682645" duration="2228000" />
-      <workItem from="1700306653410" duration="3012000" />
-      <workItem from="1700319076027" duration="7340000" />
-      <workItem from="1700327462262" duration="11715000" />
-      <workItem from="1700387627443" duration="2290000" />
-      <workItem from="1700418486013" duration="5998000" />
-      <workItem from="1700472655632" duration="689000" />
-      <workItem from="1700478803782" duration="1144000" />
-      <workItem from="1700482919782" duration="1328000" />
-      <workItem from="1700485345862" duration="12651000" />
-      <workItem from="1700561968213" duration="3837000" />
-      <workItem from="1700575043755" duration="1171000" />
-      <workItem from="1700581652027" duration="7118000" />
-      <workItem from="1701275140470" duration="6922000" />
-      <workItem from="1701420881778" duration="1058000" />
-      <workItem from="1701425072351" duration="1874000" />
-      <workItem from="1701527286060" duration="9344000" />
-      <workItem from="1701598953971" duration="30858000" />
-      <workItem from="1701642295767" duration="632000" />
-      <workItem from="1701676980153" duration="11000" />
-      <workItem from="1701691721167" duration="4896000" />
-      <workItem from="1701710506466" duration="10140000" />
-      <workItem from="1701764740810" duration="1930000" />
-      <workItem from="1701869227609" duration="15624000" />
-      <workItem from="1701937808769" duration="490000" />
-      <workItem from="1701941370376" duration="1356000" />
-      <workItem from="1702027428421" duration="622000" />
-      <workItem from="1702503188268" duration="6316000" />
-      <workItem from="1702550959026" duration="15068000" />
-      <workItem from="1702734100870" duration="357000" />
-      <workItem from="1702734753505" duration="25911000" />
-    </task>
-    <task id="LOCAL-00001" summary="Résolution de conflits">
-      <created>1699536589175</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1699536589175</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Résolution de conflits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Résolution de conflits" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -189,9 +34,5 @@
         <PinnedItemInfo parentTag="Representation.DecisionNode" memberName="nextNodes" />
       </pinned-members>
     </pin-to-top-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
