@@ -1,7 +1,5 @@
 # Projet-Java
-<<<<<<< HEAD
 
-=======
 Notre projet JAVA permet au joueur de choisir son espèce et sa classe de combattant. Il va alors naviguer au travers de différentes situations mélant chance et parcours d'une carte
 
 Pour compiler et exécuter notre projet, il faut passer par un IDE. Nous avons tenté de le compiler depuis la console en vain.
@@ -20,4 +18,3 @@ S Bas
 D Droite
 
 AMUSEZ VOUS BIEN !
->>>>>>> 341a7de3ded0e8cb238740e866a2206541d11f81
