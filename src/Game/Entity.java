@@ -1,11 +1,13 @@
 package Game;
 
-import Univers.Personnage;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
+/**
+ * Classe entité.
+ * @author David Roufé
+ */
 public class Entity {
     public int worldX,worldY;
     public boolean isMooving;

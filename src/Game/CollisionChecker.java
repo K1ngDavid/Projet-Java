@@ -1,5 +1,10 @@
 package Game;
 
+
+/**
+ * Classe qui vérifie les collisions.
+ * @author David Roufé
+ */
 public class CollisionChecker {
     GamePanel gp;
     int tmp1x,tmp1y;

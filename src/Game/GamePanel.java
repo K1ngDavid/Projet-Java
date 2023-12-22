@@ -5,6 +5,11 @@ import Game.Tile.TileManager;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Le panel de jeu
+ * @author David Roufé
+ */
+
 public class GamePanel extends JPanel implements Runnable {
     final int originalTileSize = 16;
     final int scale = 3;

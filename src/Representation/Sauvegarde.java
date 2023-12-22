@@ -15,6 +15,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * La classe <code>Sauvegarde</code> représente la gestion des sauvegardes dans le jeu. Elle permet de sauvegarder
+ * et de reprendre une partie enregistrée.
+ * @author David Roufé
+ */
 public class Sauvegarde extends JFrame implements Serializable  {
     private ArrayList<Event> checkpoints;
     private ArrayList<File> sauvegardeFiles;
@@ -27,6 +32,11 @@ public class Sauvegarde extends JFrame implements Serializable  {
     boolean isPartieSaved = false;
     boolean isPartieRegained = false;
 
+    /**
+     * Constructeur de la classe <code>Sauvegarde</code>. Initialise les listes et la fenêtre Swing.
+     *
+     * @throws IOException En cas d'erreur lors de la création du répertoire de sauvegarde.
+     */
     public Sauvegarde() throws IOException {
         checkpoints = new ArrayList<>();
         partie = new ArrayList<>();
@@ -40,6 +50,11 @@ public class Sauvegarde extends JFrame implements Serializable  {
         return checkpoints;
     }
 
+    /**
+     * Renvoie la liste des parties enregistrées.
+     *
+     * @return Liste des parties enregistrées.
+     */
     public ArrayList<ArrayList<Event>> getPartie() {
         return partie;
     }
@@ -48,10 +63,22 @@ public class Sauvegarde extends JFrame implements Serializable  {
         this.checkpoints = checkpoints;
     }
 
+    /**
+     * Définit la liste des parties enregistrées.
+     *
+     * @param partie Liste des parties enregistrées à définir.
+     */
     public void setPartie(ArrayList<ArrayList<Event>> partie) {
         this.partie = partie;
     }
 
+    /**
+     * Sauvegarde la partie en cours dans un fichier texte avec le nom spécifié par l'utilisateur.
+     *
+     * @return True si la sauvegarde est réussie, sinon False.
+     * @throws IOException           En cas d'erreur d'entrée/sortie lors de la sauvegarde.
+     * @throws InterruptedException  En cas d'interruption pendant l'attente de l'utilisateur.
+     */
     public boolean savePartie() throws IOException, InterruptedException {
         isPartieSaved = false;
         JTextField jTextField = new JTextField();
@@ -96,10 +123,22 @@ public class Sauvegarde extends JFrame implements Serializable  {
         return true;
     }
 
+    /**
+     * Renvoie la sauvegarde actuelle.
+     *
+     * @return La sauvegarde actuelle.
+     */
     public Sauvegarde getSauvegarde() {
         return sauvegarde;
     }
 
+    /**
+     * Permet de reprendre une partie en chargeant une sauvegarde depuis un fichier.
+     *
+     * @throws IOException            En cas d'erreur d'entrée/sortie lors de la reprise de la partie.
+     * @throws ClassNotFoundException En cas de classe non trouvée lors de la désérialisation.
+     * @throws InterruptedException   En cas d'interruption pendant l'attente de l'utilisateur.
+     */
     public void reprendrePartie() throws IOException, ClassNotFoundException, InterruptedException {
         setLayout(new BorderLayout());
 

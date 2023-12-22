@@ -6,20 +6,42 @@ import Univers.Personnage;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Représente un nœud de combat dans le scénario du jeu.
+ * Étend la classe abstraite InnerNode.
+ * @author David Roufé
+ */
 public class CombatNode extends InnerNode{
     private transient GamePanel gamePanel;
     private JLabel jLabel = new JLabel("Touches du joueur");
     private JLabel jLabel1 = new JLabel();
+    /**
+     * Constructeur de la classe CombatNode.
+     *
+     * @param description Description du nœud de combat.
+     */
     public CombatNode(String description) {
         super(description);
         this.gamePanel = new GamePanel();
     }
 
+    /**
+     * Ajoute un nœud à la liste des nœuds suivants.
+     *
+     * @param nodeFromJson Nœud à ajouter.
+     */
     @Override
     public void addNode(Event nodeFromJson) {
         nextNodes.add(nodeFromJson);
     }
 
+    /**
+     * Choisi le prochain nœud en fonction de la situation du jeu.
+     *
+     * @param pnlRoot      Le panneau racine.
+     * @param personnage   Le personnage du joueur.
+     * @return             Le prochain nœud.
+     */
     @Override
     public Event chooseNext(JPanel pnlRoot, Personnage personnage) {
         if(gamePanel == null){
@@ -48,6 +70,12 @@ public class CombatNode extends InnerNode{
         return this.nextNodes.get(0);
     }
 
+    /**
+     * Affiche des informations lors de l'affichage du nœud.
+     *
+     * @param pnlRoot      Le panneau racine.
+     * @param personnage   Le personnage du joueur.
+     */
     @Override
     public void display(JPanel pnlRoot,Personnage personnage) {
 //        super.display(pnlRoot,personnage);

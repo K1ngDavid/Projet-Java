@@ -21,12 +21,24 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 
+/**
+ * La classe <code>Scenario</code> représente le scénario du jeu. Elle charge le scénario à partir d'un fichier JSON
+ * et gère le déroulement du jeu en fonction des choix du joueur.
+ * @author David Roufé
+ */
 public class Scenario extends JFrame{
     public Event initialNode;
     private JPanel pnlRoot;
     private Sauvegarde sauvegarde;
     private Sauvegarde savedPartie;
     Personnage personnage;
+
+    /**
+     * Constructeur de la classe Scenario. Il charge le scénario à partir d'un fichier JSON.
+     *
+     * @throws IOException     en cas d'erreur lors de la lecture du fichier JSON.
+     * @throws ParseException  en cas d'erreur lors de l'analyse du fichier JSON.
+     */
     public Scenario() throws IOException, ParseException {
         this.initialNode = null;
         personnage = new Personnage();
@@ -34,6 +46,11 @@ public class Scenario extends JFrame{
         this.loadScenarioFromJson("src/data.json");
     }
 
+    /**
+     * Charge le scénario à partir d'un fichier JSON.
+     *
+     * @param jsonFilePath Chemin du fichier JSON contenant le scénario.
+     */
     public void loadScenarioFromJson(String jsonFilePath) {
         JSONParser parser = new JSONParser();
 
@@ -47,6 +64,15 @@ public class Scenario extends JFrame{
             throw new RuntimeException(e);
         }
     }
+    /**
+     * Crée un nœud d'événement à partir des données JSON.
+     *
+     * @param jsonData Données JSON représentant un nœud d'événement.
+     * @return Le nœud d'événement créé.
+     * @throws UnsupportedAudioFileException Si le fichier audio n'est pas supporté.
+     * @throws LineUnavailableException      Si la ligne audio n'est pas disponible.
+     * @throws IOException                   En cas d'erreur d'entrée/sortie.
+     */
     private Event createNodeFromJson(JSONObject jsonData) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         String nodeType = (String) jsonData.get("type");
         String description = (String) jsonData.get("description");
@@ -81,6 +107,15 @@ public class Scenario extends JFrame{
         return null;
     }
 
+    /**
+     * Associe un événement décorateur à un nœud en fonction des données JSON.
+     *
+     * @param pathFile Fichier de chemin pour l'événement décorateur.
+     * @param node     Nœud d'événement initial.
+     * @return L'événement décorateur associé.
+     * @throws LineUnavailableException Si la ligne audio n'est pas disponible.
+     * @throws IOException              En cas d'erreur d'entrée/sortie.
+     */
     private Event getEvent(JSONObject pathFile, Event node) throws LineUnavailableException, IOException {
         if(pathFile != null){
             if(pathFile.containsKey("Image")){
@@ -111,7 +146,12 @@ public class Scenario extends JFrame{
     /*Nouvelle version*/
 
     /**
-     * @param initialNode
+     * Affiche la représentation graphique du scénario et gère le déroulement du jeu.
+     *
+     * @param initialNode Nœud initial du scénario.
+     * @throws ClassNotFoundException en cas d'erreur lors de la désérialisation de la sauvegarde.
+     * @throws IOException            en cas d'erreur d'entrée/sortie.
+     * @throws InterruptedException   en cas d'interruption de la thread.
      */
     public void playScenario(Event initialNode) throws ClassNotFoundException, IOException, InterruptedException {
         this.sauvegarde = new Sauvegarde();
@@ -191,6 +231,11 @@ public class Scenario extends JFrame{
     }
 
 
+    /**
+     * Initialisation des composants graphiques.
+     *
+     * @throws IOException en cas d'erreur d'entrée/sortie lors du chargement des images.
+     */
     private void createUIComponents() throws IOException {
         Random random = new Random();
         this.pnlRoot = new BackgroundPanel("src/Background/background"+ random.nextInt(1,5) + ".png");
@@ -201,7 +246,7 @@ public class Scenario extends JFrame{
         lbl.setFont(new Font("Arial",Font.PLAIN,30));
         lbl.setHorizontalAlignment(0);
         pnlRoot.add(lbl,BorderLayout.NORTH);
-        this.setResizable(false);
+        this.setResizable(true);
 
         JPanel jpanelMenu = new JPanel(new GridBagLayout());
         jpanelMenu.setPreferredSize(new Dimension(200, 100));

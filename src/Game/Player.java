@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 
+/**
+ * Classe du joueur
+ * @author David Roufé
+ */
 public class Player extends Entity{
     transient GamePanel gamePanel;
     transient KeyHandler keyH;
