@@ -8,4 +8,11 @@ SI LE PROJET NE COMPILE PAS À CAUSE DU JSON :
    ENTRER DANS LA BARRE DE RECHERCHE : com.googlecode.json-simple
 3) REDÉMARRER L'IDE
 4) EXÉCUTER À NOUVEAU LE PROJET
+5) Pour se déplacer :
+Z Haut
+Q Gauche
+S Bas
+D Droite
+
+AMUSEZ VOUS BIEN !
 >>>>>>> 341a7de3ded0e8cb238740e866a2206541d11f81
